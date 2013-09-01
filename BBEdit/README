@@ -1,0 +1,12 @@
+Installation:
+
+1. Make backups.
+
+2. Copy Info.plist into the folder:
+	/Applications/BBEdit.app/Contents/Language Modules/Lua.bblm/Contents
+
+	There is already an Info.plist in this folder, make a backup and copy the new Info.plist over it.
+
+3. Restart BBEdit.
+
+Done.
