@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BuildMachineOSBuild</key>
+	<string>12E55</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>Lua</string>
+	<key>CFBundleGetInfoString</key>
+	<string>10.5.5 (3310), copyright ©1992-2013 Bare Bones Software, Inc.</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.barebones.bblm.lua</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>10.5.5</string>
+	<key>CFBundleVersion</key>
+	<string>3310</string>
+	<key>CSResourcesFileMapped</key>
+	<true/>
+	<key>DTCompiler</key>
+	<string>com.apple.compilers.llvm.clang.1_0</string>
+	<key>DTPlatformBuild</key>
+	<string>4H1503</string>
+	<key>DTPlatformVersion</key>
+	<string>GM</string>
+	<key>DTSDKBuild</key>
+	<string>12D75</string>
+	<key>DTSDKName</key>
+	<string>macosx10.8</string>
+	<key>DTXcode</key>
+	<string>0463</string>
+	<key>DTXcodeBuild</key>
+	<string>4H1503</string>
+	<key>com.barebones.ProductBuildNumber</key>
+	<string>3310</string>
+	<key>com.barebones.bblminfo</key>
+	<array>
+		<dict>
+			<key>BBLMCanGenerateHTMLForPreview</key>
+			<false/>
+			<key>BBLMCanGuessLanguage</key>
+			<true/>
+			<key>BBLMColorsSyntax</key>
+			<true/>
+			<key>BBLMCommentLineDefault</key>
+			<string>--</string>
+			<key>BBLMDroppedFilePathStyle</key>
+			<string>POSIX</string>
+			<key>BBLMFiltersRunsForSpellChecking</key>
+			<true/>
+			<key>BBLMFunctionScannerDoesFoldsToo</key>
+			<true/>
+			<key>BBLMIsCaseSensitive</key>
+			<true/>
+			<key>BBLMKeywordList</key>
+			<array>
+				<string>and</string>
+				<string>break</string>
+				<string>do</string>
+				<string>else</string>
+				<string>elseif</string>
+				<string>end</string>
+				<string>false</string>
+				<string>for</string>
+				<string>function</string>
+				<string>if</string>
+				<string>in</string>
+				<string>local</string>
+				<string>nil</string>
+				<string>not</string>
+				<string>or</string>
+				<string>repeat</string>
+				<string>return</string>
+				<string>then</string>
+				<string>true</string>
+				<string>until</string>
+				<string>while</string>
+				<string>...</string>
+			</array>
+			<key>BBLMLanguageCode</key>
+			<string>Lua </string>
+			<key>BBLMLanguageDisplayName</key>
+			<string>Lua</string>
+			<key>BBLMMainFunctionName</key>
+			<string>LuaMachO</string>
+			<key>BBLMPredefinedNameList</key>
+			<array>
+				<string>_G</string>
+				<string>_VERSION</string>
+				<string>assert</string>
+				<string>collectgarbage</string>
+				<string>dofile</string>
+				<string>error</string>
+				<string>getfenv</string>
+				<string>getmetatable</string>
+				<string>ipairs</string>
+				<string>load</string>
+				<string>loadfile</string>
+				<string>loadstring</string>
+				<string>module</string>
+				<string>next</string>
+				<string>pairs</string>
+				<string>pcall</string>
+				<string>print</string>
+				<string>rawequal</string>
+				<string>rawget</string>
+				<string>rawset</string>
+				<string>require</string>
+				<string>select</string>
+				<string>setfenv</string>
+				<string>setmetatable</string>
+				<string>tonumber</string>
+				<string>tostring</string>
+				<string>type</string>
+				<string>unpack</string>
+				<string>xpcall</string>
+				<string>coroutine.create</string>
+				<string>coroutine.resume</string>
+				<string>coroutine.running</string>
+				<string>coroutine.status</string>
+				<string>coroutine.wrap</string>
+				<string>coroutine.yield</string>
+				<string>debug.debug</string>
+				<string>debug.getfenv</string>
+				<string>debug.gethook</string>
+				<string>debug.getinfo</string>
+				<string>debug.getlocal</string>
+				<string>debug.getmetatable</string>
+				<string>debug.getregistry</string>
+				<string>debug.getupvalue</string>
+				<string>debug.setfenv</string>
+				<string>debug.sethook</string>
+				<string>debug.setlocal</string>
+				<string>debug.setmetatable</string>
+				<string>debug.setupvalue</string>
+				<string>debug.traceback</string>
+				<string>file:close</string>
+				<string>file:flush</string>
+				<string>file:lines</string>
+				<string>file:read</string>
+				<string>file:seek</string>
+				<string>file:setvbuf</string>
+				<string>file:write</string>
+				<string>io.close</string>
+				<string>io.flush</string>
+				<string>io.input</string>
+				<string>io.lines</string>
+				<string>io.open</string>
+				<string>io.output</string>
+				<string>io.popen</string>
+				<string>io.read</string>
+				<string>io.tmpfile</string>
+				<string>io.type</string>
+				<string>io.write</string>
+				<string>math.abs</string>
+				<string>math.acos</string>
+				<string>math.asin</string>
+				<string>math.atan2</string>
+				<string>math.atan</string>
+				<string>math.ceil</string>
+				<string>math.cosh</string>
+				<string>math.cos</string>
+				<string>math.deg</string>
+				<string>math.exp</string>
+				<string>math.floor</string>
+				<string>math.fmod</string>
+				<string>math.frexp</string>
+				<string>math.huge</string>
+				<string>math.ldexp</string>
+				<string>math.log10</string>
+				<string>math.log</string>
+				<string>math.max</string>
+				<string>math.min</string>
+				<string>math.modf</string>
+				<string>math.pi</string>
+				<string>math.pow</string>
+				<string>math.rad</string>
+				<string>math.random</string>
+				<string>math.randomseed</string>
+				<string>math.sinh</string>
+				<string>math.sin</string>
+				<string>math.sqrt</string>
+				<string>math.tanh</string>
+				<string>math.tan</string>
+				<string>os.clock</string>
+				<string>os.date</string>
+				<string>os.difftime</string>
+				<string>os.execute</string>
+				<string>os.exit</string>
+				<string>os.getenv</string>
+				<string>os.remove</string>
+				<string>os.rename</string>
+				<string>os.setlocale</string>
+				<string>os.time</string>
+				<string>os.tmpname</string>
+				<string>package.cpath</string>
+				<string>package.loaded</string>
+				<string>package.loadlib</string>
+				<string>package.path</string>
+				<string>package.preload</string>
+				<string>package.seeall</string>
+				<string>string.byte</string>
+				<string>string.char</string>
+				<string>string.dump</string>
+				<string>string.find</string>
+				<string>string.format</string>
+				<string>string.gmatch</string>
+				<string>string.gsub</string>
+				<string>string.len</string>
+				<string>string.lower</string>
+				<string>string.match</string>
+				<string>string.rep</string>
+				<string>string.reverse</string>
+				<string>string.sub</string>
+				<string>string.upper</string>
+				<string>table.concat</string>
+				<string>table.insert</string>
+				<string>table.maxn</string>
+				<string>table.remove</string>
+				<string>table.sort</string>
+
+
+<string>acf.getAStabHeading()</string>
+<string>acf.getAStabPitch()</string>
+<string>acf.getAStabRoll()</string>
+<string>acf.getAlpha()</string>
+<string>acf.getAltAgl()</string>
+<string>acf.getAltMsl()</string>
+<string>acf.getAuthor()</string>
+<string>acf.getBeta()</string>
+<string>acf.getDescription()</string>
+<string>acf.getEncryptedScripts()</string>
+<string>acf.getFCHeading()</string>
+<string>acf.getFCPitch()</string>
+<string>acf.getFCRoll()</string>
+<string>acf.getFilename()</string>
+<string>acf.getFolder()</string>
+<string>acf.getGS()</string>
+<string>acf.getGearDeployState()</string>
+<string>acf.getGearHandleState()</string>
+<string>acf.getHeading()</string>
+<string>acf.getHeadingTrue()</string>
+<string>acf.getIAS()</string>
+<string>acf.getKIAS()</string>
+<string>acf.getLat()</string>
+<string>acf.getLiveryFolder()</string>
+<string>acf.getLiveryName()</string>
+<string>acf.getLon()</string>
+<string>acf.getP()</string>
+<string>acf.getP_dot()</string>
+<string>acf.getPitch()</string>
+<string>acf.getPosition()</string>
+<string>acf.getPositionGL()</string>
+<string>acf.getQ()</string>
+<string>acf.getQ_dot()</string>
+<string>acf.getR()</string>
+<string>acf.getR_dot()</string>
+<string>acf.getRelativeFolder()</string>
+<string>acf.getRoll()</string>
+<string>acf.getSessionTime()</string>
+<string>acf.getTAS()</string>
+<string>acf.getTrack()</string>
+<string>acf.getVS()</string>
+<string>acf.getYokeHeading()</string>
+<string>acf.getYokePitch()</string>
+<string>acf.getYokeRoll()</string>
+<string>acf.load( xp_relative_fiilename )</string>
+<string>acf.reload()</string>
+
+<string>base64.decode( base64_encoded_string )</string>
+<string>base64.encode( plain_text_string )</string>
+
+<string>camera.getAttitude()</string>
+<string>camera.getControl()</string>
+<string>camera.getControlGreedy()</string>
+<string>camera.getFOV()</string>
+<string>camera.getPosition()</string>
+<string>camera.getPositionGL()</string>
+<string>camera.getZoom()</string>
+<string>camera.lookAt( lat, lot, altitude )</string>
+<string>camera.lookAtGL( x,y,z )</string>
+<string>camera.releaseControl()</string>
+<string>camera.setAttitude( p,r,h )</string>
+<string>camera.setFOV( fov )</string>
+<string>camera.setPosition( lat,lon,alt )</string>
+<string>camera.setPositionGL( x,y,z )</string>
+<string>camera.setZoom( zoom )</string>
+
+
+<string>dref.getArraySize( dref_id )</string>
+<string>dref.getBytes( dataref_id, start_at, number_to_fetch )</string>
+<string>dref.getDataref( string_dataref_name )</string>
+<string>dref.getFloat( dataref_id )</string>
+<string>dref.getFloatV( dataref_id, start_at, number_to_fetch )</string>
+<string>dref.getInt( dataref_id )</string>
+<string>dref.getIntV( dataref_id, start_at, number_to_fetch )</string>
+<string>dref.getString( dataref_id )</string>
+<string>dref.newByteArray( string_dataref_name )</string>
+<string>dref.newFloat( dataref_name, OPT_hook_event_name )</string>
+<string>dref.newFloatArray( string_dataref_name )</string>
+<string>dref.newInt( dataref_name, OPT_hook_event_name )</string>
+<string>dref.newIntArray( string_dataref_name )</string>
+<string>dref.publish( string_dataref_name )</string>
+<string>dref.setArraySize( dref_id, new_size )</string>
+<string>dref.setAutoPublish( boolean )</string>
+<string>dref.setBytes( dataref_id, start_at, byte_string_var )</string>
+<string>dref.setFloat( dataref_id, value )</string>
+<string>dref.setFloatV( dataref_id, start_at, value1, value2, value3, ... )</string>
+<string>dref.setInt( dataref_id, value )</string>
+<string>dref.setIntV( dataref_id, start_at, value1, value2, value3, ... )</string>
+<string>dref.setString( dataref_id, byte_string_var )</string>
+
+
+
+
+
+
+
+
+<string>event.register( string_event_name, string_callback_function_name )</string>
+<string>event.unregister( string_event_name, string_callback_function_name )</string>
+
+
+<string>fmc.clear( index_number )</string>
+<string>fmc.clearAll()</string>
+<string>fmc.getCount()</string>
+<string>fmc.getDestination()</string>
+<string>fmc.getDisplayed()</string>
+<string>fmc.getGpsNavAid()</string>
+<string>fmc.getGpsNavAidType()</string>
+<string>fmc.getInfo( fmc_index_id )</string>
+<string>fmc.setDestination( fmc_index_id )</string>
+<string>fmc.setDisplayed( fmc_index_id )</string>
+<string>fmc.setInfo( fmc_index_id, navaid_id, altitude )</string>
+<string>fmc.setLatLon( fmc_index_id, Latitude, Longitude, altitude )</string>
+
+
+<string>font.drawString( font_id, string_to_draw, OPT_x,OPT_y )</string>
+<string>font.getFont( full_path_to_font_file, font_size )</string>
+<string>font.getStringWidth( font_id, string )</string>
+<string>font.measureString( font_id, string )</string>
+
+
+<string>gfx.bakeTerrainMap( texture_id )</string>
+<string>gfx.clearFBO()</string>
+<string>gfx.clearMaskingTape()</string>
+<string>gfx.clearTexture( texture_id, widht, height, bpp )</string>
+<string>gfx.disableReflectionDrawingCalls()</string>
+<string>gfx.drawArc( radius, segments, begin_degrees,end_degrees )</string>
+<string>gfx.drawBox( left,bottom,width,height )</string>
+<string>gfx.drawCircle( radius,segments )</string>
+<string>gfx.drawFilledArc( radius, segments, begin_degrees,end_degrees )</string>
+<string>gfx.drawFilledBox( left,bottom,width,height )</string>
+<string>gfx.drawFilledCircle( radius,segments )</string>
+<string>gfx.drawLine( a,b, x,y )</string>
+<string>gfx.drawObject( object_id, lat,lon,alt, p,r,h )</string>
+<string>gfx.drawObjectEx( object_handle, x,y,z, p,r,h )</string>
+<string>gfx.drawObjectGL( object_handle, x,y,z, p,r,h )</string>
+<string>gfx.drawRadial( heading, radius, length )</string>
+
+<string>gfx.drawString( string, [x,y] )</string>
+<string>gfx.drawTranslucentDarkBox( left,bottom,width,height )</string>
+<string>gfx.enableReflectionDrawingCalls()</string>
+<string>gfx.getAircraftPositionGL()</string>
+<string>gfx.getDrawDebugPath()</string>
+<string>gfx.getFPS()</string>
+<string>gfx.getFrameSpeed( target_speed_per_second )</string>
+<string>gfx.getIsViewInsideCockpit()</string>
+<string>gfx.getM()</string>
+<string>gfx.getScreenSize()</string>
+
+
+<string>gfx.getStringWidth( "string" )</string>
+<string>gfx.getTexture_GizmoLogo()</string>
+<string>gfx.getTexture_GizmoUI()</string>
+<string>gfx.getTexture_LiteMap()</string>
+<string>gfx.getTexture_LuaLogo()</string>
+<string>gfx.getTexture_Paint()</string>
+<string>gfx.getTexture_UI()</string>
+<string>gfx.getTexture_XALogo()</string>
+<string>gfx.loadObject( [object_id], "Aircraft/General Aviation/Cirrus Jet/objects/cockpit.obj" )</string>
+<string>gfx.loadPng( [texture_id], "/full/path/to/texture.png" )</string>
+<string>gfx.loadTga( [texture_id], "/full/path/to/texture.tga" )</string>
+<string>gfx.loadTgaBlob( texture_id, blob, blob_size )</string>
+<string>gfx.localToWorld( x,y,z )</string>
+<string>gfx.matchAircraftOrientation()</string>
+<string>gfx.measureString( "string" )</string>
+<string>gfx.newFBO( texture_id, width, height )</string>
+<string>gfx.newTexture()</string>
+<string>gfx.rebindFBO( fbo_id..... )</string>
+<string>gfx.releaseFBO( fbo_id )</string>
+<string>gfx.setColor( r,g,b, a )</string>
+<string>gfx.setMaskingTape( x,y, w,h ) //FIXME: mantis/118</string>
+<string>gfx.setState( fog, numTexUnits, lighting, alphaTest, alphaBlend, depthTest, depthWrite )</string>
+<string>gfx.setTerrainMapMode_Predictive()</string>
+<string>gfx.setTerrainMapMode_Relative()</string>
+<string>gfx.setTerrainMapMode_Synthetic()</string>
+<string>gfx.setTerrainMapMode_Topographic()</string>
+<string>gfx.setTerrainMapOption_LookAhead( integer_flag )</string>
+<string>gfx.setTerrainMapOption_NorthUp( integer_flag )</string>
+<string>gfx.setTerrainMapOption_Range( meters_between_sample_points )</string>
+<string>gfx.setTerrainMapOption_RefreshRate( rate_value )</string>
+<string>gfx.setTerrainMapOption_Size( number_of_samples_along_an_edge )</string>
+<string>gfx.texOff()</string>
+<string>gfx.texOn()</string>
+<string>gfx.useFBO( fbo_id )</string>
+<string>gfx.useTexture( texture_id )</string>
+<string>gfx.worldToLocal( lat,lon,alt )</string>
+
+
+<string>gizmo.activate( serial_number, [write_to_disk] )</string>
+<string>gizmo.disable( "filename" )</string>
+<string>gizmo.dofile( "filename" )</string>
+<string>gizmo.dofirmware( "filename" )</string>
+<string>gizmo.getActivated()</string>
+<string>gizmo.getBuildDate()</string>
+<string>gizmo.getDisabledEventNames()</string>
+<string>gizmo.getPossibleEventNames()</string>
+<string>gizmo.getRegisteredEmail()</string>
+<string>gizmo.getVersion()</string>
+<string>gizmo.getVersionFull()</string>
+<string>gizmo.reboot()</string>
+<string>gizmo.resetEventMap()</string>
+<string>gizmo.resetFirmware()</string>
+<string>gizmo.setDebugVerbose( flag )</string>
+<string>gizmo.sleep( duration_in_milliseconds, [power_saver] )</string>
+
+
+<string>gl.read_me()</string>
+
+
+<string>glu.read_me()</string>
+
+
+<string>gui.blur( gui_widget_id )</string>
+<string>gui.getCustomWidgetMouseXY( )</string>
+<string>gui.getWidgetSize( gui_widget_id )</string>
+<string>gui.getWidgetValue( gui_widget_id )</string>
+<string>gui.getWindowList()</string>
+<string>gui.getWindowSize( gui_window_id )</string>
+<string>gui.hideWidget( gui_widget_id )</string>
+<string>gui.hideWindow( gui_window_id )</string>
+<string>gui.newButton( gui_window_id, "MyClickHandlerFunction", "Button Caption", left, top, width )</string>
+<string>gui.newCheckbox( gui_window_id, "MyClickHandlerFunction", "Button Caption", left, top, width )</string>
+<string>gui.newCustomWidget( gui_window_id, "EventHandlerFunction", left, top, width, height )</string>
+<string>gui.newLabel( gui_window_id, "EventHandlerFunction", "Button Caption", left, top, width )</string>
+<string>gui.newListView( gui_window_id, "EventHandlerFunction", "Button Caption", left, top, width )</string>
+<string>gui.newPasswordBox( gui_window_id, "EventHandlerFunction", "Button Caption", left, top, width )</string>
+<string>gui.newRadioButton( gui_window_id, "MyClickHandlerFunction", "Button Caption", left, top, width )</string>
+<string>gui.newScreen( gui_window_id, "MyClickHandlerFunction", "Button Caption", left, top, width )</string>
+<string>gui.newSubWindow( gui_window_id, "MyClickHandlerFunction", left, top, width, height )</string>
+<string>gui.newTextBox( gui_window_id, "EventHandlerFunction", "Box Contents", left, top, width )</string>
+<string>gui.newWindow( "WindowIdentifier" )</string>
+<string>gui.setCustomWidgetClipping( gui_widget_id, [0|1] )</string>
+<string>gui.setFocus( gui_widget_id )</string>
+<string>gui.setPasswordMode( gui_widget_id, int_flag )</string>
+<string>gui.setWidgetSize( gui_widget_id, left, top, width, height )</string>
+<string>gui.setWidgetValue( gui_widget_id, "new value" )</string>
+<string>gui.setWindowCaption( gui_window_id, "My Window Caption" )</string>
+<string>gui.setWindowSize( gui_window_id, left, top, width, height )</string>
+<string>gui.showWidget( gui_widget_id )</string>
+<string>gui.showWindow( gui_window_id )</string>
+
+
+<string>hash.md5File( "filename" )</string>
+<string>hash.md5String( "filename" )</string>
+
+
+<string>http.get( url, callback_function_name )</string>
+<string>http.post( url, callback_function_name, post_payload )</string>
+<string>http.resetProxy()</string>
+<string>http.setProxy( "http://user:pass@proxy.host.lan:8001/" )</string>
+<string>http.urlDecode( data, data_length )</string>
+<string>http.urlEncode( data, data_length )</string>
+
+
+<string>io.read_me()</string>
+
+
+<string>logging.clear()</string>
+<string>logging.debug( "debug message" )</string>
+<string>logging.error( "error message" )</string>
+<string>logging.getMessages()</string>
+<string>logging.warning( "debug message" )</string>
+
+
+<string>map.bake( map_id, texture_id )</string>
+<string>map.newMap()</string>
+<string>map.setColorMode( map_id, map.color_mode )</string>
+<string>map.setLookAhead( map_id, look_ahead )</string>
+<string>map.setNorthUp( map_id, north_up )</string>
+<string>map.setPosition( map_id, lat, lon, alt_agl, heading )</string>
+<string>map.setRange( map_id, range )</string>
+
+<string>matrix.transform3D( x,y,z,  tx,ty,tz,  tp,tr,th )</string>
+
+
+<string>memcache.get( "key name" )</string>
+<string>memcache.set( "key name", string_blob )</string>
+
+
+<string>menu.newItem( "Menu Label", "MenuEventName" )</string>
+
+
+<string>mouse.getXY()</string>
+<string>mouse.setCursor( "CursorDrawingFunctionName" )</string>
+
+
+<string>nav.findNavAid( "name", "id", lat, lon, frequency )</string>
+<string>nav.getFirstNavAid()</string>
+<string>nav.getFirstNavAidOfType( navaid_type )</string>
+<string>nav.getLastNavAidOfType( navaid_type )</string>
+<string>nav.getNavAidInfo( navaid_id )</string>
+<string>nav.getNextNavAid( nav_ref )</string>
+<string>nav.getTypeName( navaid_type )</string>
+<string>nav.setSearchGroups( airports, ndbs, vors, ils, localizers, glideslopes, outermarkers, middle_markers, innermarkers, fixes, dmes, latlons )</string>
+
+
+
+<string>particles.newParticles()</string>
+<string>particles.setBirthRate( particle_emitter_id, particles_per_second )</string>
+<string>particles.setBounce( particle_emitter_id, int_flag )</string>
+<string>particles.setColor( particle_emitter_id, r,g,b, a )</string>
+<string>particles.setCount( particle_emitter_id, max_particle_count )</string>
+<string>particles.setDisabled( particle_emitter_id )</string>
+<string>particles.setDrag( particle_emitter_id, particle_drag )</string>
+<string>particles.setEnabled( particle_emitter_id )</string>
+<string>particles.setEnergyMax( particle_emitter_id, emax )</string>
+<string>particles.setEnergyMin( particle_emitter_id, energy_min_value )</string>
+<string>particles.setGravity( particle_emitter_id, float_value )</string>
+<string>particles.setHardDeck( particle_emitter_id, deck_altitude )</string>
+<string>particles.setLife( particle_emitter_id, life_span_in_seconds )</string>
+<string>particles.setOrigin( particle_emitter_id, x,y,z )</string>
+<string>particles.setOriginOffset( particle_emitter_id, off_x,off_y,off_z )</string>
+<string>particles.setScaleRate( particle_emitter_id, rate_value )</string>
+<string>particles.setSize( particle_emitter_id, size )</string>
+<string>particles.setStreamHeading( particle_emitter_id, value )</string>
+<string>particles.setStreamNoise( particle_emitter_id, value )</string>
+<string>particles.setStreamPitch( particle_emitter_id, value )</string>
+<string>particles.setStuckToAcf( particle_emitter_id, sticky )</string>
+<string>particles.setTexture( particle_emitter_id, texture_id )</string>
+<string>particles.setTextureSpriteCount( particle_emitter_id, nx,ny )</string>
+<string>particles.setType_Cubic( particle_emitter_id )</string>
+<string>particles.setType_Spherical( particle_emitter_id )</string>
+<string>particles.setType_Stream( particle_emitter_id )</string>
+<string>particles.start( particle_emitter_id )</string>
+
+
+<string>physics.applyForce( object_id, x,y,z )</string>
+<string>physics.applyImpulse( object_id, x,y,z )</string>
+<string>physics.applyOffsetImpulse( object_id, x,y,z )</string>
+<string>physics.applyTorque( object_id, x,y,z )</string>
+<string>physics.applyTorqueImpulse( object_id, x,y,z )</string>
+<string>physics.clearForces( object_id )</string>
+<string>physics.getAngularVelocity( object_id )</string>
+<string>physics.getLinearVelocity( object_id )</string>
+<string>physics.getOrientationQ( object_id )</string>
+<string>physics.loadCollada( "filename" )</string>
+<string>physics.newBox( edge_size )</string>
+<string>physics.newCapsule( radius, height )</string>
+<string>physics.newCone( radius, height )</string>
+<string>physics.newCylinder( radius, height, z )</string>
+<string>physics.newMultiSphere( ........fubar )</string>
+<string>physics.newSphere( radius )</string>
+<string>physics.restart()</string>
+<string>physics.setAngularVelocity( id, x, y, z )</string>
+<string>physics.setBrush( object_id )</string>
+<string>physics.setBrushByID( physics_id, object_id )</string>
+<string>physics.setCursor( x,y,z )</string>
+<string>physics.setDebugMode( debug_mode_flag )</string>
+<string>physics.setEnabled( int_flag )</string>
+<string>physics.setGravityVector( x,y,z )</string>
+<string>physics.setInertia( vx,vy,vz )</string>
+<string>physics.setLinearVelocity( object_id, vx, vy, vz )</string>
+<string>physics.setMass( new_default_mass )</string>
+<string>physics.setOrigin( x,y,z )</string>
+<string>physics.setPaused( int_flag )</string>
+<string>physics.setPhysicsDrawingHack( int_flag )</string>
+<string>physics.stepOnce()</string>
+<string>physics.translate( id, x,y,z )</string>
+
+
+<string>plugins.findPlugin( "signature" )</string>
+<string>plugins.getFolder()</string>
+<string>plugins.sendMessage( "signature", code, "message" )</string>
+
+
+<string>shaders.compileShaders( shader_id, vertex_shader_string_blob, fragment_shader_string_blob )</string>
+<string>shaders.newShader()</string>
+<string>shaders.release()</string>
+<string>shaders.setParam( shader_id, "param_name", value )</string>
+<string>shaders.useShader( shader_id )</string>
+
+
+<string>sound.getControl()</string>
+<string>sound.load( [sound_buffer_id], "sound_filename.wav" )</string>
+<string>sound.newBuffer()</string>
+<string>sound.newSource()</string>
+<string>sound.pause( sound_source_id )</string>
+<string>sound.play( sound_source_id )</string>
+<string>sound.releaseControl()</string>
+<string>sound.rewind( sound_source_id )</string>
+<string>sound.say( "string to vocalize" )</string>
+<string>sound.setDirection( sound_source_id, nx,ny,nz )</string>
+<string>sound.setGain( sound_source_id, gain_ratio )</string>
+<string>sound.setLoop( sound_source_id, loop_flag )</string>
+<string>sound.setPitch( sound_source_id, pitch_ratio )</string>
+<string>sound.setPosition( sound_source_id, x,y,z )</string>
+<string>sound.setVelocity( sound_source_id, vx,vy,vz )</string>
+<string>sound.stop( sound_source_id )</string>
+
+
+<string>timer.destroy( timer_id )</string>
+<string>timer.getHPT()</string>
+<string>timer.getInterval( timer_id )</string>
+<string>timer.getValue( timer_id )</string>
+<string>timer.newOneShot( "timer_function_name", interval )</string>
+<string>timer.newTimer( "timer_function_name", interval )</string>
+<string>timer.reset( timer_id )</string>
+<string>timer.setInterval( timer_id, interval )</string>
+<string>timer.stop( timer_id )</string>
+
+
+<string>trig.courseToLocation( x,y )</string>
+<string>trig.courseToLocation3D( x,y,z )</string>
+<string>trig.distanceBetweenPoints( a,b, x,y )</string>
+<string>trig.distanceBetweenWorldPoints( lat_a,lon_a, lat_b,lon_b )</string>
+<string>trig.interpolator( r,s,y, x,y,z, steps )</string>
+<string>trig.newPositionOffset( heading, speed )</string>
+<string>trig.newPositionOffset3D( heading, pitch, speed )</string>
+
+
+<string>utils.expScale( input, scale_factor )</string>
+<string>utils.getFileInfo( file_path )</string>
+<string>utils.getFolderContents( folder_path )</string>
+<string>utils.getStringFromCPointer( pointer_address, [length] )</string>
+<string>utils.newFolder( folder_path )</string>
+<string>utils.popWebBrowser( url )</string>
+<string>utils.setClipboardText( text_chunk )</string>
+
+
+<string>xp.clearReplay()</string>
+<string>xp.commandBeginByName( "sim/command" )</string>
+<string>xp.commandEndByName( "sim/command" )</string>
+<string>xp.commandOnceByName( "sim/command" )</string>
+<string>xp.getCycleNumber()</string>
+
+<string>xp.getElapsedTime()</string>
+
+<string>xp.getFolder()</string>
+
+<string>xp.getLanguage()</string>
+<string>xp.getOS()</string>
+<string>xp.getPaused()</string>
+<string>xp.getPluginsFolder()</string>
+<string>xp.getSDKVersion()</string>
+<string>xp.getTerrainData( x,y,z )</string>
+<string>xp.getVersion()</string>
+<string>xp.getXPlaneFolder()</string>
+<string>xp.loadReplay( "Output/replays/replay.mov" )</string>
+<string>xp.loadSituation( "Output/situations/capnsully.sit" )</string>
+<string>xp.newCommand( command_name, description, script_function_name )</string>
+
+<string>xp.reloadScenery()</string>
+<string>xp.saveReplay( "Output/replays/filename.mov" )</string>
+<string>xp.saveSituation( "Output/situations/filename.sit" )</string>
+
+<string>xp.setPaused( integer_flag )</string>
+
+
+
+
+
+
+				
+			</array>
+			<key>BBLMScansFunctions</key>
+			<true/>
+			<key>BBLMSuffixMap</key>
+			<array>
+				<dict>
+					<key>BBLMLanguageSuffix</key>
+					<string>.lua</string>
+				</dict>
+			</array>
+			<key>BBLMSupportsCFStringKeywordLookups</key>
+			<false/>
+			<key>BBLMSupportsTextCompletion</key>
+			<true/>
+			<key>BBLMUseHTMLFileSearchRules</key>
+			<false/>
+		</dict>
+	</array>
+</dict>
+</plist>
