@@ -1,0 +1,6 @@
+{
+	"signature": "gizmo.getMachineID()",
+	"returns": "string",
+	"comment": "Returns: String value with unique machine ID value. Min 32 bytes long.",
+	"api_version_required": ">=13.5"
+}

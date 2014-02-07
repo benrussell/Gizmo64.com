@@ -1,3 +1,0 @@
-string gizmo.getMachineID()
-
-Returns: String value with unique machine ID value. Min 32 bytes long.
