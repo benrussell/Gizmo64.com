@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 __author__ = 'br'
 """
 """
@@ -7,16 +9,14 @@ import os
 import re
 import string
 
-repo_base_url = "http://github.com/benrussell/Gizmo/plugin_source/gizmo_lua_api/"
-
 output_folder = "./output/"
 
-input_folder = "/Users/br/Desktop/Gizmo/plugin_source/"
+#FIXME: replace with command line arg?
+input_folder = "/Users/br/Desktop/GizmoVMSharedDev/Gizmo/plugin_source/"
+
 
 counter_headers = 0
 counter_src = 0
-
-
 
 
 def save_data( filename, data ):
@@ -26,13 +26,8 @@ def save_data( filename, data ):
 
 
 
-
-
-
 #storage for Event-Dox-Comments blocks
 known_event_docs = {}
-
-
 
 
 # --------- System Events -------------
@@ -497,20 +492,12 @@ known_event_docs["OnDraw_LocalMap3D"] = ["""
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 #FIXME: delete an item from the list above and test to ensure that it is detected as a new event!
+
+
+
+
+
 
 
 
