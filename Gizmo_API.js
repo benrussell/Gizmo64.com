@@ -43,35 +43,81 @@ return false;
 }//end leafClick( node )
 
 
+function getNewSectionBranch( key ){
 
+	return "<div id='branch_"+key+"' class='branch' onclick='expandBranch(\"" + key + "\");'>" + key + "</div>";
+
+}
+
+
+
+function createSectionTreeBranch( key, leaves ){
+
+	//build API event reference
+	var newSectionBranch = getNewSectionBranch( key );
+
+	var divBlob = "";
+
+	divBlob += newSectionBranch;
+	divBlob += "<div id='branch_leaves_"+key+"' style='display:none' disabled_onclick='expandBranch(\"" + key + "\");'>";
+
+		//create sub items here.
+		//var leaves = gizmo_dox_data[key];
+		//alert(leaves.length);
+		for( x=0; x<leaves.length; x++ ){
+			var sNewLeaf = "<div id='leaf_"+leaves[x][0]+"' class='leaf' onclick='leafClick(this, \"" + key + "\", \"" + leaves[x][0] + "\");'>" + leaves[x][0] + "</div>";
+			divBlob += sNewLeaf;
+		}
+
+	divBlob += "</div>";
+
+
+	return divBlob;
+
+}
 
 
 
 function buildSectionTree(){
 
-	var tree = document.getElementById("navTree");
-
 	var divBlob = "";
+	var leaves = new Array();
 
+	leaves = ["OnDraw_Windows","OnDraw_Gauges_3D"];
+	divBlob += createSectionTreeBranch( "Events: Graphics", leaves );
+
+	leaves = ["..._OnMouseDown","..._OnKeyDown"];
+	divBlob += createSectionTreeBranch( "Events: Input", leaves );
+
+	leaves = ["OnSituationLoaded","OnAircraftChanged"];
+	divBlob += createSectionTreeBranch( "Events: Simulator", leaves );
+
+	leaves = ["...OnUpdate","..."];
+	divBlob += createSectionTreeBranch( "Events: Timers", leaves );
+
+
+	//build API function reference
 	for( key in gizmo_dox_data ){
 
-	var sNewBranch = "<div id='branch_"+key+"' class='branch' onclick='expandBranch(\"" + key + "\");'>" + key + "</div>";
-	divBlob += sNewBranch;
+		var sNewBranch = "<div id='branch_"+key+"' class='branch' onclick='expandBranch(\"" + key + "\");'>" + key + "</div>";
+		divBlob += sNewBranch;
 
-	divBlob += "<div id='branch_leaves_"+key+"' style='display:none' disabled_onclick='expandBranch(\"" + key + "\");'>";
+		divBlob += "<div id='branch_leaves_"+key+"' style='display:none' disabled_onclick='expandBranch(\"" + key + "\");'>";
 
-	var leaves = gizmo_dox_data[key];
-	//alert(leaves.length);
-	for( x=0; x<leaves.length; x++ ){
-	var sNewLeaf = "<div id='leaf_"+leaves[x][0]+"' class='leaf' onclick='leafClick(this, \"" + key + "\", \"" + leaves[x][0] + "\");'>" + leaves[x][0] + "</div>";
-	divBlob += sNewLeaf;
+			var leaves = gizmo_dox_data[key];
+			//alert(leaves.length);
+			for( x=0; x<leaves.length; x++ ){
+				var sNewLeaf = "<div id='leaf_"+leaves[x][0]+"' class='leaf' onclick='leafClick(this, \"" + key + "\", \"" + leaves[x][0] + "\");'>" + leaves[x][0] + "</div>";
+				divBlob += sNewLeaf;
+			}
+
+		divBlob += "</div>";
+
 	}
 
-divBlob += "</div>";
 
-}
-
-tree.innerHTML = divBlob;
+	var tree = document.getElementById("navTree");
+	tree.innerHTML = divBlob;
 
 }
 
