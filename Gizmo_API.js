@@ -85,6 +85,91 @@ function createSectionTreeBranch( key, leaves ){
 
 
 
+function buildSectionTree_Events(){
+
+	var divBlob = "";
+	var leaves = new Array();
+
+	// *
+
+
+	leaves = ["OnDraw_Windows","OnDraw_Gauges_3D"];
+	divBlob += createSectionTreeBranch( "Custom Commands", leaves );
+
+
+
+
+	leaves = ["OnDraw_Windows","OnDraw_Gauges_3D"];
+	divBlob += createSectionTreeBranch( "Dataref Events", leaves );
+
+
+
+
+
+	leaves = ["OnDraw_Windows","OnDraw_Gauges_3D"];
+	 divBlob += createSectionTreeBranch( "Graphics: 3D Objects", leaves );
+
+	leaves = ["OnDraw_Windows","OnDraw_Gauges_3D"];
+	divBlob += createSectionTreeBranch( "Graphics: 2D Gauges", leaves );
+
+	leaves = ["OnDraw_Windows","OnDraw_Gauges_3D"];
+	divBlob += createSectionTreeBranch( "Graphics: 2D Windows", leaves );
+
+
+
+
+	leaves = ["OnDraw_Windows","OnDraw_Gauges_3D"];
+	divBlob += createSectionTreeBranch( "GUI", leaves );
+
+	leaves = ["OnDraw_Windows","OnDraw_Gauges_3D"];
+	divBlob += createSectionTreeBranch( "GUI: Custom Widgets", leaves );
+
+
+
+
+	leaves = ["..._OnMouseDown","..._OnKeyDown"];
+	 divBlob += createSectionTreeBranch( "Input", leaves );
+
+
+	// most of the XPL messages can go in here.
+	 leaves = ["OnSituationLoaded","OnAircraftChanged"];
+	 divBlob += createSectionTreeBranch( "Simulator", leaves );
+
+
+
+	 leaves = ["...OnUpdate","..."];
+	 divBlob += createSectionTreeBranch( "Timers", leaves );
+	 // */
+
+
+	/*
+	//build API function reference
+	for( key in gizmo_dox_data ){
+
+		var sNewBranch = "<div id='branch_"+key+"' class='branch' onclick='expandBranch(\"" + key + "\");'>" + key + "</div>";
+		divBlob += sNewBranch;
+
+		divBlob += "<div id='branch_leaves_"+key+"' style='display:none' disabled_onclick='expandBranch(\"" + key + "\");'>";
+
+		var leaves = gizmo_dox_data[key];
+		//alert(leaves.length);
+		for( x=0; x<leaves.length; x++ ){
+			var sNewLeaf = "<div id='leaf_"+leaves[x][0]+"' class='leaf' onclick='leafClick(this, \"" + key + "\", \"" + leaves[x][0] + "\");'>" + leaves[x][0] + "</div>";
+			divBlob += sNewLeaf;
+		}
+
+		divBlob += "</div>";
+
+	}
+	*/
+
+	var tree = document.getElementById("navTree_events");
+	tree.innerHTML = divBlob;
+
+}
+
+
+
 function buildSectionTree_API(){
 
 	var divBlob = "";
@@ -179,6 +264,7 @@ function setContent( header, body ){
 
 function OnLoad(){
 	buildSectionTree_API();
+	buildSectionTree_Events();
 
 	syncSectionTreeHeight();
 
@@ -220,7 +306,12 @@ function OnResize(){
 function syncSectionTreeHeight(){
 	var height = document.body.clientHeight;
 
-	var new_tree_height = (height- 60 ) + 'px';
+	var top = parseInt( document.getElementById('navTree_api').style.top );
+	//alert( top );
+
+	top = top + 10;
+
+	var new_tree_height = (height- top ) + 'px';
 	document.getElementById('navTree_api').style.height = new_tree_height;
 	document.getElementById('navTree_events').style.height = new_tree_height;
 
