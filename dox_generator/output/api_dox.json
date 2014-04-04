@@ -150,8 +150,8 @@ var gizmo_dox_data = {
 		['gfx.getM', 'gfx.getM()', ' gfx.getFRP()\n Returns: Special multiplier variable^. \n object_speed_for_this_frame = speed_in_meters * gfx.getM() \n \n ^ Data comes from: ( sim/operation/misc/frame_rate_period )\n'],
 		['gfx.getScreenSize', 'gfx.getScreenSize()', ' Returns: width,height\n local sw,sh = gfx.getScreenSize()\n'],
 		['gfx.getStringWidth', 'gfx.getStringWidth( "string" )', ' Returns: horizontal length of string in decimal pixels\n'],
+		['gfx.getTexture_CELogo', 'gfx.getTexture_CELogo()', ' Returns: Gizmo Community Edition Texture\n'],
 		['gfx.getTexture_GizmoLogo', 'gfx.getTexture_GizmoLogo()', ' Returns: texture_id for Gizmo logo texture.\n'],
-		['gfx.getTexture_GizmoUI', 'gfx.getTexture_GizmoUI()', ' Returns: texture_id for Gizmo User Interface elements texture.\n'],
 		['gfx.getTexture_LiteMap', 'gfx.getTexture_LiteMap()', ' Returns: texture_id for LiteMap texture, not much use with OBJ8 detailed aircraft.\n'],
 		['gfx.getTexture_LuaLogo', 'gfx.getTexture_LuaLogo()', ' Returns: texture_id for Lua logo texture.\n'],
 		['gfx.getTexture_Paint', 'gfx.getTexture_Paint()', ' Returns: texture_id for Paint texture, not much use with OBJ8 detailed aircraft.\n'],
@@ -168,6 +168,7 @@ var gizmo_dox_data = {
 		['gfx.newTexture', 'gfx.newTexture()', ' Returns: texture_id\n Creates a blank texture slot that can be used to load a texture into or create an FBO with.\n'],
 		['gfx.rebindFBO', 'gfx.rebindFBO( fbo_id..... )', ' BROKEN: gitbug:12\n'],
 		['gfx.releaseFBO', 'gfx.releaseFBO( fbo_id )', ' \n Release active FBO and return all drawing targets to normal.\n \n Tweaked to no longer require any FBO argument: 12.12.28\n \n Retweaked to require an FBO argument so we can do mipmap gen.\n \n'],
+		['gfx.screenToGL', 'gfx.screenToGL( win_x, win_y )', ' Returns: x,y,z in OpenGL space.\n \n The results you get from this will depend on the callback mode X-Plane is in when you call it.\n \n OnDraw_Windows and OnDraw_Airplanes will return different values because the OpenGL depth buffer contents is different.\n\n * * * EXPERIMENTAL * * *\n \n API: >= 13.10.09.0243\n\n'],
 		['gfx.setColor', 'gfx.setColor( r,g,b, a )', ' \n All arguments are 0-1\n Set the color to red, 75% opacity.\n gfx.setColor( 1,0,0, 0.75 )\n \n API >= 12.1\n gfx.setColor( {colors} )\n \n Eg:\n local red = {1,0,0, 1}\n gfx.setColor( red )\n \n'],
 		['gfx.setMaskingTape', 'gfx.setMaskingTape( x,y, w,h ) //FIXME: mantis/118', ' \n This function is useful for drawing gauges.\n It will setup a masked region for you to draw inside of.\n All drawing outside of the masked region will be ignored.\n \n (Requests an OpenGL clipping box using glScissor(..))\n \n Many thanks to x-alberto@x-pilot for the code submission.\n http://forums.x-pilot.com/index.php?topic=1502.msg15474#msg15474\n\n \n API: >= 11.5.6\n \n'],
 		['gfx.setState', 'gfx.setState( fog, numTexUnits, lighting, alphaTest, alphaBlend, depthTest, depthWrite )', ' Set graphics state using XPLMSetGraphicsState(..) Most flags are 0 or 1.\n numTexUnits accepts > 1\n'],
@@ -187,20 +188,17 @@ var gizmo_dox_data = {
 		['gfx.worldToLocal', 'gfx.worldToLocal( lat,lon,alt )', ' Convert world-space coordinates, from a real map, into OpenGL drawing coordinates, for use in a Game Engine.\n This function makes no attempt to check if your request makes sense, if you ask for coordinates on the other side of the planet the result is undefined. Good luck.\n x,y,z = gfx.worldToLocal( lat,lon,alt )\n']
 		],
 	'gizmo' : [
-		['gizmo.activate', 'gizmo.activate( serial_number, [write_to_disk] )', '\n Disables the Gizmo nagware dialog if the serial number is valid.\n\n This function is targeted at users of freeware or "lab users" that are using Gizmo for private projects.\n\n See also: acf.auth(...) for Payware Vendors.\n\n'],
-		['gizmo.disable', 'gizmo.disable( "filename" )', '\n Basically the same as the built in Lua dofile() except we work with encrypted files inside the firmware folder.\n\n EXPERIMENTAL\n\n API >= 13.05.23\n'],
 		['gizmo.dofile', 'gizmo.dofile( "filename" )', '\n Basically the same as the built in Lua dofile() except we work with encrypted files.\n\n EXPERIMENTAL\n\n API >= 11.11.03\n'],
 		['gizmo.dofirmware', 'gizmo.dofirmware( "filename" )', '\n Basically the same as the built in Lua dofile() except we work with encrypted files inside the firmware folder.\n\n EXPERIMENTAL\n\n API >= 12.01.29\n'],
-		['gizmo.getActivated', 'gizmo.getActivated()', '\n Returns: boolean\n\n True if Gizmo is registered.\n This can be by: User Serial -or- Aircraft Project Key-File.\n\n API: >= 11.5.18\n\n'],
 		['gizmo.getBuildDate', 'gizmo.getBuildDate()', ' Returns: String containing date that the .xpl file was compiled.\n Eg:\n date_built = gizmo.getBuildDate()\n'],
 		['gizmo.getDisabledEventNames', 'gizmo.getDisabledEventNames()', ' Returns: Table of strings containing all disabled event names.\n Eg:\n disabled_events = { gizmo.getDisabledEventNames() }\n'],
 		['gizmo.getPossibleEventNames', 'gizmo.getPossibleEventNames()', ' Returns: Table of strings containing all possible event names.\n Eg:\n possible_events = { gizmo.getPossibleEventNames() }\n'],
-		['gizmo.getRegisteredEmail', 'gizmo.getRegisteredEmail()', ' Returns: Email address of user that registered.\n\n API: >= 11.10.24\n'],
 		['gizmo.getVersion', 'gizmo.getVersion()', ' Returns: "Human" friendly version string.\n'],
 		['gizmo.getVersionFull', 'gizmo.getVersionFull()', ' Returns: Machine friendly version number as Integer.\n Eg: 201103141234 - 2011-03-14-1234\n'],
 		['gizmo.reboot', 'gizmo.reboot()', ' Reboot the Gizmo script engine, same effect as the menu item.\n'],
 		['gizmo.resetEventMap', 'gizmo.resetEventMap()', ' Reset the table of disabled events. Causes all events to be allowed another try.\n'],
 		['gizmo.resetFirmware', 'gizmo.resetFirmware()', ' Reset the firmware to a copy from disk.\n (Gizmo64.plugin/scripts/firmware.lua)\n'],
+		['gizmo.setCommunityEdition', 'gizmo.setCommunityEdition( flag )', '\nDisplays the CE banner.\n\nAPI: >= 13.10.21\n\n'],
 		['gizmo.setDebugVerbose', 'gizmo.setDebugVerbose( flag )', ' Increase debugging messages that get in your face with dialog boxes etc.\n Good for development, not so good for shipping products sometimes.\n'],
 		['gizmo.sleep', 'gizmo.sleep( duration_in_milliseconds, [power_saver] )', ' Causes the main X-Plane thread to sleep for N ms.\n\n Passing a second argument sets the Gizmo "Global Power Saver" sleep value.\n This value is NOT reset automatically when Gizmo reboots the script engine.\n This option is intended for developers and those wanting greater control over X-Planes CPU priority.\n\n API: >= 11.1 for gizmo.sleep(duration)\n API: >= 11.11 for gizmo.sleep(duration, power_saver)\n\n']
 		],
@@ -233,6 +231,7 @@ var gizmo_dox_data = {
 		['gui.setCustomWidgetClipping', 'gui.setCustomWidgetClipping( gui_widget_id, [0|1] )', ' \n Sets GL clipping on/off for custom widget bounds.\n \n API: >= 11.11\n'],
 		['gui.setFocus', 'gui.setFocus( gui_widget_id )', '\n Set keyboard focus.\n \n API: >= 11.8.2\n'],
 		['gui.setPasswordMode', 'gui.setPasswordMode( gui_widget_id, int_flag )', ' Control the password-hiding mode of a text field.\n'],
+		['gui.setWidgetSelection', 'gui.setWidgetSelection( gui_widget_id, selection_start, selection_end )', ' Returns: nil\n \n Used to control the selection range of things like text boxes.\n \n If used during an _OnKeyDown handler you will need to use a deferred execution in some circumstances.\n \n \n API: >= 14.03.13\n'],
 		['gui.setWidgetSize', 'gui.setWidgetSize( gui_widget_id, left, top, width, height )', ' \n API: >= 11.5.29\n'],
 		['gui.setWidgetValue', 'gui.setWidgetValue( gui_widget_id, "new value" )', ' Sets the value of the target widget to the value you pass in.\n Values can be strings or numbers, other data will probably fail.\n \n Basic functionality available since 11.1\n \n Enhanced in >= 11.9\n \n Now accepts 0/1 for checkbox or radio-button widgets to modify their state.\n \n'],
 		['gui.setWindowCaption', 'gui.setWindowCaption( gui_window_id, "My Window Caption" )', ''],
@@ -315,6 +314,7 @@ var gizmo_dox_data = {
 		],
 	'mouse' : [
 		['mouse.getXY', 'mouse.getXY()', ' Returns: Mouse X,Y location on the screen. \n\t\n Eg: \n\tm.x,m.y = mouse.getXY()\n \n'],
+		['mouse.getXYZ', 'mouse.getXYZ()', ' Returns: x,y,z in OpenGL space.\n \n The results you get from this will depend on the callback mode X-Plane is in when you call it.\n \n OnDraw_Windows and OnDraw_Airplanes will return different values because the OpenGL depth buffer contents is different.\n\n * * * EXPERIMENTAL * * *\n \n API: >= 13.10.08.2340\n\n'],
 		['mouse.setCursor', 'mouse.setCursor( "CursorDrawingFunctionName" )', ' \n Eg: \n\t mouse.setCursor( "drawCustomCursor" )\n\t \n\t function drawCustomCursor()\n\t\t--mouse.x and mouse.y are automatically updated by Gizmo64.plugin\n\t\tgfx.drawString("mouse cursor", mouse.x, mouse.y)\n\t end\n \n']
 		],
 	'nav' : [
@@ -400,14 +400,15 @@ var gizmo_dox_data = {
 	'plugins' : [
 		['plugins.findPlugin', 'plugins.findPlugin( "signature" )', ' Returns: boolean\n \n Eg:\n \n\tif( plugins.findPlugin( "custom_systems.xpl" ) )then\n\t\t--we could find the plugin and are capable of sending messages to it in a useful manner.\n\tend\n'],
 		['plugins.getFolder', 'plugins.getFolder()', ' Returns: path to plugins folder as string.\n \n API: >= 11.5.25\n \n'],
+		['plugins.sendBlob', 'plugins.sendBlob( "signature", code, "message" )', ' Returns: true if signature was found and message sent, nil otherwise.\n Eg:\n plugins.sendMessage( "xplanesdk.examples.DataRefEditor", 0x01000000, "myproject/custom/dataref_name" )\n --this would try to register a fake dataref with DRE.\n \n As of 2013.07.01 this function will auto detect the type of data you are sending as "message".\n \n If you are sending a string value it will be passed over IPC as a C-String pointer.\n \n If you are sending a numeric value (may include strings that can be cleanly converted to numeric!) then it will be sent as an unsigned  long int.\n \n Data packet will be auto packaged with a 4 byte header to indicate the size of the payload.\n This allows one shot binary packet xfer over the ixplc channel.\n \n'],
 		['plugins.sendMessage', 'plugins.sendMessage( "signature", code, "message" )', ' Returns: true if signature was found and message sent, nil otherwise.\n Eg:\n plugins.sendMessage( "xplanesdk.examples.DataRefEditor", 0x01000000, "myproject/custom/dataref_name" )\n --this would try to register a fake dataref with DRE.\n \n As of 2013.07.01 this function will auto detect the type of data you are sending as "message".\n \n If you are sending a string value it will be passed over IPC as a C-String pointer.\n \n If you are sending a numeric value (may include strings that can be cleanly converted to numeric!) then it will be sent as an unsigned  long int.\n \n']
 		],
 	'shaders' : [
-		['shaders.compileShaders', 'shaders.compileShaders( shader_id, vertex_shader_string_blob, fragment_shader_string_blob )', ' Returns: boolean for success\n'],
+		['shaders.compile', 'shaders.compile( shader_id, vertex_shader_string_blob, fragment_shader_string_blob )', ' Returns: boolean for success\n'],
 		['shaders.newShader', 'shaders.newShader()', ' Returns: shader_id\n'],
 		['shaders.release', 'shaders.release()', ' Return GL to "fixed function hardware" drawing.\n'],
 		['shaders.setParam', 'shaders.setParam( shader_id, "param_name", value )', ' Allows passing of dynamic parameters into the shader.\n param_name is a string, value is a floating point number\n'],
-		['shaders.useShader', 'shaders.useShader( shader_id )', ' Activate the specified valid shader_id.\n']
+		['shaders.use', 'shaders.use( shader_id )', ' Activate the specified valid shader_id.\n']
 		],
 	'sound' : [
 		['sound.getControl', 'sound.getControl()', ''],
@@ -455,6 +456,7 @@ var gizmo_dox_data = {
 		],
 	'utils' : [
 		['utils.expScale', 'utils.expScale( input, scale_factor )', 'Returns: exponentially scaled value.\r\n'],
+		['utils.getBlobFromCPointer', 'utils.getBlobFromCPointer( pointer_address )', 'Returns: String value at pointer address.\r\n\r\nThis function auto decodes a blob of the format:\r\n{ size[4], bytes[...] }\r\n\r\nThe size header will be automatically parsed and stripped away leaving you with blob data.\r\n\r\nUseful when combined with: plugins.sendBlob( target, msg, blob, blob_length )\r\n\r\n WARNING: Experts only, will crash X-Plane to desktop if not used correctly.\r\n\r\n API: 11.4+\r\n'],
 		['utils.getFileInfo', 'utils.getFileInfo( file_path )', ' Returns: node_type, size_in_bytes, date_changed\r\n\r\n Eg:\r\n file_info = { utils.getFileInfo(acf.getFolder() .. acf.getFilename()) }\r\n --file_info[1] == "file"\r\n\r\n Valid node_types:\r\n\t"block_dev"\r\n\t"char_dev"\r\n\t"folder"\r\n\t"fifo"\r\n\t"symlink"\r\n\t"file"\r\n\t"socket"\r\n\t"unknown"\r\n\r\n API: 11.14+\r\n'],
 		['utils.getFolderContents', 'utils.getFolderContents( folder_path )', ' Returns: Multiple strings containing the names of the items found in the folder specified.\r\n\r\n Eg:\r\n file_list = { utils.getFolderContents(acf.getFolder()) }\r\n\r\n\r\n NOTE: Due to a limit in Mac OS "Classic" the max recommended length for a filename is 31 chars.\r\n Use of filenames longer than this may result in cross-plaform issues.\r\n\r\n\r\n API: 11.11+\r\n'],
 		['utils.getStringFromCPointer', 'utils.getStringFromCPointer( pointer_address, [length] )', 'Returns: String value at pointer address.\r\n\r\n WARNING: Experts only, will crash X-Plane to desktop if not used correctly.\r\n\r\n API: 11.4+\r\n'],
