@@ -83,6 +83,7 @@ function buildSectionTree(){
 	var divBlob = "";
 	var leaves = new Array();
 
+	/*
 	leaves = ["OnDraw_Windows","OnDraw_Gauges_3D"];
 	divBlob += createSectionTreeBranch( "Events: Graphics", leaves );
 
@@ -94,6 +95,7 @@ function buildSectionTree(){
 
 	leaves = ["...OnUpdate","..."];
 	divBlob += createSectionTreeBranch( "Events: Timers", leaves );
+	*/
 
 
 	//build API function reference
