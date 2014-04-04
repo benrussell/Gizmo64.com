@@ -1,0 +1,119 @@
+Scanning api headers in folder: /Users/br/Dropbox/Dev/Gizmo-Firmware/firmware/core/
+
+
+scan: color_api.lua
+
+scan: console_api.lua
+
+scan: easings_api.lua
+easings.easeOutQuad = function( value, target, strength )
+	local function log( arg )
+
+scan: gfx_api.lua
+gfx.drawTexturedQuad = function( x,y, w,h )
+gfx.generateTexture_Checkerboard = function()
+
+scan: gizmo_api.lua
+gizmo.getFolder = function()
+-- Cleaned up some of the misc event functions by moving them into the event.api
+gizmo.resetEventMap = function()
+gizmo.getDisabledEventNames = function()
+gizmo.getPossibleEventNames = function()
+
+scan: gui_api.lua
+gui.addResizerHandle = function( name )
+function %s_Handle_OnDraw()
+function %s_Handle_OnMouseDown()
+function %s_Handle_OnMouseDrag()
+function %s_Handle_OnMouseUp()
+gui.hideWidgets = function( widgets )
+gui.showWidgets = function( widgets )
+--this function is useful to freeze a widget to a desired x,y position during OnResize events resulting from our resize handle
+function gui.moveWidget( widget,l,t )
+These functions accept a lua table as a parameter.
+gui.centerWindow = function( window )
+gui.quarterWindow = function( window )
+
+scan: gxt_api.lua
+gxt.refresh = function()
+gxt.getListIdByName = function( extensionName )
+gxt.getLoaded = function( extensionName )
+gxt.setLoaded = function( extensionName, bool_loaded )
+gxt.show = function( extensionName )
+gxt.load = function( extensionName )
+	local function dofile_override(filename)
+gxt.unload = function( extension_name )
+gxt.sendMessage = function( extension_name, message, param )
+		--get a handle to the function we need to handle this message.
+-- autoloader functions -----
+gxt.autoload = function()
+	local function autoload_core( autoload_folder )
+
+scan: icons_api.lua
+icons.get = function( icon_name, no_cache )
+
+blacklisted: json.lua
+
+scan: matrix_api.lua
+function angleToVector( angle )
+
+scan: obj8_loader.lua
+	local obj8_draw_f = function( obj8_instance )
+	local obj8_loader = function( filename )
+
+scan: PointCollisionTest.lua
+	testQuad = function( self, l,b,w,h,  x,y )
+
+scan: prefs_api.lua
+prefs.load = function()
+prefs.save = function()
+prefs.set = function( key, value )
+prefs.get = function( key, default )
+prefs.debug = function()
+
+scan: sound_api.lua
+sound.newSound = function()
+sound.bind = function( source_id, buffer_id )
+sound.unbind = function( source_id )
+sound.buffer = function( source_id, buffer_ids )
+sound.pause = function( source_id )
+sound.play = function( source_id )
+sound.rewind = function( source_id )
+sound.stop = function( source_id )
+sound.setDirection = function(...) --( source_id, v1,v2,v3 )
+sound.setGain = function( source_id, new_gain )
+sound.setLoop = function( source_id, loop_flag )
+sound.setPitch = function( source_id, new_pitch )
+sound.setPosition = function(...) --( source_id, x,y,z )
+sound.setVelocity = function(...) --( source_id, x,y,z )
+sound.setMaxDistance = function( source_id, max_distance )
+sound.setRollOffFactor = function( source_id, rolloff )
+sound.setReferenceDistance = function( source_id, ref_distance )
+sound.setMinGain = function( source_id, min_gain )
+sound.setMaxGain = function( source_id, max_gain )
+sound.setConeOuterGain = function( source_id, cone_outer_gain )
+sound.setConeInnerAngle = function( source_id, cone_angle )
+sound.setConeOuterAngle = function( source_id, cone_angle )
+sound.setSourceRelative = function( source_id, bool_relative )
+sound.setConeHeading = function( source_id, heading )
+
+scan: toast_api.lua
+--factory function that creates the data structure.
+toast.toaster = function( type, caption, message )
+	local font_color = color.red --default to red for max vis. used in toast render function
+	new_slice.draw = function( self, mouse_over )
+toast.newError = function( caption, message ) --cancel.png OR cross.png
+toast.newWarning = function( caption, message ) --error.png OR exclamation_octagon_fram
+toast.newInfo = function( caption, message ) --exclamation.png
+toast.newHelp = function( caption, message ) --lifebuoy.png
+function toast_Windows_OnDraw()
+function toast_OnMouseClick(  )
+	--This click_data is used inside the "toast_Windows_OnDraw" function to test for toast-region clicks.
+toast.test = function()
+
+scan: vardump.lua
+function vardump_original(value, depth, key)
+  elseif type(value)	== 'function' or
+function vardump_lua(value, depth, key)
+	type(value)	== 'function' or
+function var_dump( target_var )
