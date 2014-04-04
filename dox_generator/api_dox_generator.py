@@ -36,6 +36,24 @@ def save_data( filename, data ):
 
 
 
+active_lua_stub_filename = ""
+#this function is used to append data to an active lua stub file
+def write_to_stub_file( data ):
+	filename = active_lua_stub_filename
+	if( filename != "" ):
+		fh = open( "%slua_stubs/%s" %(output_folder, filename), "a" )
+		fh.write( data )
+		fh.close()
+
+
+
+
+
+
+
+
+
+
 list_of_api_function_data = {}
 
 tmp_last_signature = ""
@@ -51,30 +69,30 @@ if( os.path.exists(input_folder) and os.path.isdir(input_folder) ):
 		else:
 			if( f[-4:] == ".cpp" ):
 				#print("scan: %s" %(f))
-				
+
 				#self.object_file_list.append(input_objects_folder + f)
 				counter_headers = counter_headers + 1
-				
-				
+
+
 				#open the .h file and scan its contents.
 				fh_header = open("%s%s" %(input_folder, f))
 				data_header = fh_header.read()
 				fh_header.close()
-				
+
 				#print(data_header)
-				
+
 				lines = data_header.split("\n")
-				
+
 				doc_block_open = False
 				doc_line_counter = 0
-				
+
 				payload = ""
-				
+
 				for l in lines:
 					if( doc_block_open ):
 						if( l.strip() == "*/" ):
 							doc_block_open = False
-						
+
 						else:
 							if( doc_line_counter == 0 ):
 								#first line of doc block is the actual API call.
@@ -84,18 +102,18 @@ if( os.path.exists(input_folder) and os.path.isdir(input_folder) ):
 								#second line of doc block is the API call documentation data.
 								#print( "last sig: " + tmp_last_signature )
 								list_of_api_function_data[ tmp_last_signature ] = list_of_api_function_data[ tmp_last_signature ] + ("%s\n"  %(l))
-						
+
 						#print("dump dox data: %s" %(l))
 						doc_line_counter = doc_line_counter + 1
-					
+
 					else:
 						if( l.strip() == "/**" ):
 							doc_line_counter = 0
 							doc_block_open = True
 							#print("doc block opened")
-					
+
 				#write_module_doc_file( f, payload )
-				
+
 else:
 	print( "Input folder does not exist: %s\n" % (input_folder) )
 
@@ -122,16 +140,16 @@ for sig in sorted(list_of_api_function_data):
 	if( list_of_api_function_data[sig] == "" ):
 		#print("Missing dox: %s" %(sig))
 		warnings.append( "Missing dox: %s" %(sig) )
-	
+
 	#print(sig)
 	#print( list_of_api_function_data[sig] )
-	
+
 	m = re.match("^(.+)\(.*", sig)
 	clean_sig = sig
-	
+
 	json_sig = string.strip(sig)
 	json_dox = (list_of_api_function_data[sig])
-	
+
 	if( m ):
 		clean_sig = str(m.groups(1)[0])
 		json_sig = clean_sig
@@ -139,20 +157,24 @@ for sig in sorted(list_of_api_function_data):
 		if( clean_parent != last_clean_p ):
 			last_clean_p = clean_parent
 			#print("foo")
-			
+
 			if( clean_parent in api_sections ):
 				pass
-				#print("ignore")
+				print("ignore")
 			else:
+				print("new api section")
 				api_sections[clean_parent] = []
-				print("\n%s = {}" %(last_clean_p))
-				
-				#FIXME: Create a new lua stub file.
-			
-			
-		print( "function %s end" % (sig) )
-		#FIXME: output signature data into active lua stub file
-		
+				active_lua_stub_filename = last_clean_p + ".lua"
+				packet = "\n%s = {}\n" %(last_clean_p)
+				write_to_stub_file( packet )
+				packet = ""
+
+
+		packet = "function %s end\n" %(sig)
+		write_to_stub_file( packet )
+		packet = ""
+
+
 	#print( "key: (%s)" %(last_clean_p) )
 	#print( "sig: (%s)" %(json_sig) )
 	#print( "key: (%s)" %(last_clean_p) )
@@ -172,22 +194,22 @@ for k in sorted(set(api_sections)):
 	node_x = 0
 	max_x = len(v)
 	for node in v:
-		
+
 		json_dox = node[2]
 		json_dox = string.replace( json_dox, "\t", "\\t" )
 		json_dox = string.replace( json_dox, "\r", "\\r" )
 		json_dox = string.replace( json_dox, "\n", "\\n" )
 		json_dox = string.replace( json_dox, "'", "\\'")
-		
+
 		json_sig = node[1]
 		json_sig = string.replace( json_sig, "\t", "\\t" )
 		json_sig = string.replace( json_sig, "\r", "\\r" )
 		json_sig = string.replace( json_sig, "\n", "\\n" )
 		json_sig = string.replace( json_sig, "'", "\\'")
-		
-		
+
+
 		json_blob += "\t\t['%s', '%s', '%s']" %(node[0], json_sig, json_dox)
-		
+
 		node_x += 1
 		if( node_x < max_x ):
 			json_blob += ",\n"
@@ -200,6 +222,10 @@ output_blob = "var gizmo_dox_data = {\n%s\n};" %(json_blob)
 
 #print( json_blob )
 save_data( "api_dox.json", output_blob )
+
+
+
+
 
 
 if( len( warnings ) > 0 ):
