@@ -1,0 +1,55 @@
+
+
+
+
+.api_mod_block_header{
+    cursor: pointer;
+}
+
+.branch {
+    z-index:-10;
+    _background-color: #efffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.leaf {
+    padding-left: 10px;
+    border-bottom: 1px solid #777777;
+    border-top: 1px solid #777777;
+    cursor: pointer;
+    z-index: 10;
+}
+
+
+.leaf_active {
+    padding-left: 10px;
+    border-bottom: 1px solid #999999;
+    border-top: 1px solid #999999;
+    background-color: #888888;
+    cursor: pointer;
+    z-index: 10;
+}
+
+
+.docblock {
+    padding-left: 20px;
+    /*border-bottom: 1px solid lightgray;*/
+}
+
+.docblock_header {
+    font-weight: bold;
+    font-size: 12pt;
+    padding: 20px;
+}
+.docblock_body {
+    font-size: 10pt;
+    padding-left:50px;
+}
+
+
+body{
+    font-family: Verdana;
+}
+
+
