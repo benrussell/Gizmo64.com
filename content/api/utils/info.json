@@ -1,0 +1,6 @@
+// utils/info.json
+{
+	"description": "A collection of misc utility functions that don't fit anywhere else.",
+	"min_version": "13.01"
+}
+

@@ -2,11 +2,6 @@
 
 function leafClick( leaf_div, branch, node_name ){
 
-	//alert( leaf_div );
-	//leaf_div.className = "leaf_active";
-
-	//alert( branch + "/" + node_name );
-
 
 	var all_active_nav_leaves = document.getElementsByClassName("leaf_active");
 	for( var ileaf=0; ileaf < all_active_nav_leaves.length; ileaf++ ){
@@ -39,13 +34,7 @@ function leafClick( leaf_div, branch, node_name ){
 		alert("Could not find the dox node!");
 	}else{
 
-		//This code controls updating the content in the RHS panel.
-
-		var div_header = document.getElementById("div_docBlock_Header");
-		var div_content = document.getElementById("div_docBlock_Content");
-
-		div_header.innerText = leaf[1];
-		div_content.innerHTML = "<pre>" + leaf[2] + "</pre>";
+		setContent( leaf[1], "<pre class='none'>" + leaf[2] + "</pre>" );
 
 	}
 
@@ -94,6 +83,8 @@ function expandBranch( key ){
 
 	//alert( branchName_dom );
 
+	setContent( "Summary: " + key + " API", "<pre>branch info</pre>" );
+
 
 	switch( branch.style.display ){
 		case "":
@@ -111,6 +102,24 @@ function expandBranch( key ){
 	} //end: switch(branch.style.display)
 
 }
+
+
+
+
+function setContent( header, body ){
+	var div_header = document.getElementById("div_docBlock_Header");
+	var div_content = document.getElementById("div_docBlock_Content");
+
+	div_header.innerText = header; //leaf[1];
+	div_content.innerHTML = body; //"<pre>" + leaf[2] + "</pre>";
+
+}
+
+
+
+
+
+
 
 
 function OnLoad(){
@@ -131,7 +140,7 @@ function syncSectionTreeHeight(){
 
 	var height = document.body.clientHeight;
 
-	tree.style.height = (height-10) + 'px';
+	tree.style.height = (height- 60 ) + 'px';
 	//tree.style.height = (height-74) + 'px';
 }
 

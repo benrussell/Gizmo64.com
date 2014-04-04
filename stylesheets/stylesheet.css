@@ -133,6 +133,7 @@ strong {
   font-weight: bold;
 }
 
+/*
 img {
   position: relative;
   margin: 0 auto;
@@ -147,8 +148,10 @@ img {
   -o-box-shadow: 0 0 5px #ebebeb;
   -ms-box-shadow: 0 0 5px #ebebeb;
 }
+*/
 
-p img {
+/*
+img {
   display: inline;
   margin: 0;
   padding: 0;
@@ -156,6 +159,19 @@ p img {
   text-align: center;
   border: none;
 }
+*/
+
+
+p {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
+    border: none;
+}
+
+
 
 pre, code {
   width: 100%;
@@ -165,9 +181,9 @@ pre, code {
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   font-size: 14px;
 
-  border-radius: 2px;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
 }
 
 pre {

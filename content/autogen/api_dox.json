@@ -1,4 +1,9 @@
 var gizmo_dox_data = {
+	'EVENTS' : [
+		['events.foo', 'events.foo()', 'events example supplement']
+		],
+
+
 	'acf' : [
 		['acf.getAStabHeading', 'acf.getAStabHeading()', ' Returns: Aritifial stability input: heading(rudder): range: -1 to 1\n'],
 		['acf.getAStabPitch', 'acf.getAStabPitch()', ' Returns: Aritifial stability input: pitch: range: -1 to 1\n'],
