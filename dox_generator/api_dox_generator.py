@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+
 __author__ = 'br'
 """
 This script will parse all the Gizmo api-source files.
@@ -29,7 +30,7 @@ counter_src = 0
 
 
 def save_data( filename, data ):
-	fh_module = open( "%s%s" %(output_folder, filename), "w")
+	fh_module = open( "%s" %(filename), "w")
 	fh_module.write( data )
 	fh_module.close()
 
@@ -162,7 +163,7 @@ for sig in sorted(list_of_api_function_data):
 				pass
 				print("ignore")
 			else:
-				print("new api section")
+				print("new api section: %s" %(clean_parent))
 				api_sections[clean_parent] = []
 				active_lua_stub_filename = last_clean_p + ".lua"
 				packet = "\n%s = {}\n" %(last_clean_p)
@@ -220,8 +221,13 @@ for k in sorted(set(api_sections)):
 json_blob = json_blob[:-2] #trims the final , char
 output_blob = "var gizmo_dox_data = {\n%s\n};" %(json_blob)
 
+
+
+
+
+
 #print( json_blob )
-save_data( "api_dox.json", output_blob )
+save_data( "/Users/br/Dropbox/Dev/Gizmo-Docs_gh-pages/content/autogen/api_dox.json", output_blob )
 
 
 
