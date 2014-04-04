@@ -39,12 +39,17 @@ def save_data( filename, data ):
 
 active_lua_stub_filename = ""
 #this function is used to append data to an active lua stub file
-def write_to_stub_file( data ):
-	filename = active_lua_stub_filename
-	if( filename != "" ):
-		fh = open( "%slua_stubs/%s" %(output_folder, filename), "a" )
-		fh.write( data )
-		fh.close()
+def write_to_stub_file( data, overwrite_flag=False ):
+    filename = active_lua_stub_filename
+    if( filename != "" ):
+        pass
+        if( overwrite_flag ):
+            fh = open( "%slua_stubs/%s" %(output_folder, filename), "w" )
+        else:
+		    fh = open( "%slua_stubs/%s" %(output_folder, filename), "a" )
+        fh.write( data )
+        fh.close()
+
 
 
 
@@ -167,7 +172,7 @@ for sig in sorted(list_of_api_function_data):
 				api_sections[clean_parent] = []
 				active_lua_stub_filename = last_clean_p + ".lua"
 				packet = "\n%s = {}\n" %(last_clean_p)
-				write_to_stub_file( packet )
+				write_to_stub_file( packet, True )
 				packet = ""
 
 
