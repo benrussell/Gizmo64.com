@@ -67,6 +67,7 @@ def write_to_stub_file( data, overwrite_flag=False ):
 
 
 list_of_api_function_data = {}
+list_of_api_function_data_filenames = {}
 
 tmp_last_signature = ""
 
@@ -118,28 +119,30 @@ if( os.path.exists(input_folder) and os.path.isdir(input_folder) ):
 
 
 						# Unfortunately we dont have any doc block data in the firmware scripts at this time. :( 2014.04.05 - br
-						# if( doc_block_open ):
-							# if( l.strip() == "*/" ):
-							# 	doc_block_open = False
-						#
-							# else:
-							# 	if( doc_line_counter == 0 ):
-							# 		#first line of doc block is the actual API call.
-							# 		tmp_last_signature = l.strip() #assign line to tmp var for documentation hooks a few lines down
-							# 		list_of_api_function_data[ tmp_last_signature ] = "" #init key:value binding in dict
-							# 	else:
-							# 		#second line of doc block is the API call documentation data.
-							# 		#print( "last sig: " + tmp_last_signature )
-							# 		list_of_api_function_data[ tmp_last_signature ] = list_of_api_function_data[ tmp_last_signature ] + ("%s\n"  %(l))
-						#
-							# #print("dump dox data: %s" %(l))
-							# doc_line_counter = doc_line_counter + 1
-						#
-						# else:
-							# if( l.strip() == "/**" ):
-							# 	doc_line_counter = 0
-							# 	doc_block_open = True
-							# 	#print("doc block opened")
+						if( doc_block_open ):
+							if( l.strip() == "*/" ):
+								doc_block_open = False
+								print("doc block closed")
+
+							else:
+								if( doc_line_counter == 0 ):
+									#first line of doc block is the actual API call.
+									tmp_last_signature = l.strip() #assign line to tmp var for documentation hooks a few lines down
+									list_of_api_function_data[ tmp_last_signature ] = "" #init key:value binding in dict
+									list_of_api_function_data_filenames[ tmp_last_signature ] = f
+								else:
+									#second line of doc block is the API call documentation data.
+									#print( "last sig: " + tmp_last_signature )
+									list_of_api_function_data[ tmp_last_signature ] = list_of_api_function_data[ tmp_last_signature ] + ("%s\n"  %(l))
+
+							#print("dump dox data: %s" %(l))
+							doc_line_counter = doc_line_counter + 1
+
+						else:
+							if( l.strip() == "/**" ):
+								doc_line_counter = 0
+								doc_block_open = True
+								print("doc block opened")
 
 					#write_module_doc_file( f, payload )
 
@@ -178,6 +181,10 @@ for sig in sorted(list_of_api_function_data):
 
 	json_sig = string.strip(sig)
 	json_dox = (list_of_api_function_data[sig])
+	json_parent_filename = (list_of_api_function_data_filenames[sig])
+
+	print( json_parent_filename )
+
 
 	if( m ):
 		clean_sig = str(m.groups(1)[0])
@@ -208,7 +215,7 @@ for sig in sorted(list_of_api_function_data):
 	#print( "sig: (%s)" %(json_sig) )
 	#print( "key: (%s)" %(last_clean_p) )
 	if( last_clean_p != "" ):
-		api_sections[last_clean_p].append( [json_sig, sig, json_dox] )
+		api_sections[last_clean_p].append( [json_sig, sig, json_dox, json_parent_filename] )
 
 
 
@@ -237,7 +244,7 @@ for k in sorted(set(api_sections)):
 		json_sig = string.replace( json_sig, "'", "\\'")
 
 
-		json_blob += "\t\t['%s', '%s', '%s']" %(node[0], json_sig, json_dox)
+		json_blob += "\t\t['%s', '%s', '%s', '%s']" %(node[0], json_sig, json_dox, node[3] )
 
 		node_x += 1
 		if( node_x < max_x ):
@@ -247,7 +254,7 @@ for k in sorted(set(api_sections)):
 
 
 json_blob = json_blob[:-2] #trims the final , char
-output_blob = "var gizmo_dox_data = {\n%s\n};" %(json_blob)
+output_blob = "var gizmo_dox_data_firmware = {\n%s\n};" %(json_blob)
 
 
 
