@@ -37,7 +37,7 @@ function leafClick( leaf_div, branch, node_name ){
 		var content = "<pre class='none'>" + leaf[2] + "</pre>";
 
 		if( leaf[3] != undefined ){
-			content += "<a href='https://github.com/benrussell/Gizmo-Firmware/tree/master/firmware/core/" + leaf[3] + "'>View source..</a>";
+			content += "<a target='_blank' href='https://github.com/benrussell/Gizmo-Firmware/tree/master/firmware/core/" + leaf[3] + "'>View source..</a>";
 		}
 
 		setContent( leaf[1], content  );
