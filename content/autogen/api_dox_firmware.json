@@ -1,0 +1,16 @@
+var gizmo_dox_data_firmware = {
+	'PointCollisionTest' : [
+		['PointCollisionTest.testQuad', 'PointCollisionTest.testQuad( self,  l,b,w,h,  x,y )', '\nEasy* hit-testing for quad regions.\n\nNeeds renaming.\n\nAPI: >= 13.01\n', 'PointCollisionTest.lua#L13']
+		],
+	'color' : [
+		['color.read_me', 'color.read_me()', '\nGizmo64 provides a table of common color names that can be used to make your code easier to read and write.\n\nPlease see this file for more information:\nhttps://github.com/benrussell/Gizmo-Firmware/blob/master/firmware/core/color_api.lua\n\nAPI: >= 14.04\n', 'color_api.lua#L13']
+		],
+	'console' : [
+		['console.error', 'console.error( message )', '\nLog an error message to the console.\n', 'console_api.lua#L35'],
+		['console.log', 'console.log( message )', '\nLog a message to the console.\n', 'console_api.lua#L25'],
+		['console.warn', 'console.warn( message )', '\nLog a warning message to the console.\n', 'console_api.lua#L15']
+		],
+	'easings' : [
+		['easings.easeOutQuad', 'easings.easeOutQuad( value, target, strength )', '\nReturns: intermediate value based on paramaters.\n\nvalue: current value of user data\ntarget: maximum desired value of user data\nstrength: how fast to get to the user data maximum\n\nAPI: >= 14.04\n', 'easings_api.lua#L16']
+		]
+};

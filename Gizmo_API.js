@@ -34,7 +34,13 @@ function leafClick( leaf_div, branch, node_name ){
 		alert("Could not find the dox node!");
 	}else{
 
-		setContent( leaf[1], "<pre class='none'>" + leaf[2] + "</pre>" );
+		var content = "<pre class='none'>" + leaf[2] + "</pre>";
+
+		if( leaf[3] != undefined ){
+			content += "<a href='https://github.com/benrussell/Gizmo-Firmware/tree/master/firmware/core/" + leaf[3] + "'>View source..</a>";
+		}
+
+		setContent( leaf[1], content  );
 
 	}
 
@@ -74,6 +80,25 @@ function createSectionTreeBranch( key, leaves ){
 
 	return divBlob;
 
+}
+
+
+function mergeFwData(){
+	//merge API function reference
+	for( key in gizmo_dox_data_firmware ){
+
+		//var sNewBranch = "<div id='branch_"+key+"' class='branch' onclick='expandBranch(\"" + key + "\");'>" + key + "</div>";
+		//divBlob += sNewBranch;
+
+		//divBlob += "<div id='branch_leaves_"+key+"' style='display:none' disabled_onclick='expandBranch(\"" + key + "\");'>";
+
+		var new_leaves = gizmo_dox_data_firmware[key];
+		var old_leaves = gizmo_dox_data[key];
+
+		gizmo_dox_data[key] = new_leaves;
+
+
+	}
 }
 
 

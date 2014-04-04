@@ -68,14 +68,11 @@ var gizmo_dox_data = {
 		['camera.setPositionGL', 'camera.setPositionGL( x,y,z )', ' Set the camera position using OpenGL-coordinates.\n'],
 		['camera.setZoom', 'camera.setZoom( zoom )', ' Set the zoom value for the camera.\n \n API: 11.4+\n \n']
 		],
-	'color' : [
-		['color.read_me', 'color.read_me()', '\nGizmo64 provides a table of common color names that can be used to make your code easier to read and write.\n\nPlease see this file for more information:\nhttps://github.com/benrussell/Gizmo-Firmware/blob/master/firmware/core/color_api.lua\n\nAPI: >= 14.04\n']
-		],
 	'coroutine' : [
 		['coroutine.read_me', 'coroutine.read_me()', ' \n']
 		],
 	'debug' : [
-		['debug.read_me', 'debug.read_me()', '']
+		['debug.read_me', 'debug.read_me()', '\nThe debug library is disabled for all third party content.\n\n']
 		],
 	'dref' : [
 		['dref.getArraySize', 'dref.getArraySize( dref_id )', ' Returns: array_element_count\n \n Number of array elements the dref supports.\n \n API: >= FIXME: dref.getArraySize(..): empty hook\n \n'],
