@@ -94,7 +94,33 @@ body{
 
 
 
+.tab_active{
+    cursor:hand;
 
+    height:20px;
+    width:100px;
+    _left:30px;
+
+    font-size:10pt;
+
+    border:1px solid dimgray;
+    position:absolute;
+    background-color: lightgrey;
+}
+
+.tab_idle{
+    cursor:hand;
+
+    height:20px;
+    width:100px;
+    _left:140px;
+
+    font-size:10pt;
+
+    border:1px solid dimgray;
+    position:absolute;
+    background-color: grey;
+}
 
 
 

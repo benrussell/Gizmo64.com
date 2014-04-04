@@ -49,6 +49,7 @@ return false;
 }//end leafClick( node )
 
 
+
 function getNewSectionBranch( key ){
 
 	return "<div id='branch_"+key+"' class='branch' onclick='expandBranch(\"" + key + "\");'>" + key + "</div>";
@@ -83,27 +84,8 @@ function createSectionTreeBranch( key, leaves ){
 }
 
 
-function mergeFwData(){
-	//merge API function reference
-	for( key in gizmo_dox_data_firmware ){
 
-		//var sNewBranch = "<div id='branch_"+key+"' class='branch' onclick='expandBranch(\"" + key + "\");'>" + key + "</div>";
-		//divBlob += sNewBranch;
-
-		//divBlob += "<div id='branch_leaves_"+key+"' style='display:none' disabled_onclick='expandBranch(\"" + key + "\");'>";
-
-		var new_leaves = gizmo_dox_data_firmware[key];
-		var old_leaves = gizmo_dox_data[key];
-
-		gizmo_dox_data[key] = new_leaves;
-
-
-	}
-}
-
-
-
-function buildSectionTree(){
+function buildSectionTree_API(){
 
 	var divBlob = "";
 	var leaves = new Array();
@@ -143,7 +125,7 @@ function buildSectionTree(){
 	}
 
 
-	var tree = document.getElementById("navTree");
+	var tree = document.getElementById("navTree_api");
 	tree.innerHTML = divBlob;
 
 }
@@ -156,7 +138,7 @@ function expandBranch( key ){
 
 	//alert( branchName_dom );
 
-	setContent( "Summary: " + key + " API", "<pre>branch info</pre>" );
+	setContent( "Summary: " + key + " API", "branch info" );
 
 
 	switch( branch.style.display ){
@@ -196,11 +178,38 @@ function setContent( header, body ){
 
 
 function OnLoad(){
-	buildSectionTree();
+	buildSectionTree_API();
 
 	syncSectionTreeHeight();
 
 }
+
+
+
+
+function mergeFwData(){
+	//merge API function reference
+	for( key in gizmo_dox_data_firmware ){
+
+		//var sNewBranch = "<div id='branch_"+key+"' class='branch' onclick='expandBranch(\"" + key + "\");'>" + key + "</div>";
+		//divBlob += sNewBranch;
+
+		//divBlob += "<div id='branch_leaves_"+key+"' style='display:none' disabled_onclick='expandBranch(\"" + key + "\");'>";
+
+		var new_leaves = gizmo_dox_data_firmware[key];
+		var old_leaves = gizmo_dox_data[key];
+
+		gizmo_dox_data[key] = new_leaves;
+
+
+	}
+}
+
+
+
+
+
+
 
 
 function OnResize(){
@@ -209,12 +218,12 @@ function OnResize(){
 
 
 function syncSectionTreeHeight(){
-	var tree = document.getElementById('navTree');
-
 	var height = document.body.clientHeight;
 
-	tree.style.height = (height- 60 ) + 'px';
-	//tree.style.height = (height-74) + 'px';
+	var new_tree_height = (height- 60 ) + 'px';
+	document.getElementById('navTree_api').style.height = new_tree_height;
+	document.getElementById('navTree_events').style.height = new_tree_height;
+
 }
 
 
@@ -270,5 +279,58 @@ function doSearch(){
 	//document.getElementById('branch_leaves_gfx').style.display = ''; // display hard coded parent branch opening as example of potential function
 
 }
+
+
+
+
+
+//control tab toggle for events/api/other
+function setTab( target_name ){
+
+	var divTabAPI = document.getElementById("divTabAPI");
+	var divTabEvents = document.getElementById("divTabEvents");
+	//var divTabAPI = document.getElementById("");
+
+
+	//Reset all tabs to idle state.
+	divTabAPI.className = "tab_idle";
+	divTabEvents.className = "tab_idle";
+
+
+	//Activate target tab.
+	switch( target_name ){
+		case "api":
+			divTabAPI.className = "tab_active";
+
+				//Show/hide content... this will need a wrapper function of its own..
+				document.getElementById("navTree_events").style.display = "none";
+				document.getElementById("navTree_api").style.display = "";
+
+			break;
+
+		case "events":
+			divTabEvents.className = "tab_active";
+
+				//Show/hide content... this will need a wrapper function of its own..
+				document.getElementById("navTree_api").style.display = "none";
+				document.getElementById("navTree_events").style.display = "";
+
+			break;
+
+		default:
+			console.error("Unexpected target name for tab selection: " + target_name);
+			break;
+
+	}
+
+
+
+
+}
+
+
+
+
+
 
 
