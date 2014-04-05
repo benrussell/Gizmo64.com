@@ -240,7 +240,7 @@ var gizmo_dox_data = {
 		['gui.showWindow', 'gui.showWindow( gui_window_id )', ' Show target Window.\n']
 		],
 	'gxt' : [
-		['gxt.load', 'gxt.load()', '\nUsed to load a Gizmo Firmware Extension.\n'],
+		['gxt.load', 'gxt.load()', '\nUsed to load a Gizmo Firmware Extension.\n\n<code>local test = foo</code>\n\n'],
 		['gxt.unload', 'gxt.unload()', '\nUnload a Gizmo Firmware Extension.\n\n<code>test = foo</code>\n\n\n']
 		],
 	'hash' : [

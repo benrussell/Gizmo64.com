@@ -34,7 +34,8 @@ function leafClick( leaf_div, branch, node_name, dox_source ){
 		alert("Could not find the dox node!");
 	}else{
 
-		var content = "<pre class='none'>" + leaf[2] + "</pre>";
+		//var content = "<pre class='none'>" + leaf[2] + "</pre>";
+		var content = leaf[2];
 
 		/*
 		if( leaf[3] != undefined ){
@@ -185,8 +186,18 @@ function setContent( header, body ){
 	var div_header = document.getElementById("div_docBlock_Header");
 	var div_content = document.getElementById("div_docBlock_Content");
 
+	body = body.trim();
+	body = body.replace( /\r\n/g, "\n" );
+	body = body.replace( /\n/g, "<br>" );
+	//alert(body);
+
 	div_header.innerText = header; //leaf[1];
+
 	div_content.innerHTML = body; //"<pre>" + leaf[2] + "</pre>";
+
+	var save_className = div_content.className;
+	div_content.className = "";
+	div_content.className = save_className;
 
 }
 
