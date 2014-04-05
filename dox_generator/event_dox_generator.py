@@ -9,10 +9,12 @@ import os
 import re
 import string
 
-output_folder = "./output/"
-
-#FIXME: replace with command line arg?
+# Where is the Gizmo source?
 input_folder = "/Users/br/Desktop/GizmoVMSharedDev/Gizmo/plugin_source/"
+
+# Where do we export the JSON data to? (will write to gizmo_events.json)
+output_folder = "/Users/br/Dropbox/Dev/Gizmo-Docs_gh-pages/content/autogen/"
+
 
 
 counter_headers = 0
@@ -33,11 +35,57 @@ known_event_docs = {}
 # --------- System Events -------------
 
 
-known_event_docs["OnAboutGizmo"] = ["""
-function OnAboutGizmo()
---Gizmo XPL calls this when it wants to display the About Dialog which is crafted from Lua widgets.
+known_event_docs["OnSystemMenu_AboutGizmo"] = ["""
+function OnSystemMenu_AboutGizmo()
+--Gizmo64 XPL calls this when it wants to display the HotFix which is crafted from Lua widgets.
 end
-""","SYS"]
+""","MENU"]
+
+
+
+known_event_docs["OnSystemMenu_HotFix"] = ["""
+function OnSystemMenu_AboutGizmo()
+--Gizmo64 XPL calls this when it wants to display the About Dialog which is crafted from Lua widgets.
+end
+""","MENU"]
+
+
+
+
+
+
+known_event_docs["OnKickStart"] = ["""
+function OnKickStart()
+--Called during LuaVM restart. Used to initiate boot process. Detects which script to load for the Players current aircraft.
+end
+""","BOOT"]
+
+
+
+
+
+known_event_docs["OnError"] = ["""
+function OnError()
+--Called when a LuaVM error is detected.
+--Allows interactive response to scripting errors. Default is connected to the Console extension.
+end
+""","LOG"]
+
+known_event_docs["OnDebug"] = ["""
+function OnError()
+--Called when a LuaVM error is detected.
+--Allows interactive response to scripting errors. Default is connected to the Console extension.
+end
+""","LOG"]
+
+known_event_docs["OnWarning"] = ["""
+function OnError()
+--Called when a LuaVM error is detected.
+--Allows interactive response to scripting errors. Default is connected to the Console extension.
+end
+""","LOG"]
+
+
 
 
 
@@ -555,28 +603,36 @@ if( os.path.exists(input_folder) and os.path.isdir(input_folder) ):
 	# end looping all input files...
 
 
+
+
+
+
+# Documentation for each event is stored in this script as structured python data.
+# This script performs two main tasks:
+# 1. Exporting structured event data into JSON format text for use on the web.
+# 2. Scanning the Gizmo source code for events data that we don't have information for.
+
+
+
+
+
 #output a bunch of data about the files we just scanned.
-
-print("")
-for k in sorted(events_list):
-	pass
-	print( "\"%s\"," %(k) )
-	if( k in known_event_docs ):
-		pass
-		#print(known_event_docs[ k ][1])
-	else:
-		print("\t NO DOX: %s ***" %(k))
-
-print("")
-print( match_count )
-				
-
-
-
-
-
-
-
+#
+# print("")
+# for k in sorted(events_list):
+# 	pass
+# 	if( k in known_event_docs ):
+# 		pass
+# 		#print( "\"%s\"," %(k) ) #Event name
+# 		#print(known_event_docs[ k ][1]) #output subsystem that owns this event
+# 		#print(known_event_docs[ k ][0]) #output description data
+# 	else:
+# 		print( "\"%s\"," %(k) ) #event name
+# 		print("\t NO DOX: %s ***" %(k))
+#
+# print("")
+# print( match_count )
+#
 
 
 
@@ -595,49 +651,75 @@ warnings = []
 api_sections = {}
 api_data = []
 
-for sig in sorted(list_of_api_function_data):
-	if( list_of_api_function_data[sig] == "" ):
-		#print("Missing dox: %s" %(sig))
-		warnings.append( "Missing dox: %s" %(sig) )
-	
-	#print(sig)
-	#print( list_of_api_function_data[sig] )
-	
-	m = re.match("^(.+)\(.*", sig)
-	clean_sig = sig
-	
-	json_sig = string.strip(sig)
-	json_dox = (list_of_api_function_data[sig])
-	
-	if( m ):
-		clean_sig = str(m.groups(1)[0])
-		json_sig = clean_sig
-		print( sig )
-		clean_parent = clean_sig.split(".")[0]
-		if( clean_parent != last_clean_p ):
-			last_clean_p = clean_parent
-			#print("foo")
-			
-			if( clean_parent in api_sections ):
-				 pass
-				#print("ignore")
-			else:
-				api_sections[clean_parent] = []
-				print("\n**** created storage for: %s" %(last_clean_p))
-			
-			#api_sections.append( clean_parent )
-	
-	#print( "key: (%s)" %(last_clean_p) )
-	#print( "sig: (%s)" %(json_sig) )
-	#print( "key: (%s)" %(last_clean_p) )
-	if( last_clean_p != "" ):
-		api_sections[last_clean_p].append( [json_sig, sig, json_dox] )
+
+
+## This code is used to decode the script data and re-assemble it in a way thats useful for JSON output.
+# for sig in sorted(list_of_api_function_data):
+# 	if( list_of_api_function_data[sig] == "" ):
+# 		#print("Missing dox: %s" %(sig))
+# 		warnings.append( "Missing dox: %s" %(sig) )
+#
+# 	#print(sig)
+# 	#print( list_of_api_function_data[sig] )
+#
+# 	m = re.match("^(.+)\(.*", sig)
+# 	clean_sig = sig
+#
+# 	json_sig = string.strip(sig)
+# 	json_dox = (list_of_api_function_data[sig])
+# 	json_subsys = "hardcoded"
+#
+# 	if( m ):
+# 		clean_sig = str(m.groups(1)[0])
+# 		json_sig = clean_sig
+# 		print( sig )
+# 		clean_parent = clean_sig.split(".")[0]
+# 		if( clean_parent != last_clean_p ):
+# 			last_clean_p = clean_parent
+# 			#print("foo")
+#
+# 			if( clean_parent in api_sections ):
+# 				 pass
+# 				#print("ignore")
+# 			else:
+# 				api_sections[clean_parent] = []
+# 				print("\n**** created storage for: %s" %(last_clean_p))
+#
+# 			#api_sections.append( clean_parent )
+#
+# 	#print( "key: (%s)" %(last_clean_p) )
+# 	#print( "sig: (%s)" %(json_sig) )
+# 	#print( "key: (%s)" %(last_clean_p) )
+# 	if( last_clean_p != "" ):
+# 		api_sections[last_clean_p].append( [json_sig, sig, json_dox] )
 
 
 
-#print("\n*** API Sections ***")
-#for section in api_sections:
-#	print( section )
+
+print("")
+for k in sorted(events_list):
+	pass
+	if( k in known_event_docs ):
+		event_name = k
+		description = known_event_docs[ k ][0]
+		subsys_name = known_event_docs[ k ][1]
+
+		#ensure that we have dict storage for this data.
+		if( subsys_name in api_sections ):
+			pass
+		else:
+			api_sections[ subsys_name ] = []
+
+		api_sections[ subsys_name ].append( [ event_name, event_name, description, subsys_name ] )
+
+	else:
+		print( "\"%s\"," %(k) ) #event name
+		print("\t NO DOX: %s ***" %(k))
+
+print("")
+print( match_count )
+
+
 
 
 for k in sorted(set(api_sections)):
@@ -658,9 +740,11 @@ for k in sorted(set(api_sections)):
 		json_sig = string.replace( json_sig, "\r", "\\r" )
 		json_sig = string.replace( json_sig, "\n", "\\n" )
 		json_sig = string.replace( json_sig, "'", "\\'")
+
+
+		json_subsys = node[3]
 		
-		
-		json_blob += "\t\t['%s', '%s', '%s']" %(node[0], json_sig, json_dox)
+		json_blob += "\t\t['%s', '%s', '%s', '%s']" %(node[0], json_sig, json_dox, json_subsys)
 		
 		node_x += 1
 		if( node_x < max_x ):
@@ -670,10 +754,12 @@ for k in sorted(set(api_sections)):
 
 
 json_blob = json_blob[:-2] #trims the final , char
-output_blob = "var gizmo_event_dox_data = {\n%s\n};" %(json_blob)
+output_blob = "var gizmo_events = {\n%s\n};" %(json_blob)
 
 #print( json_blob )
-#save_data( "event_dox.json", output_blob )
+save_data( "gizmo_events.json", output_blob )
+
+print( output_blob )
 
 
 if( len( warnings ) > 0 ):
