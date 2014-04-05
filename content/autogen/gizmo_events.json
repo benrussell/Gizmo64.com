@@ -1,0 +1,67 @@
+var gizmo_events = {
+	'2D' : [
+		['OnDraw_BeforeGauges', 'OnDraw_BeforeGauges', '\nfunction OnDraw_BeforeGauges()\n\nend\n ', '2D'],
+		['OnDraw_BeforeGauges_3D', 'OnDraw_BeforeGauges_3D', '\nfunction OnDraw_BeforeGauges_3D()\n\nend\n ', '2D'],
+		['OnDraw_BeforeLastCockpit', 'OnDraw_BeforeLastCockpit', '\nfunction OnDraw_BeforeLastCockpit()\n\nend\n ', '2D'],
+		['OnDraw_BeforeLastScene', 'OnDraw_BeforeLastScene', '\nfunction OnDraw_BeforeLastScene()\n\nend\n ', '2D'],
+		['OnDraw_BeforeLocalMap2D', 'OnDraw_BeforeLocalMap2D', '\nfunction OnDraw_BeforeLocalMap2D()\n\nend\n ', '2D'],
+		['OnDraw_BeforeLocalMapProfile', 'OnDraw_BeforeLocalMapProfile', '\nfunction OnDraw_BeforeLocalMapProfile()\n\nend\n ', '2D'],
+		['OnDraw_FirstCockpit', 'OnDraw_FirstCockpit', '\n\tfunction OnDraw_BeforeFirstCockpit()\n\tend\n\tfunction OnDraw_FirstCockpit()\n\tend\n ', '2D'],
+		['OnDraw_Gauges', 'OnDraw_Gauges', '\n\tfunction OnDraw_BeforeGauges()\n\t\t--Using this function can be more suitable for mixing Avionics with X-Planes built in items.\n\t\t--Combined with the next function you should be able to achieve most tasks.\n\tend\n\tfunction OnDraw_Gauges()\n\t\t--You should draw your Panel Gauges / Avionics displays in this function.\n\tend\n ', '2D'],
+		['OnDraw_Gauges_3D', 'OnDraw_Gauges_3D', '\n\tfunction OnDraw_BeforeGauges_3D()\n\t\t--3d Panel Phase, gauge background, bezels etc\n\t\t--The function names have 3D in them but the drawing modes are purely 2D GL.\n\tend\n\tfunction OnDraw_Gauges_3D()\n\t\t--3D panel phase\n\tend\n ', '2D'],
+		['OnDraw_LastCockpit', 'OnDraw_LastCockpit', '\n\tfunction OnDraw_BeforeLastCockpit()\n\n\tend\n\tfunction OnDraw_LastCockpit()\n\n\tend\n', '2D'],
+		['OnDraw_LocalMap2D', 'OnDraw_LocalMap2D', '\n\t--WARNING: These functions have ambiguous names that will be changed.\n\t--They have been added "for completeness" and don\'t fit in with the Gizmo naming conventions as they are.\n\tfunction OnDraw_BeforeLocalMap2D()\n\n\tend\n\tfunction OnDraw_LocalMap2D()\n\n\tend\n ', '2D'],
+		['OnDraw_LocalMapProfile', 'OnDraw_LocalMapProfile', '\n\tfunction OnDraw_BeforeLocalMapProfile()\n\n\tend\n\tfunction OnDraw_LocalMapProfile()\n\n\tend\n ', '2D'],
+		['OnDraw_Windows', 'OnDraw_Windows', '\n\tfunction OnDraw_BeforeWindows()\n\n\t--Draw your own 2d popups here\n\tend\n\tfunction OnDraw_Windows()\n\n\t--Draw your own 2d popups here\n\tend\n', '2D']
+		],
+	'3D' : [
+		['OnDraw_Airplanes', 'OnDraw_Airplanes', '\n\tfunction OnDraw_Airplanes()\n\t\n\tend\n ', '3D'],
+		['OnDraw_Airports', 'OnDraw_Airports', '\n\tfunction OnDraw_Airports()\n\t\n\tend\n ', '3D'],
+		['OnDraw_BeforeAirplanes', 'OnDraw_BeforeAirplanes', '\nfunction OnDraw_BeforeAirplanes()\n\nend\n ', '3D'],
+		['OnDraw_BeforeAirports', 'OnDraw_BeforeAirports', '\nfunction OnDraw_BeforeAirports()\n\nend\n ', '3D'],
+		['OnDraw_BeforeFirstCockpit', 'OnDraw_BeforeFirstCockpit', '\nfunction OnDraw_BeforeFirstCockpit()\n\nend\n ', '3D'],
+		['OnDraw_BeforeFirstScene', 'OnDraw_BeforeFirstScene', '\nfunction OnDraw_BeforeFirstScene()\n\nend\n ', '3D'],
+		['OnDraw_BeforeTerrain', 'OnDraw_BeforeTerrain', '\nfunction OnDraw_BeforeTerrain()\n\nend\n ', '3D'],
+		['OnDraw_BeforeVectors', 'OnDraw_BeforeVectors', '\nfunction OnDraw_BeforeVectors()\n\nend\n ', '3D'],
+		['OnDraw_BeforeWindows', 'OnDraw_BeforeWindows', '\nfunction OnDraw_BeforeWindows()\n\nend\n ', '3D'],
+		['OnDraw_DebugFlightPath', 'OnDraw_DebugFlightPath', '\n\tfunction OnDraw_DebugFlightPath()\n\t--Use this to draw graphics when x-planes purple flight path is turned on\n\t--The actual SDK phase is currently xplm_Phase_Objects\n\tend\n ', '3D'],
+		['OnDraw_FirstScene', 'OnDraw_FirstScene', '\nfunction OnDraw_FirstScene()\n\nend\n ', '3D'],
+		['OnDraw_LastScene', 'OnDraw_LastScene', '\n\tfunction OnDraw_LastScene()\n\t\n\tend\n', '3D'],
+		['OnDraw_Terrain', 'OnDraw_Terrain', '\n\tfunction OnDraw_Terrain()\n\t\n\tend\n', '3D'],
+		['OnDraw_Vectors', 'OnDraw_Vectors', '\n\tfunction OnDraw_Vectors()\n\t\n\tend\n', '3D'],
+		['OnDraw_World', 'OnDraw_World', '\n\tfunction OnDraw_World()\n\t\n\t--Draw objects in the world next to your aircraft, your aircraft will be drawn after them so effects should integrate well\n\t--Called during: xplm_Phase_Objects\n\tend\n ', '3D']
+		],
+	'BOOT' : [
+		['OnKickStart', 'OnKickStart', '\nfunction OnKickStart()\n--Called during LuaVM restart. Used to initiate boot process. Detects which script to load for the Players current aircraft.\nend\n', 'BOOT']
+		],
+	'LOG' : [
+		['OnDebug', 'OnDebug', '\nfunction OnError()\n--Called when a LuaVM error is detected.\n--Allows interactive response to scripting errors. Default is connected to the Console extension.\nend\n', 'LOG'],
+		['OnError', 'OnError', '\nfunction OnError()\n--Called when a LuaVM error is detected.\n--Allows interactive response to scripting errors. Default is connected to the Console extension.\nend\n', 'LOG'],
+		['OnWarning', 'OnWarning', '\nfunction OnError()\n--Called when a LuaVM error is detected.\n--Allows interactive response to scripting errors. Default is connected to the Console extension.\nend\n', 'LOG']
+		],
+	'MENU' : [
+		['OnSystemMenu_AboutGizmo', 'OnSystemMenu_AboutGizmo', '\nfunction OnSystemMenu_AboutGizmo()\n--Gizmo64 XPL calls this when it wants to display the HotFix which is crafted from Lua widgets.\nend\n', 'MENU'],
+		['OnSystemMenu_HotFix', 'OnSystemMenu_HotFix', '\nfunction OnSystemMenu_AboutGizmo()\n--Gizmo64 XPL calls this when it wants to display the About Dialog which is crafted from Lua widgets.\nend\n', 'MENU']
+		],
+	'SYS' : [
+		['OnAircraftCrash', 'OnAircraftCrash', '\nfunction OnAircraftCrash()\n--The user crashed the vehicle.\nend\n', 'SYS'],
+		['OnAircraftLoad', 'OnAircraftLoad', '\nfunction OnAircraftLoad()\n--This function needs to accept an index number telling us which aircraft changed, currently it does not.\n--You know -an- aircraft was loaded, you don\'t know which one, it\'s kind of irrelevant anyway due to engine issues.(??? - br)\nend\n', 'SYS'],
+		['OnAircraftUnload', 'OnAircraftUnload', '\nfunction OnAicraftUnload()\n--This function needs to accept an index number telling us which aircraft changed, currently it does not.\n--You know an aircraft was unloaded, but not which one.\nend\n', 'SYS'],
+		['OnAirportChanged', 'OnAirportChanged', '\nfunction OnAirportChanged()\n--A new airport has been selected\nend\n', 'SYS'],
+		['OnBeforeReboot', 'OnBeforeReboot', '\nfunction OnBeforeReboot()\n--This hook has been created to give you a chance to cleanup x-planes state.\n--This may include releasing overrides, restoring the autopilot/fmc, etc.\nend\n', 'SYS'],
+		['OnBoot', 'OnBoot', '\nfunction OnBoot()\n--Gizmo has rebooted, init your code.\n--This event is also called when the user first loads your ACF file.\nend\n', 'SYS'],
+		['OnFirstFrame', 'OnFirstFrame', '\nfunction OnFirstFrame()\n--OnBoot -> ACF Finishes Loading -> OnFirstFrame\n--set any "default acf state" datarefs here.\nend\n\nAPI: >= 11.5.12\n', 'SYS'],
+		['OnForceRedraw', 'OnForceRedraw', '\nfunction OnForceRedraw()\n--The user has exited a full screen X-Plane dialog: Eg: WX/Joystick/Rendering options.\n--Does not work for: Load ACF / Change ACF Livery. Checked most others. Please report any that dont work.\nend\n\nAPI: >= 11.5.12\n', 'SYS'],
+		['OnLiveryChanged', 'OnLiveryChanged', '\n function OnLiveryChanged()\n \n --The user has changed their livery, check acf.getLiveryName() for more info.\n \n end\n \n API >= 11.9.1\n ', 'SYS'],
+		['OnMouseClick', 'OnMouseClick', '\nfunction OnMouseClick()\n--mouse.click.x, mouse.click.y and mouse.click.e \n--are automatically updated by Gizmo before this function is called.\n--You may use them immediately.\n\n\tsound.say("click: " .. mouse.click.x .. " / " .. mouse.click.y .. \n\t\t\t\t" / " .. mouse.click.e )\n\n--See the mouse.api module documentation for more details.\nend\n', 'SYS'],
+		['OnMouseWheel', 'OnMouseWheel', '\n function OnMouseWheel( x,y, wheel,clicks )\n\t--x,y in screen coordinates\n\t--wheel and clicks are int values, unkown details.\n \n end\n \n ', 'SYS'],
+		['OnPluginDisable', 'OnPluginDisable', '\nfunction OnPluginDisable()\n--The plugin has been disabled.\nend\n', 'SYS'],
+		['OnPluginEnable', 'OnPluginEnable', '\nfunction OnPluginEnable()\n--The plugin has been enabled.\nend\n', 'SYS'],
+		['OnPluginMessage', 'OnPluginMessage', '\n _Events.OnPluginMessage( sig, path, message, integer_param )\n Calls for inter plugin comms.\n \n function OnPluginMessage( sig, path, message ) \n\t if( sig == "com.example.plug" )then\n\t --if we return 1 then Gizmo will ensure that only this function sees this event.\n\t return 1\n end\n \n --if we do not return any value Gizmo will continue looking for an event handler for this plugin message type.\n \n end\n ', 'SYS'],
+		['OnPluginMessageEx', 'OnPluginMessageEx', '\n_Events.OnPluginMessageEx( sig, path, message, integer_param )\n Expert calls for inter plugin comms, allows for fine grained control of message handlers.\n \n function OnPluginMessageEx( sig, path, message, integer_param )\n \n\tif( sig == "com.example.plug" )then\n\t\t--if we return 1 then Gizmo will ensure that only this function sees this event.\n\t\treturn 1\n\tend\n \n\t\n\t--if we do not return any value Gizmo will continue looking for an event handler for this plugin message type.\n \n end\n', 'SYS'],
+		['OnSceneryLoaded', 'OnSceneryLoaded', '\nfunction OnSceneryLoaded()\n--New scenery tiles were loaded\nend\n', 'SYS'],
+		['OnSituationLoaded', 'OnSituationLoaded', '\nfunction OnSituationLoaded()\n--A .sit file completed loading.\nend\n', 'SYS'],
+		['OnTrafficCountChanged', 'OnTrafficCountChanged', '\n function OnTrafficCountChanged()\n \n\t--The number of traffic aircraft has been changed\n \n end\n ', 'SYS'],
+		['OnUpdate', 'OnUpdate', '\nfunction OnUpdate()\n--this is your basic "every frame" function call, do most of your work here.\nend\n', 'SYS']
+		]
+};
