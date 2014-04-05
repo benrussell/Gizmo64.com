@@ -112,8 +112,9 @@ if( os.path.exists(input_folder) and os.path.isdir(input_folder) ):
 
 					payload = ""
 
-					for l in lines:
 
+					line_x = 1
+					for l in lines:
 						if( l.find("function") >= 0 ):
 							print(l)
 
@@ -129,7 +130,9 @@ if( os.path.exists(input_folder) and os.path.isdir(input_folder) ):
 									#first line of doc block is the actual API call.
 									tmp_last_signature = l.strip() #assign line to tmp var for documentation hooks a few lines down
 									list_of_api_function_data[ tmp_last_signature ] = "" #init key:value binding in dict
-									list_of_api_function_data_filenames[ tmp_last_signature ] = f
+
+									#filename data is stored here.
+									list_of_api_function_data_filenames[ tmp_last_signature ] = f + "#L" + str(line_x)
 								else:
 									#second line of doc block is the API call documentation data.
 									#print( "last sig: " + tmp_last_signature )
@@ -143,6 +146,8 @@ if( os.path.exists(input_folder) and os.path.isdir(input_folder) ):
 								doc_line_counter = 0
 								doc_block_open = True
 								print("doc block opened")
+
+						line_x = line_x + 1
 
 					#write_module_doc_file( f, payload )
 
