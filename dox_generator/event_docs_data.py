@@ -7,7 +7,7 @@ __author__ = 'br'
 known_event_docs = {}
 
 
-# --------- simtem Events -------------
+# --------- system Events -------------
 
 
 known_event_docs["OnSystemMenu_AboutGizmo"] = ["""
@@ -15,7 +15,7 @@ known_event_docs["OnSystemMenu_AboutGizmo"] = ["""
 --Gizmo64 XPL calls this when it wants to display the HotFix which is crafted from Lua widgets.
 end
 </code></pre>
-""","menu"]
+""","system menu"]
 
 
 
@@ -24,9 +24,15 @@ known_event_docs["OnSystemMenu_HotFix"] = ["""
 --Gizmo64 XPL calls this when it wants to display the About Dialog which is crafted from Lua widgets.
 end
 </code></pre>
-""","menu"]
+""","system menu"]
 
 
+known_event_docs["..._OnClick"] = ["""
+<pre><code>function ..._OnClick()
+
+end
+</code></pre>
+""","script menu"]
 
 
 
@@ -76,7 +82,7 @@ known_event_docs["OnAircraftCrash"] = ["""
 --The user crashed the vehicle.
 end
 </code></pre>
-""","sim"]
+""","aircraft"]
 
 
 known_event_docs["OnAircraftLoad"] = ["""
@@ -85,7 +91,7 @@ known_event_docs["OnAircraftLoad"] = ["""
 --You know -an- aircraft was loaded, you don't know which one, it's kind of irrelevant anyway due to engine issues.(??? - br)
 end
 </code></pre>
-""","sim"]
+""","aircraft"]
 
 
 known_event_docs["OnAircraftUnload"] = ["""
@@ -94,7 +100,11 @@ known_event_docs["OnAircraftUnload"] = ["""
 --You know an aircraft was unloaded, but not which one.
 end
 </code></pre>
-""","sim"]
+""","aircraft"]
+
+
+
+
 
 
 known_event_docs["OnAirportChanged"] = ["""
@@ -102,7 +112,7 @@ known_event_docs["OnAirportChanged"] = ["""
 --A new airport has been selected
 end
 </code></pre>
-""","sim"]
+""","scenery"]
 
 
 
@@ -164,7 +174,7 @@ known_event_docs["OnLiveryChanged"] = ["""
  </code></pre>
 
  API >= 11.9.1
- ""","sim"]
+ ""","aircraft"]
 
 
 
@@ -185,7 +195,7 @@ known_event_docs["OnMouseClick"] = ["""
 --See the mouse.api module documentation for more details.
 end
 </code></pre>
-""","input"]
+""","user input"]
 
 
 known_event_docs["OnMouseWheel"] = ["""
@@ -196,7 +206,7 @@ known_event_docs["OnMouseWheel"] = ["""
  end
  </code></pre>
 
- ""","input"]
+ ""","user input"]
 
 
 
@@ -206,40 +216,41 @@ known_event_docs["OnMouseWheel"] = ["""
 
 
 known_event_docs["OnPluginDisable"] = ["""
-function OnPluginDisable()
+<pre><code>function OnPluginDisable()
 --The plugin has been disabled.
 end
+</code></pre>
 ""","plugin"]
 
 
 known_event_docs["OnPluginEnable"] = ["""
-function OnPluginEnable()
+<pre><code>function OnPluginEnable()
 --The plugin has been enabled.
 end
+</code></pre>
 ""","plugin"]
 
 
 known_event_docs["OnPluginMessage"] = ["""
- _Events.OnPluginMessage( sig, path, message, integer_param )
  Calls for inter plugin comms.
 
- function OnPluginMessage( sig, path, message )
-	 if( sig == "com.example.plug" )then
-	 --if we return 1 then Gizmo will ensure that only this function sees this event.
-	 return 1
- end
+<pre><code>function OnPluginMessage( sig, path, message )
+	if( sig == "com.example.plug" )then
+	--if we return 1 then Gizmo will ensure that only this function sees this event.
+	return 1
+	end
 
- --if we do not return any value Gizmo will continue looking for an event handler for this plugin message type.
+    --if we do not return any value Gizmo will continue looking for an event handler for this plugin message type.
 
  end
+ </code></pre>
  ""","plugin"]
 
 
 known_event_docs["OnPluginMessageEx"] = ["""
-_Events.OnPluginMessageEx( sig, path, message, integer_param )
  Expert calls for inter plugin comms, allows for fine grained control of message handlers.
 
- function OnPluginMessageEx( sig, path, message, integer_param )
+<pre><code>function OnPluginMessageEx( sig, path, message, integer_param )
 
 	if( sig == "com.example.plug" )then
 		--if we return 1 then Gizmo will ensure that only this function sees this event.
@@ -250,6 +261,7 @@ _Events.OnPluginMessageEx( sig, path, message, integer_param )
 	--if we do not return any value Gizmo will continue looking for an event handler for this plugin message type.
 
  end
+</code></pre>
 ""","plugin"]
 
 
@@ -261,10 +273,11 @@ _Events.OnPluginMessageEx( sig, path, message, integer_param )
 
 
 known_event_docs["OnSceneryLoaded"] = ["""
-function OnSceneryLoaded()
+<pre><code>function OnSceneryLoaded()
 --New scenery tiles were loaded
 end
-""","sim"]
+</code></pre>
+""","scenery"]
 
 
 
@@ -274,16 +287,16 @@ end
 
 
 known_event_docs["OnScriptError"] = ["""
-function OnScriptError( message_string )
+<pre><code>function OnScriptError( message_string )
 --A script error has been thrown.
-end
+end</code></pre>
 ""","lua"]
 
 
 known_event_docs["OnScriptWarning"] = ["""
-function OnScriptWarning( message_string )
+<pre><code>function OnScriptWarning( message_string )
 --A script warning has been thrown.
-end
+end</code></pre>
 ""","lua"]
 
 
@@ -292,18 +305,18 @@ end
 
 
 known_event_docs["OnSituationLoaded"] = ["""
-function OnSituationLoaded()
+<pre><code>function OnSituationLoaded()
 --A .sit file completed loading.
-end
+end</code></pre>
 ""","sim"]
 
 
 known_event_docs["OnTrafficCountChanged"] = ["""
- function OnTrafficCountChanged()
+<pre><code>function OnTrafficCountChanged()
 
 	--The number of traffic aircraft has been changed
 
- end
+ end</code></pre>
  ""","sim"]
 
 
@@ -311,10 +324,10 @@ known_event_docs["OnTrafficCountChanged"] = ["""
 
 
 known_event_docs["OnUpdate"] = ["""
-function OnUpdate()
+<pre><code>function OnUpdate()
 --this is your basic "every frame" function call, do most of your work here.
-end
-""","sim"]
+end</code></pre>
+""","flightloop"]
 
 
 
@@ -327,17 +340,17 @@ end
 
 
 known_event_docs["OnDraw_BeforeGauges"] = ["""
-function OnDraw_BeforeGauges()
+<pre><code>function OnDraw_BeforeGauges()
 	--Using this function can be more suitable for mixing Avionics with X-Planes built in items.
 	--Combined with the next function you should be able to achieve most tasks.
-end
+end</code></pre>
  ""","GFX 2D"]
 
 known_event_docs["OnDraw_BeforeGauges_3D"] = ["""
-function OnDraw_BeforeGauges_3D()
+<pre><code>function OnDraw_BeforeGauges_3D()
 --3d Panel Phase, gauge background, bezels etc
 --The function names have 3D in them but the drawing modes are purely 2D GL.
-end
+end</code></pre>
 ""","GFX 2D"]
 
 known_event_docs["OnDraw_BeforeLastCockpit"] = ["""
@@ -373,10 +386,8 @@ end
 
 
 known_event_docs["OnDraw_FirstCockpit"] = ["""
-	function OnDraw_BeforeFirstCockpit()
-	end
-	function OnDraw_FirstCockpit()
-	end
+function OnDraw_FirstCockpit()
+end
  ""","GFX 2D"]
 
 
@@ -419,9 +430,6 @@ known_event_docs["OnDraw_Panel"] = ["""
 known_event_docs["OnDraw_LocalMap2D"] = ["""
 --WARNING: These functions have ambiguous names that will be changed.
 --They have been added "for completeness" and don't fit in with the Gizmo naming conventions as they are.
-function OnDraw_BeforeLocalMap2D()
-
-end
 function OnDraw_LocalMap2D()
 
 end
@@ -533,11 +541,10 @@ known_event_docs["OnDraw_Vectors"] = ["""
 
 
 known_event_docs["OnDraw_World"] = ["""
-function OnDraw_World()
-
+<pre><code>function OnDraw_World()
 --Draw objects in the world next to your aircraft, your aircraft will be drawn after them so effects should integrate well
 --Called during: xplm_Phase_Objects
-end
+end</code></pre>
  ""","GFX 3D"]
 
 
