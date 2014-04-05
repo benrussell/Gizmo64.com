@@ -100,10 +100,10 @@
 
         <!-- Import the JSON data we need to build the documentation GUI from. -->
         <script type="text/javascript" src="content/autogen/api_dox.json"></script>
-        <script type="text/javascript" src="content/autogen/event_dox.json"></script>
+        <script type="text/javascript" src="content/autogen/gizmo_events.json" onload='buildSectionTree_Events();'></script>
 
 
-        <script type="text/javascript" src="content/autogen/api_dox_firmware.json" onload='mergeFwData();'></script>
+        <script type="text/javascript" src="content/autogen/api_dox_firmware.json" _onload='mergeFwData();'></script>
 
 
     </body>

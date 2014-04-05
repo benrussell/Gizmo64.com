@@ -1,6 +1,6 @@
 
 
-function leafClick( leaf_div, branch, node_name ){
+function leafClick( leaf_div, branch, node_name, dox_source ){
 
 
 	var all_active_nav_leaves = document.getElementsByClassName("leaf_active");
@@ -13,7 +13,7 @@ function leafClick( leaf_div, branch, node_name ){
 
 
 
-	var leaves = gizmo_dox_data[branch];
+	var leaves = dox_source[branch];
 	var leaf = null;
 
 	var node_error = true; //this will catch nodes with no dox data.
@@ -36,9 +36,11 @@ function leafClick( leaf_div, branch, node_name ){
 
 		var content = "<pre class='none'>" + leaf[2] + "</pre>";
 
+		/*
 		if( leaf[3] != undefined ){
 			content += "<a target='_blank' href='https://github.com/benrussell/Gizmo-Firmware/tree/master/firmware/core/" + leaf[3] + "'>View source..</a>";
 		}
+		*/
 
 		setContent( leaf[1], content  );
 
@@ -90,78 +92,26 @@ function buildSectionTree_Events(){
 	var divBlob = "";
 	var leaves = new Array();
 
-	// *
 
 
-	leaves = ["OnDraw_Windows","OnDraw_Gauges_3D"];
-	divBlob += createSectionTreeBranch( "Custom Commands", leaves );
-
-
-
-
-	leaves = ["OnDraw_Windows","OnDraw_Gauges_3D"];
-	divBlob += createSectionTreeBranch( "Dataref Events", leaves );
-
-
-
-
-
-	leaves = ["OnDraw_Windows","OnDraw_Gauges_3D"];
-	 divBlob += createSectionTreeBranch( "Graphics: 3D Objects", leaves );
-
-	leaves = ["OnDraw_Windows","OnDraw_Gauges_3D"];
-	divBlob += createSectionTreeBranch( "Graphics: 2D Gauges", leaves );
-
-	leaves = ["OnDraw_Windows","OnDraw_Gauges_3D"];
-	divBlob += createSectionTreeBranch( "Graphics: 2D Windows", leaves );
-
-
-
-
-	leaves = ["OnDraw_Windows","OnDraw_Gauges_3D"];
-	divBlob += createSectionTreeBranch( "GUI", leaves );
-
-	leaves = ["OnDraw_Windows","OnDraw_Gauges_3D"];
-	divBlob += createSectionTreeBranch( "GUI: Custom Widgets", leaves );
-
-
-
-
-	leaves = ["..._OnMouseDown","..._OnKeyDown"];
-	 divBlob += createSectionTreeBranch( "Input", leaves );
-
-
-	// most of the XPL messages can go in here.
-	 leaves = ["OnSituationLoaded","OnAircraftChanged"];
-	 divBlob += createSectionTreeBranch( "Simulator", leaves );
-
-
-
-	 leaves = ["...OnUpdate","..."];
-	 divBlob += createSectionTreeBranch( "Timers", leaves );
-	 // */
-
-
-	/*
-	//build API function reference
-	for( key in gizmo_dox_data ){
+	//build API event reference
+	for( key in gizmo_events ){
 
 		var sNewBranch = "<div id='branch_"+key+"' class='branch' onclick='expandBranch(\"" + key + "\");'>" + key + "</div>";
 		divBlob += sNewBranch;
 
 		divBlob += "<div id='branch_leaves_"+key+"' style='display:none' disabled_onclick='expandBranch(\"" + key + "\");'>";
 
-		var leaves = gizmo_dox_data[key];
+		var leaves = gizmo_events[key];
 		//alert(leaves.length);
 		for( x=0; x<leaves.length; x++ ){
-			var sNewLeaf = "<div id='leaf_"+leaves[x][0]+"' class='leaf' onclick='leafClick(this, \"" + key + "\", \"" + leaves[x][0] + "\");'>" + leaves[x][0] + "</div>";
+			var sNewLeaf = "<div id='leaf_"+leaves[x][0]+"' class='leaf' onclick='leafClick(this, \"" + key + "\", \"" + leaves[x][0] + "\", gizmo_events);'>" + leaves[x][0] + "</div>";
 			divBlob += sNewLeaf;
 		}
 
 		divBlob += "</div>";
 
 	}
-	*/
 
 	var tree = document.getElementById("navTree_events");
 	tree.innerHTML = divBlob;
@@ -175,21 +125,6 @@ function buildSectionTree_API(){
 	var divBlob = "";
 	var leaves = new Array();
 
-	/*
-	leaves = ["OnDraw_Windows","OnDraw_Gauges_3D"];
-	divBlob += createSectionTreeBranch( "Events: Graphics", leaves );
-
-	leaves = ["..._OnMouseDown","..._OnKeyDown"];
-	divBlob += createSectionTreeBranch( "Events: Input", leaves );
-
-	leaves = ["OnSituationLoaded","OnAircraftChanged"];
-	divBlob += createSectionTreeBranch( "Events: Simulator", leaves );
-
-	leaves = ["...OnUpdate","..."];
-	divBlob += createSectionTreeBranch( "Events: Timers", leaves );
-	*/
-
-
 	//build API function reference
 	for( key in gizmo_dox_data ){
 
@@ -201,7 +136,7 @@ function buildSectionTree_API(){
 			var leaves = gizmo_dox_data[key];
 			//alert(leaves.length);
 			for( x=0; x<leaves.length; x++ ){
-				var sNewLeaf = "<div id='leaf_"+leaves[x][0]+"' class='leaf' onclick='leafClick(this, \"" + key + "\", \"" + leaves[x][0] + "\");'>" + leaves[x][0] + "</div>";
+				var sNewLeaf = "<div id='leaf_"+leaves[x][0]+"' class='leaf' onclick='leafClick(this, \"" + key + "\", \"" + leaves[x][0] + "\", gizmo_dox_data);'>" + leaves[x][0] + "</div>";
 				divBlob += sNewLeaf;
 			}
 
