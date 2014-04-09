@@ -1,35 +1,35 @@
 var gizmo_events = {
 	'GFX 2D' : [
-		['OnDraw_BeforeFirstCockpit', 'OnDraw_BeforeFirstCockpit', '\nfunction OnDraw_BeforeFirstCockpit()\n\nend\n ', 'GFX 2D'],
+		['OnDraw_BeforeFirstCockpit', 'OnDraw_BeforeFirstCockpit', '\n<code>function OnDraw_BeforeFirstCockpit()\n\nend\n</code>\n', 'GFX 2D'],
 		['OnDraw_BeforeGauges', 'OnDraw_BeforeGauges', '\n<code>function OnDraw_BeforeGauges()\n\t--Using this function can be more suitable for mixing Avionics with X-Planes built in items.\n\t--Combined with the next function you should be able to achieve most tasks.\nend</code>\n ', 'GFX 2D'],
-		['OnDraw_BeforeGauges_3D', 'OnDraw_BeforeGauges_3D', '\n<code>function OnDraw_BeforeGauges_3D()\n--3d Panel Phase, gauge background, bezels etc\n--The function names have 3D in them but the drawing modes are purely 2D GL.\nend</code>\n', 'GFX 2D'],
-		['OnDraw_BeforeLastCockpit', 'OnDraw_BeforeLastCockpit', '\nfunction OnDraw_BeforeLastCockpit()\n\nend\n ', 'GFX 2D'],
-		['OnDraw_BeforeLastScene', 'OnDraw_BeforeLastScene', '\nfunction OnDraw_BeforeLastScene()\n\nend\n ', 'GFX 2D'],
-		['OnDraw_BeforeLocalMap2D', 'OnDraw_BeforeLocalMap2D', '\nfunction OnDraw_BeforeLocalMap2D()\n\nend\n ', 'GFX 2D'],
-		['OnDraw_BeforeLocalMapProfile', 'OnDraw_BeforeLocalMapProfile', '\nfunction OnDraw_BeforeLocalMapProfile()\n\nend\n ', 'GFX 2D'],
-		['OnDraw_BeforeWindows', 'OnDraw_BeforeWindows', '\nfunction OnDraw_BeforeWindows()\n\nend\n ', 'GFX 2D'],
-		['OnDraw_FirstCockpit', 'OnDraw_FirstCockpit', '\nfunction OnDraw_FirstCockpit()\nend\n ', 'GFX 2D'],
-		['OnDraw_Gauges', 'OnDraw_Gauges', '\nfunction OnDraw_Gauges()\n\t--You should draw your Panel Gauges / Avionics displays in this function.\nend\n', 'GFX 2D'],
-		['OnDraw_Gauges_3D', 'OnDraw_Gauges_3D', '\nfunction OnDraw_Gauges_3D()\n\t--3D panel phase\nend\n ', 'GFX 2D'],
-		['OnDraw_LastCockpit', 'OnDraw_LastCockpit', '\nfunction OnDraw_BeforeLastCockpit()\n\nend\nfunction OnDraw_LastCockpit()\n\nend\n', 'GFX 2D'],
-		['OnDraw_LocalMap2D', 'OnDraw_LocalMap2D', '\n--WARNING: These functions have ambiguous names that will be changed.\n--They have been added "for completeness" and don\'t fit in with the Gizmo naming conventions as they are.\nfunction OnDraw_LocalMap2D()\n\nend\n ', 'GFX 2D'],
-		['OnDraw_LocalMapProfile', 'OnDraw_LocalMapProfile', '\nfunction OnDraw_BeforeLocalMapProfile()\n\nend\nfunction OnDraw_LocalMapProfile()\n\nend\n ', 'GFX 2D'],
-		['OnDraw_Windows', 'OnDraw_Windows', '\nfunction OnDraw_BeforeWindows()\n\n--Draw your own 2d popups here\nend\nfunction OnDraw_Windows()\n\n--Draw your own 2d popups here\nend\n', 'GFX 2D']
+		['OnDraw_BeforeGauges_3D', 'OnDraw_BeforeGauges_3D', '\n3D Panel Phase, gauge background, bezels etc\n\nThe function names have 3D in them but the drawing modes are purely 2D GL.\n\n<code>function OnDraw_BeforeGauges_3D()\n\nend\n</code>\n', 'GFX 2D'],
+		['OnDraw_BeforeLastCockpit', 'OnDraw_BeforeLastCockpit', '\n<code>function OnDraw_BeforeLastCockpit()\n\nend</code>\n ', 'GFX 2D'],
+		['OnDraw_BeforeLastScene', 'OnDraw_BeforeLastScene', '\n<code>function OnDraw_BeforeLastScene()\n\nend</code>\n ', 'GFX 2D'],
+		['OnDraw_BeforeLocalMap2D', 'OnDraw_BeforeLocalMap2D', '\n<code>function OnDraw_BeforeLocalMap2D()\n\nend</code>\n ', 'GFX 2D'],
+		['OnDraw_BeforeLocalMapProfile', 'OnDraw_BeforeLocalMapProfile', '\n<code>function OnDraw_BeforeLocalMapProfile()\n\nend</code>\n ', 'GFX 2D'],
+		['OnDraw_BeforeWindows', 'OnDraw_BeforeWindows', '\n<code>function OnDraw_BeforeWindows()\n\nend</code>\n ', 'GFX 2D'],
+		['OnDraw_FirstCockpit', 'OnDraw_FirstCockpit', '\n<code>function OnDraw_FirstCockpit()\n\nend</code>\n ', 'GFX 2D'],
+		['OnDraw_Gauges', 'OnDraw_Gauges', '\n<code>function OnDraw_Gauges()\n\t--You should draw your Panel Gauges / Avionics displays in this function.\nend\n</code>\n', 'GFX 2D'],
+		['OnDraw_Gauges_3D', 'OnDraw_Gauges_3D', '\n3D Panel Phase, gauge background, bezels etc\n\nThe function names have 3D in them but the drawing modes are purely 2D GL.\n\n<code>function OnDraw_Gauges_3D()\n\nend\n</code>\n ', 'GFX 2D'],
+		['OnDraw_LastCockpit', 'OnDraw_LastCockpit', '\n<code>function OnDraw_LastCockpit()\n\nend\n</code>\n', 'GFX 2D'],
+		['OnDraw_LocalMap2D', 'OnDraw_LocalMap2D', '\n<code>function OnDraw_LocalMap2D()\n\nend\n</code>\n ', 'GFX 2D'],
+		['OnDraw_LocalMapProfile', 'OnDraw_LocalMapProfile', '\n<code>function OnDraw_LocalMapProfile()\n\nend\n</code>\n ', 'GFX 2D'],
+		['OnDraw_Windows', 'OnDraw_Windows', '\n<code>function OnDraw_Windows()\n\t--Draw your own 2d popups here\nend\n</code>\n', 'GFX 2D']
 		],
 	'GFX 3D' : [
-		['OnDraw_Airplanes', 'OnDraw_Airplanes', '\n<code>function OnDraw_Airplanes()\n\nend</code>\n ', 'GFX 3D'],
-		['OnDraw_Airports', 'OnDraw_Airports', '\n\tfunction OnDraw_Airports()\n\n\tend\n ', 'GFX 3D'],
-		['OnDraw_BeforeAirplanes', 'OnDraw_BeforeAirplanes', '\nfunction OnDraw_BeforeAirplanes()\n\nend\n ', 'GFX 3D'],
-		['OnDraw_BeforeAirports', 'OnDraw_BeforeAirports', '\nfunction OnDraw_BeforeAirports()\n\nend\n ', 'GFX 3D'],
-		['OnDraw_BeforeFirstScene', 'OnDraw_BeforeFirstScene', '\nfunction OnDraw_BeforeFirstScene()\n\nend\n ', 'GFX 3D'],
-		['OnDraw_BeforeTerrain', 'OnDraw_BeforeTerrain', '\nfunction OnDraw_BeforeTerrain()\n\nend\n ', 'GFX 3D'],
-		['OnDraw_BeforeVectors', 'OnDraw_BeforeVectors', '\nfunction OnDraw_BeforeVectors()\n\nend\n ', 'GFX 3D'],
-		['OnDraw_DebugFlightPath', 'OnDraw_DebugFlightPath', '\nfunction OnDraw_DebugFlightPath()\n--Use this to draw graphics when x-planes purple flight path is turned on\n--The actual SDK phase is currently xplm_Phase_Objects\nend\n ', 'GFX 3D'],
-		['OnDraw_FirstScene', 'OnDraw_FirstScene', '\nfunction OnDraw_FirstScene()\n\nend\n ', 'GFX 3D'],
-		['OnDraw_LastScene', 'OnDraw_LastScene', '\n<code>function OnDraw_LastScene()\n\nend</code>\n', 'GFX 3D'],
-		['OnDraw_Terrain', 'OnDraw_Terrain', '\n\tfunction OnDraw_Terrain()\n\n\tend\n', 'GFX 3D'],
-		['OnDraw_Vectors', 'OnDraw_Vectors', '\n\tfunction OnDraw_Vectors()\n\n\tend\n', 'GFX 3D'],
-		['OnDraw_World', 'OnDraw_World', '\n<code>function OnDraw_World()\n--Draw objects in the world next to your aircraft, your aircraft will be drawn after them so effects should integrate well\n--Called during: xplm_Phase_Objects\nend</code>\n ', 'GFX 3D']
+		['OnDraw_Airplanes', 'OnDraw_Airplanes', '\n<code>function OnDraw_Airplanes()\n\nend\n</code>\n ', 'GFX 3D'],
+		['OnDraw_Airports', 'OnDraw_Airports', '\n<code>function OnDraw_Airports()\n\nend\n</code>\n ', 'GFX 3D'],
+		['OnDraw_BeforeAirplanes', 'OnDraw_BeforeAirplanes', '\n<code>function OnDraw_BeforeAirplanes()\n\nend\n</code>\n ', 'GFX 3D'],
+		['OnDraw_BeforeAirports', 'OnDraw_BeforeAirports', '\n<code>function OnDraw_BeforeAirports()\n\nend\n</code>\n ', 'GFX 3D'],
+		['OnDraw_BeforeFirstScene', 'OnDraw_BeforeFirstScene', '\n<code>function OnDraw_BeforeFirstScene()\n\nend\n</code>\n ', 'GFX 3D'],
+		['OnDraw_BeforeTerrain', 'OnDraw_BeforeTerrain', '\n<code>function OnDraw_BeforeTerrain()\n\nend\n</code>\n ', 'GFX 3D'],
+		['OnDraw_BeforeVectors', 'OnDraw_BeforeVectors', '\n<code>function OnDraw_BeforeVectors()\n\nend\n</code>\n ', 'GFX 3D'],
+		['OnDraw_DebugFlightPath', 'OnDraw_DebugFlightPath', '\nUse this to draw graphics when x-planes purple flight path is turned on\n\nThe actual SDK phase is currently xplm_Phase_Objects\n\n<code>function OnDraw_DebugFlightPath()\n\nend\n</code>\n ', 'GFX 3D'],
+		['OnDraw_FirstScene', 'OnDraw_FirstScene', '\n<code>function OnDraw_FirstScene()\n\nend\n</code>\n ', 'GFX 3D'],
+		['OnDraw_LastScene', 'OnDraw_LastScene', '\n<code>function OnDraw_LastScene()\n\nend\n</code>\n', 'GFX 3D'],
+		['OnDraw_Terrain', 'OnDraw_Terrain', '\n<code>function OnDraw_Terrain()\n\nend\n</code>\n', 'GFX 3D'],
+		['OnDraw_Vectors', 'OnDraw_Vectors', '\n<code>function OnDraw_Vectors()\n\nend\n</code>\n', 'GFX 3D'],
+		['OnDraw_World', 'OnDraw_World', '\nDraw objects in the world next to your aircraft, your aircraft will be drawn after them so effects should integrate well\n\nCalled during: xplm_Phase_Objects (link to SDK?)\n\n<code>function OnDraw_World()\n\nend\n</code>\n ', 'GFX 3D']
 		],
 	'aircraft' : [
 		['OnAircraftCrash', 'OnAircraftCrash', '\n<code>function OnAircraftCrash()\n--The user crashed the vehicle.\nend\n</code>\n', 'aircraft'],
@@ -41,7 +41,7 @@ var gizmo_events = {
 		['OnBeforeReboot', 'OnBeforeReboot', '\n<code>function OnBeforeReboot()\n--This hook has been created to give you a chance to cleanup x-planes state.\n--This may include releasing overrides, restoring the autopilot/fmc, etc.\nend\n</code>\n', 'boot'],
 		['OnBoot', 'OnBoot', '\n<code>function OnBoot()\n--Gizmo has rebooted, init your code.\n--This event is also called when the user first loads your ACF file.\nend\n</code>\n', 'boot'],
 		['OnFirstFrame', 'OnFirstFrame', '\n<code>function OnFirstFrame()\n--OnBoot -> ACF Finishes Loading -> OnFirstFrame\n--set any "default acf state" datarefs here.\nend\n</code>\n\nAPI: >= 11.5.12\n', 'boot'],
-		['OnKickStart', 'OnKickStart', '\n<pre><code lang=\'lua\'>function OnKickStart()\n--Called during LuaVM restart. Used to initiate boot process. Detects which script to load for the Players current aircraft.\nend\n</code>\n', 'boot']
+		['OnKickStart', 'OnKickStart', '\n<code>function OnKickStart()\n--Called during LuaVM restart. Used to initiate boot process. Detects which script to load for the Players current aircraft.\nend\n</code>\n', 'boot']
 		],
 	'flightloop' : [
 		['OnUpdate', 'OnUpdate', '\n<code>function OnUpdate()\n--this is your basic "every frame" function call, do most of your work here.\nend</code>\n', 'flightloop']
@@ -54,8 +54,8 @@ var gizmo_events = {
 	'plugin' : [
 		['OnPluginDisable', 'OnPluginDisable', '\n<code>function OnPluginDisable()\n--The plugin has been disabled.\nend\n</code>\n', 'plugin'],
 		['OnPluginEnable', 'OnPluginEnable', '\n<code>function OnPluginEnable()\n--The plugin has been enabled.\nend\n</code>\n', 'plugin'],
-		['OnPluginMessage', 'OnPluginMessage', '\n Calls for inter plugin comms.\n\n<code>function OnPluginMessage( sig, path, message )\n\tif( sig == "com.example.plug" )then\n\t--if we return 1 then Gizmo will ensure that only this function sees this event.\n\treturn 1\n\tend\n\n    --if we do not return any value Gizmo will continue looking for an event handler for this plugin message type.\n\n end\n </code>\n ', 'plugin'],
-		['OnPluginMessageEx', 'OnPluginMessageEx', '\n Expert calls for inter plugin comms, allows for fine grained control of message handlers.\n\n<code>function OnPluginMessageEx( sig, path, message, integer_param )\n\n\tif( sig == "com.example.plug" )then\n\t\t--if we return 1 then Gizmo will ensure that only this function sees this event.\n\t\treturn 1\n\tend\n\n\n\t--if we do not return any value Gizmo will continue looking for an event handler for this plugin message type.\n\n end\n</code>\n', 'plugin']
+		['OnPluginMessage', 'OnPluginMessage', '\nCalls for inter plugin comms.\n\n<code>function OnPluginMessage( sig, path, message )\n\tif( sig == "com.example.plug" )then\n\t--if we return 1 then Gizmo will ensure that only this function sees this event.\n\treturn 1\n\tend\n\n    --if we do not return any value Gizmo will continue looking for an event handler for this plugin message type.\n\n end\n </code>\n ', 'plugin'],
+		['OnPluginMessageEx', 'OnPluginMessageEx', '\nExpert calls for inter plugin comms, allows for fine grained control of message handlers.\n\n<code>function OnPluginMessageEx( sig, path, message, integer_param )\n\n\tif( sig == "com.example.plug" )then\n\t\t--if we return 1 then Gizmo will ensure that only this function sees this event.\n\t\treturn 1\n\tend\n\n\n\t--if we do not return any value Gizmo will continue looking for an event handler for this plugin message type.\n\n end\n</code>\n', 'plugin']
 		],
 	'scenery' : [
 		['OnAirportChanged', 'OnAirportChanged', '\n<code>function OnAirportChanged()\n--A new airport has been selected\nend\n</code>\n', 'scenery'],
@@ -71,7 +71,7 @@ var gizmo_events = {
 		['OnSystemMenu_HotFix', 'OnSystemMenu_HotFix', '\n<code>function OnSystemMenu_HotFix()\n--Gizmo64 XPL calls this when it wants to display the About Dialog which is crafted from Lua widgets.\nend\n</code>\n', 'system menu']
 		],
 	'user input' : [
-		['OnMouseClick', 'OnMouseClick', '\n<code>function OnMouseClick()\n--mouse.click.x, mouse.click.y and mouse.click.e\n--are automatically updated by Gizmo before this function is called.\n--You may use them immediately.\n\n\tsound.say("click: " .. mouse.click.x .. " / " .. mouse.click.y ..\n\t\t\t\t" / " .. mouse.click.e )\n\n--See the mouse.api module documentation for more details.\nend\n</code>\n', 'user input'],
-		['OnMouseWheel', 'OnMouseWheel', '\n <code>function OnMouseWheel( x,y, wheel,clicks )\n\t--x,y in screen coordinates\n\t--wheel and clicks are int values, unkown details.\n\n end\n </code>\n\n ', 'user input']
+		['OnMouseClick', 'OnMouseClick', '\n<code>function OnMouseClick()\n--[[\nmouse.click.x, mouse.click.y and mouse.click.e\nare automatically updated by Gizmo before this function is called.\n--You may use them immediately.\n--]]\n\n\tsound.say("click: " .. mouse.click.x .. " / " .. mouse.click.y ..\n\t\t\t\t" / " .. mouse.click.e )\n\n--See the mouse.api module documentation for more details.\nend\n</code>\n', 'user input'],
+		['OnMouseWheel', 'OnMouseWheel', '\n<code>function OnMouseWheel( x,y, wheel,clicks )\n--x,y in screen coordinates\n--wheel and clicks are int values, unkown details.\n\nend\n</code>\n\n', 'user input']
 		]
 };

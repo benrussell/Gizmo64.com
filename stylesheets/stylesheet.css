@@ -176,7 +176,7 @@ p {
 pre, code {
   width: 100%;
   color: #222;
-  background-color: #fff;
+  _background-color: #fff;
 
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   font-size: 14px;
@@ -194,6 +194,7 @@ pre {
 }
 
 code {
+
   width: 640px;
   overflow: auto;
   padding: 3px;

@@ -212,7 +212,7 @@ function setContent( header, body ){
 	body = body.replace( /\<pre\>\<\/pre\>/g, "" );
 
 
-	body = body.replace( /\<code\>/g, "<pre><code>" );
+	body = body.replace( /\<code\>/g, "<pre class='code_bg'><code>" );
 	body = body.replace( /\<\/code\>/g, "</code></pre>" );
 
 

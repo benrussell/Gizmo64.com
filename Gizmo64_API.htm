@@ -1,7 +1,9 @@
 <html>
     <head>
         <title>Gizmo64 API</title>
+        <!--
         <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css"/>
+        -->
         <link rel="stylesheet" type="text/css" href="stylesheets/Gizmo_API.css"/>
         <link rel="stylesheet" type="text/css" href="stylesheets/searchform.css"/>
     </head>
@@ -9,32 +11,48 @@
     <script src='Gizmo_API.js'></script>
 
 
-
     <link href="rainbow-master/themes/github.css" rel="stylesheet" type="text/css">
+    <!--
+
+    <link href="rainbow-master/themes/zenburnesque.css" rel="stylesheet" type="text/css">
+-->
 
     <script src='rainbow-master/js/rainbow.js'></script>
     <script src='rainbow-master/js/language/lua.js'></script>
 
 
-    <!-- source code highlighting - - >
-    <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/default.min.css">
-    <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+    <style>
+        pre{
+            background: #aeaeae;
+            border: 0px;
+        }
 
-    <script>
+        .code_bg{
+            border: 1px solid black;
 
-        console.warn( hljs.listLanguages() );
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
 
-        //hljs.configure( {
-        //   languages: ['lua']
-        //});
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,.1);
 
-        //hljs.initHighlightingOnLoad();
-    </script>
-    -->
+
+            width: 90%;
+            overflow: auto;
+            margin: 0 3px;
+
+            background: #f8f8f8;
+
+            _background-color: midnightblue;
+
+        }
+
+    </style>
+
 
 
     <body style="overflow: hidden;" onload='OnLoad();' onresize='OnResize();'>
-
 
         <div>
 

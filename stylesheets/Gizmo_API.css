@@ -124,7 +124,7 @@ body{
 
 
 
-
+/*
 pre, code {
     width: 95%;
     color: #222;
@@ -137,6 +137,7 @@ pre, code {
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
 }
+*/
 
 
 a {
