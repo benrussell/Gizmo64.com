@@ -192,42 +192,45 @@ function setContent( header, body ){
 	body = body.replace( /\r\n/g, "\n" );
 	//body = body.replace( /\n/g, "<br>" );
 
-	//every end pre spawns a new block immediately after
-	body = body.replace( /\<\/pre\>/g, "</pivot_pre><pivot_pre>" );
 
-	//ever start pre spans an end pre immediate before it.
-	body = body.replace( /\<pre\>/g, "</pre><pre>" );
+	//Magic code to wrap everything in pre tags.
+		//every end pre spawns a new block immediately after
+		body = body.replace( /\<\/pre\>/g, "</pivot_pre><pivot_pre>" );
 
-	//finish the pivot move
-	body = body.replace( /\<\/pivot_pre\>\<pivot_pre\>/g, "</pre><pre>" );
+		//ever start pre spans an end pre immediate before it.
+		body = body.replace( /\<pre\>/g, "</pre><pre>" );
 
-	//wrap entire body in pre tags
-	body = "<pre>" + body + "</pre>";
+		//finish the pivot move
+		body = body.replace( /\<\/pivot_pre\>\<pivot_pre\>/g, "</pre><pre>" );
+
+		//wrap entire body in pre tags
+		body = "<pre>" + body + "</pre>";
+
 
 
 	//replace empty pre instances
 	body = body.replace( /\<pre\>\<\/pre\>/g, "" );
 
-	//body = body.replace( /\n/g, "<br>" );
 
+	body = body.replace( /\<code\>/g, "<pre><code>" );
+	body = body.replace( /\<\/code\>/g, "</code></pre>" );
+
+
+	//be specific about our language usages.
 	body = body.replace( /\<code\>/g, "<code data-language=\"lua\">" );
 
 
 
 
 	//grab DOM nodes and start pumping content.
-
 	var div_header = document.getElementById("div_docBlock_Header");
-	alert( div_header.innerText );
-	div_header.innerText = header; //leaf[1];
-	alert(header);
-
-	return;
-
-
 	var div_content = document.getElementById("div_docBlock_Content");
+
+	//refresh content.
+	div_header.innerHTML = header;
 	div_content.innerHTML = ""; //erase contents
 
+	//generate new contents including syntax-highlighting if needed.
 	var div = document.createElement('div');
 	div.innerHTML = body; //'<p>code:</p><pre><code data-language="lua">local bla = "foo";</code></pre>';
 	Rainbow.color(div, function() {
@@ -235,12 +238,6 @@ function setContent( header, body ){
 		div_content.appendChild(div);
 	});
 
-
-
-
-	var save_className = div_content.className;
-	div_content.className = "";
-	div_content.className = save_className;
 
 
 } //end setContent

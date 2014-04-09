@@ -1,8 +1,8 @@
 var gizmo_events = {
 	'GFX 2D' : [
 		['OnDraw_BeforeFirstCockpit', 'OnDraw_BeforeFirstCockpit', '\nfunction OnDraw_BeforeFirstCockpit()\n\nend\n ', 'GFX 2D'],
-		['OnDraw_BeforeGauges', 'OnDraw_BeforeGauges', '\n<pre><code>function OnDraw_BeforeGauges()\n\t--Using this function can be more suitable for mixing Avionics with X-Planes built in items.\n\t--Combined with the next function you should be able to achieve most tasks.\nend</code></pre>\n ', 'GFX 2D'],
-		['OnDraw_BeforeGauges_3D', 'OnDraw_BeforeGauges_3D', '\n<pre><code>function OnDraw_BeforeGauges_3D()\n--3d Panel Phase, gauge background, bezels etc\n--The function names have 3D in them but the drawing modes are purely 2D GL.\nend</code></pre>\n', 'GFX 2D'],
+		['OnDraw_BeforeGauges', 'OnDraw_BeforeGauges', '\n<code>function OnDraw_BeforeGauges()\n\t--Using this function can be more suitable for mixing Avionics with X-Planes built in items.\n\t--Combined with the next function you should be able to achieve most tasks.\nend</code>\n ', 'GFX 2D'],
+		['OnDraw_BeforeGauges_3D', 'OnDraw_BeforeGauges_3D', '\n<code>function OnDraw_BeforeGauges_3D()\n--3d Panel Phase, gauge background, bezels etc\n--The function names have 3D in them but the drawing modes are purely 2D GL.\nend</code>\n', 'GFX 2D'],
 		['OnDraw_BeforeLastCockpit', 'OnDraw_BeforeLastCockpit', '\nfunction OnDraw_BeforeLastCockpit()\n\nend\n ', 'GFX 2D'],
 		['OnDraw_BeforeLastScene', 'OnDraw_BeforeLastScene', '\nfunction OnDraw_BeforeLastScene()\n\nend\n ', 'GFX 2D'],
 		['OnDraw_BeforeLocalMap2D', 'OnDraw_BeforeLocalMap2D', '\nfunction OnDraw_BeforeLocalMap2D()\n\nend\n ', 'GFX 2D'],
@@ -17,7 +17,7 @@ var gizmo_events = {
 		['OnDraw_Windows', 'OnDraw_Windows', '\nfunction OnDraw_BeforeWindows()\n\n--Draw your own 2d popups here\nend\nfunction OnDraw_Windows()\n\n--Draw your own 2d popups here\nend\n', 'GFX 2D']
 		],
 	'GFX 3D' : [
-		['OnDraw_Airplanes', 'OnDraw_Airplanes', '\nfunction OnDraw_Airplanes()\n\nend\n ', 'GFX 3D'],
+		['OnDraw_Airplanes', 'OnDraw_Airplanes', '\n<code>function OnDraw_Airplanes()\n\nend</code>\n ', 'GFX 3D'],
 		['OnDraw_Airports', 'OnDraw_Airports', '\n\tfunction OnDraw_Airports()\n\n\tend\n ', 'GFX 3D'],
 		['OnDraw_BeforeAirplanes', 'OnDraw_BeforeAirplanes', '\nfunction OnDraw_BeforeAirplanes()\n\nend\n ', 'GFX 3D'],
 		['OnDraw_BeforeAirports', 'OnDraw_BeforeAirports', '\nfunction OnDraw_BeforeAirports()\n\nend\n ', 'GFX 3D'],
@@ -26,52 +26,52 @@ var gizmo_events = {
 		['OnDraw_BeforeVectors', 'OnDraw_BeforeVectors', '\nfunction OnDraw_BeforeVectors()\n\nend\n ', 'GFX 3D'],
 		['OnDraw_DebugFlightPath', 'OnDraw_DebugFlightPath', '\nfunction OnDraw_DebugFlightPath()\n--Use this to draw graphics when x-planes purple flight path is turned on\n--The actual SDK phase is currently xplm_Phase_Objects\nend\n ', 'GFX 3D'],
 		['OnDraw_FirstScene', 'OnDraw_FirstScene', '\nfunction OnDraw_FirstScene()\n\nend\n ', 'GFX 3D'],
-		['OnDraw_LastScene', 'OnDraw_LastScene', '\nfunction OnDraw_LastScene()\n\nend\n', 'GFX 3D'],
+		['OnDraw_LastScene', 'OnDraw_LastScene', '\n<code>function OnDraw_LastScene()\n\nend</code>\n', 'GFX 3D'],
 		['OnDraw_Terrain', 'OnDraw_Terrain', '\n\tfunction OnDraw_Terrain()\n\n\tend\n', 'GFX 3D'],
 		['OnDraw_Vectors', 'OnDraw_Vectors', '\n\tfunction OnDraw_Vectors()\n\n\tend\n', 'GFX 3D'],
-		['OnDraw_World', 'OnDraw_World', '\n<pre><code>function OnDraw_World()\n--Draw objects in the world next to your aircraft, your aircraft will be drawn after them so effects should integrate well\n--Called during: xplm_Phase_Objects\nend</code></pre>\n ', 'GFX 3D']
+		['OnDraw_World', 'OnDraw_World', '\n<code>function OnDraw_World()\n--Draw objects in the world next to your aircraft, your aircraft will be drawn after them so effects should integrate well\n--Called during: xplm_Phase_Objects\nend</code>\n ', 'GFX 3D']
 		],
 	'aircraft' : [
-		['OnAircraftCrash', 'OnAircraftCrash', '\n<pre><code>function OnAircraftCrash()\n--The user crashed the vehicle.\nend\n</code></pre>\n', 'aircraft'],
-		['OnAircraftLoad', 'OnAircraftLoad', '\n<pre><code>function OnAircraftLoad()\n--This function needs to accept an index number telling us which aircraft changed, currently it does not.\n--You know -an- aircraft was loaded, you don\'t know which one, it\'s kind of irrelevant anyway due to engine issues.(??? - br)\nend\n</code></pre>\n', 'aircraft'],
-		['OnAircraftUnload', 'OnAircraftUnload', '\n<pre><code>function OnAicraftUnload()\n--This function needs to accept an index number telling us which aircraft changed, currently it does not.\n--You know an aircraft was unloaded, but not which one.\nend\n</code></pre>\n', 'aircraft'],
-		['OnLiveryChanged', 'OnLiveryChanged', '\n <pre><code>function OnLiveryChanged()\n\n --The user has changed their livery, check acf.getLiveryName() for more info.\n\n end\n </code></pre>\n\n API >= 11.9.1\n ', 'aircraft']
+		['OnAircraftCrash', 'OnAircraftCrash', '\n<code>function OnAircraftCrash()\n--The user crashed the vehicle.\nend\n</code>\n', 'aircraft'],
+		['OnAircraftLoad', 'OnAircraftLoad', '\n<code>function OnAircraftLoad()\n--This function needs to accept an index number telling us which aircraft changed, currently it does not.\n--You know -an- aircraft was loaded, you don\'t know which one, it\'s kind of irrelevant anyway due to engine issues.(??? - br)\nend\n</code>\n', 'aircraft'],
+		['OnAircraftUnload', 'OnAircraftUnload', '\n<code>function OnAicraftUnload()\n--This function needs to accept an index number telling us which aircraft changed, currently it does not.\n--You know an aircraft was unloaded, but not which one.\nend\n</code>\n', 'aircraft'],
+		['OnLiveryChanged', 'OnLiveryChanged', '\n <code>function OnLiveryChanged()\n\n --The user has changed their livery, check acf.getLiveryName() for more info.\n\n end\n </code>\n\n API >= 11.9.1\n ', 'aircraft']
 		],
 	'boot' : [
-		['OnBeforeReboot', 'OnBeforeReboot', '\n<pre><code>function OnBeforeReboot()\n--This hook has been created to give you a chance to cleanup x-planes state.\n--This may include releasing overrides, restoring the autopilot/fmc, etc.\nend\n</code></pre>\n', 'boot'],
-		['OnBoot', 'OnBoot', '\n<pre><code>function OnBoot()\n--Gizmo has rebooted, init your code.\n--This event is also called when the user first loads your ACF file.\nend\n</code></pre>\n', 'boot'],
-		['OnFirstFrame', 'OnFirstFrame', '\n<pre><code>function OnFirstFrame()\n--OnBoot -> ACF Finishes Loading -> OnFirstFrame\n--set any "default acf state" datarefs here.\nend\n</code></pre>\n\nAPI: >= 11.5.12\n', 'boot'],
-		['OnKickStart', 'OnKickStart', '\n<pre><code lang=\'lua\'>function OnKickStart()\n--Called during LuaVM restart. Used to initiate boot process. Detects which script to load for the Players current aircraft.\nend\n</code></pre>\n', 'boot']
+		['OnBeforeReboot', 'OnBeforeReboot', '\n<code>function OnBeforeReboot()\n--This hook has been created to give you a chance to cleanup x-planes state.\n--This may include releasing overrides, restoring the autopilot/fmc, etc.\nend\n</code>\n', 'boot'],
+		['OnBoot', 'OnBoot', '\n<code>function OnBoot()\n--Gizmo has rebooted, init your code.\n--This event is also called when the user first loads your ACF file.\nend\n</code>\n', 'boot'],
+		['OnFirstFrame', 'OnFirstFrame', '\n<code>function OnFirstFrame()\n--OnBoot -> ACF Finishes Loading -> OnFirstFrame\n--set any "default acf state" datarefs here.\nend\n</code>\n\nAPI: >= 11.5.12\n', 'boot'],
+		['OnKickStart', 'OnKickStart', '\n<pre><code lang=\'lua\'>function OnKickStart()\n--Called during LuaVM restart. Used to initiate boot process. Detects which script to load for the Players current aircraft.\nend\n</code>\n', 'boot']
 		],
 	'flightloop' : [
-		['OnUpdate', 'OnUpdate', '\n<pre><code>function OnUpdate()\n--this is your basic "every frame" function call, do most of your work here.\nend</code></pre>\n', 'flightloop']
+		['OnUpdate', 'OnUpdate', '\n<code>function OnUpdate()\n--this is your basic "every frame" function call, do most of your work here.\nend</code>\n', 'flightloop']
 		],
 	'log' : [
-		['OnDebug', 'OnDebug', '\n<pre><code>function OnDebug()\n--Called when a debug message is logged.\n--Allows interactive response to scripting errors. Default is connected to the Console extension.\nend\n</code></pre>\n', 'log'],
-		['OnError', 'OnError', '\n<pre><code>function OnError()\n--Called when a LuaVM error is detected.\n--Allows interactive response to scripting errors. Default is connected to the Console extension.\nend\n</code></pre>\n', 'log'],
-		['OnWarning', 'OnWarning', '\n<pre><code>function OnWarning()\n--Called when a warning message is logged.\n--Allows interactive response to scripting errors. Default is connected to the Console extension.\nend\n</code></pre>\n', 'log']
+		['OnDebug', 'OnDebug', '\n<code>function OnDebug()\n--Called when a debug message is logged.\n--Allows interactive response to scripting errors. Default is connected to the Console extension.\nend\n</code>\n', 'log'],
+		['OnError', 'OnError', '\n<code>function OnError()\n--Called when a LuaVM error is detected.\n--Allows interactive response to scripting errors. Default is connected to the Console extension.\nend\n</code>\n', 'log'],
+		['OnWarning', 'OnWarning', '\n<code>function OnWarning()\n--Called when a warning message is logged.\n--Allows interactive response to scripting errors. Default is connected to the Console extension.\nend\n</code>\n', 'log']
 		],
 	'plugin' : [
-		['OnPluginDisable', 'OnPluginDisable', '\n<pre><code>function OnPluginDisable()\n--The plugin has been disabled.\nend\n</code></pre>\n', 'plugin'],
-		['OnPluginEnable', 'OnPluginEnable', '\n<pre><code>function OnPluginEnable()\n--The plugin has been enabled.\nend\n</code></pre>\n', 'plugin'],
-		['OnPluginMessage', 'OnPluginMessage', '\n Calls for inter plugin comms.\n\n<pre><code>function OnPluginMessage( sig, path, message )\n\tif( sig == "com.example.plug" )then\n\t--if we return 1 then Gizmo will ensure that only this function sees this event.\n\treturn 1\n\tend\n\n    --if we do not return any value Gizmo will continue looking for an event handler for this plugin message type.\n\n end\n </code></pre>\n ', 'plugin'],
-		['OnPluginMessageEx', 'OnPluginMessageEx', '\n Expert calls for inter plugin comms, allows for fine grained control of message handlers.\n\n<pre><code>function OnPluginMessageEx( sig, path, message, integer_param )\n\n\tif( sig == "com.example.plug" )then\n\t\t--if we return 1 then Gizmo will ensure that only this function sees this event.\n\t\treturn 1\n\tend\n\n\n\t--if we do not return any value Gizmo will continue looking for an event handler for this plugin message type.\n\n end\n</code></pre>\n', 'plugin']
+		['OnPluginDisable', 'OnPluginDisable', '\n<code>function OnPluginDisable()\n--The plugin has been disabled.\nend\n</code>\n', 'plugin'],
+		['OnPluginEnable', 'OnPluginEnable', '\n<code>function OnPluginEnable()\n--The plugin has been enabled.\nend\n</code>\n', 'plugin'],
+		['OnPluginMessage', 'OnPluginMessage', '\n Calls for inter plugin comms.\n\n<code>function OnPluginMessage( sig, path, message )\n\tif( sig == "com.example.plug" )then\n\t--if we return 1 then Gizmo will ensure that only this function sees this event.\n\treturn 1\n\tend\n\n    --if we do not return any value Gizmo will continue looking for an event handler for this plugin message type.\n\n end\n </code>\n ', 'plugin'],
+		['OnPluginMessageEx', 'OnPluginMessageEx', '\n Expert calls for inter plugin comms, allows for fine grained control of message handlers.\n\n<code>function OnPluginMessageEx( sig, path, message, integer_param )\n\n\tif( sig == "com.example.plug" )then\n\t\t--if we return 1 then Gizmo will ensure that only this function sees this event.\n\t\treturn 1\n\tend\n\n\n\t--if we do not return any value Gizmo will continue looking for an event handler for this plugin message type.\n\n end\n</code>\n', 'plugin']
 		],
 	'scenery' : [
-		['OnAirportChanged', 'OnAirportChanged', '\n<pre><code>function OnAirportChanged()\n--A new airport has been selected\nend\n</code></pre>\n', 'scenery'],
-		['OnSceneryLoaded', 'OnSceneryLoaded', '\n<pre><code>function OnSceneryLoaded()\n--New scenery tiles were loaded\nend\n</code></pre>\n', 'scenery']
+		['OnAirportChanged', 'OnAirportChanged', '\n<code>function OnAirportChanged()\n--A new airport has been selected\nend\n</code>\n', 'scenery'],
+		['OnSceneryLoaded', 'OnSceneryLoaded', '\n<code>function OnSceneryLoaded()\n--New scenery tiles were loaded\nend\n</code>\n', 'scenery']
 		],
 	'sim' : [
-		['OnForceRedraw', 'OnForceRedraw', '\n<pre><code>function OnForceRedraw()\n--The user has exited a full screen X-Plane dialog: Eg: WX/Joystick/Rendering options.\n--Does not work for: Load ACF / Change ACF Livery. Checked most others. Please report any that dont work.\nend</code></pre>\nAPI: >= 11.5.12\n', 'sim'],
-		['OnSituationLoaded', 'OnSituationLoaded', '\n<pre><code>function OnSituationLoaded()\n--A .sit file completed loading.\nend</code></pre>\n', 'sim'],
-		['OnTrafficCountChanged', 'OnTrafficCountChanged', '\n<pre><code>function OnTrafficCountChanged()\n\n\t--The number of traffic aircraft has been changed\n\n end</code></pre>\n ', 'sim']
+		['OnForceRedraw', 'OnForceRedraw', '\n<code>function OnForceRedraw()\n--The user has exited a full screen X-Plane dialog: Eg: WX/Joystick/Rendering options.\n--Does not work for: Load ACF / Change ACF Livery. Checked most others. Please report any that dont work.\nend</code>\nAPI: >= 11.5.12\n', 'sim'],
+		['OnSituationLoaded', 'OnSituationLoaded', '\n<code>function OnSituationLoaded()\n--A .sit file completed loading.\nend</code>\n', 'sim'],
+		['OnTrafficCountChanged', 'OnTrafficCountChanged', '\n<code>function OnTrafficCountChanged()\n\n\t--The number of traffic aircraft has been changed\n\n end</code>\n ', 'sim']
 		],
 	'system menu' : [
-		['OnSystemMenu_AboutGizmo', 'OnSystemMenu_AboutGizmo', '\n<pre><code>function OnSystemMenu_AboutGizmo()\n--Gizmo64 XPL calls this when it wants to display the HotFix which is crafted from Lua widgets.\nend\n</code></pre>\n', 'system menu'],
-		['OnSystemMenu_HotFix', 'OnSystemMenu_HotFix', '\n<pre><code>function OnSystemMenu_HotFix()\n--Gizmo64 XPL calls this when it wants to display the About Dialog which is crafted from Lua widgets.\nend\n</code></pre>\n', 'system menu']
+		['OnSystemMenu_AboutGizmo', 'OnSystemMenu_AboutGizmo', '\n<code>function OnSystemMenu_AboutGizmo()\n--Gizmo64 XPL calls this when it wants to display the HotFix which is crafted from Lua widgets.\nend\n</code>\n', 'system menu'],
+		['OnSystemMenu_HotFix', 'OnSystemMenu_HotFix', '\n<code>function OnSystemMenu_HotFix()\n--Gizmo64 XPL calls this when it wants to display the About Dialog which is crafted from Lua widgets.\nend\n</code>\n', 'system menu']
 		],
 	'user input' : [
-		['OnMouseClick', 'OnMouseClick', '\n<pre><code>function OnMouseClick()\n--mouse.click.x, mouse.click.y and mouse.click.e\n--are automatically updated by Gizmo before this function is called.\n--You may use them immediately.\n\n\tsound.say("click: " .. mouse.click.x .. " / " .. mouse.click.y ..\n\t\t\t\t" / " .. mouse.click.e )\n\n--See the mouse.api module documentation for more details.\nend\n</code></pre>\n', 'user input'],
-		['OnMouseWheel', 'OnMouseWheel', '\n <pre><code>function OnMouseWheel( x,y, wheel,clicks )\n\t--x,y in screen coordinates\n\t--wheel and clicks are int values, unkown details.\n\n end\n </code></pre>\n\n ', 'user input']
+		['OnMouseClick', 'OnMouseClick', '\n<code>function OnMouseClick()\n--mouse.click.x, mouse.click.y and mouse.click.e\n--are automatically updated by Gizmo before this function is called.\n--You may use them immediately.\n\n\tsound.say("click: " .. mouse.click.x .. " / " .. mouse.click.y ..\n\t\t\t\t" / " .. mouse.click.e )\n\n--See the mouse.api module documentation for more details.\nend\n</code>\n', 'user input'],
+		['OnMouseWheel', 'OnMouseWheel', '\n <code>function OnMouseWheel( x,y, wheel,clicks )\n\t--x,y in screen coordinates\n\t--wheel and clicks are int values, unkown details.\n\n end\n </code>\n\n ', 'user input']
 		]
 };
