@@ -1,0 +1,13 @@
+
+<code>--This code demonstrates how to load a collection of files.
+event.register( "OnBoot", "myCode_OnBoot" )
+function myCode_OnBoot()
+
+
+end
+
+
+</code>
+
+
+

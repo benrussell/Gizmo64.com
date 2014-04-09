@@ -240,6 +240,11 @@ function setContent( header, body ){
 
 
 
+	// ...additional user contrib content..
+	var div_extraContent = document.getElementById('div_extraContent');
+	div_extraContent.innerHTML = "user contrib for: " + header;
+
+
 } //end setContent
 
 

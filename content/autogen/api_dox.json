@@ -69,14 +69,14 @@ var gizmo_dox_data = {
 		['camera.setZoom', 'camera.setZoom( zoom )', ' Set the zoom value for the camera.\n \n API: 11.4+\n \n']
 		],
 	'coroutine' : [
-		['coroutine.read_me', 'coroutine.read_me()', ' \n']
+		['coroutine.read_me', 'coroutine.read_me()', '\nStandard Lua coroutine support is available. \n']
 		],
 	'debug' : [
 		['debug.read_me', 'debug.read_me()', '\nThe debug library is disabled for all third party content.\n\n']
 		],
 	'dref' : [
-		['dref.getArraySize', 'dref.getArraySize( dref_id )', ' Returns: array_element_count\n \n Number of array elements the dref supports.\n \n API: >= FIXME: dref.getArraySize(..): empty hook\n \n'],
-		['dref.getBytes', 'dref.getBytes( dataref_id, start_at, number_to_fetch )', ' Returns: Lua String\n \n Eg: \n foo = dref.getBytes( dr_id, 1, 1024 )\n print( foo )\n \n \n'],
+		['dref.getArraySize', 'dref.getArraySize( dref_id )', '\nReturns: array_element_count\n\nNumber of array elements the dref supports.\n\n<code>local array_size = dref.getArraySize( dr_MyCustomFloatArray )</code>\n\nAPI: >= broken!\n'],
+		['dref.getBytes', 'dref.getBytes( dataref_id, start_at, number_to_fetch )', '\nReturns: Lua String\n\n<code>--Copy byte-string dataref value into a Lua variable.\n\nlocal dr_AcfAuthor = dref.getDataref("sim/acf/description/author")\n\nlocal dref_string_value_copy = dref.getBytes( dr_AcfAuthor, 1, 1024 )\n</code>\n\nAPI: >= 14.01\n'],
 		['dref.getDataref', 'dref.getDataref( string_dataref_name )', ' Returns: dataref_id\n \n Eg: dr_ice_switch = dref.getDataref("sim/cockpit/switches/ice")\n \n \n Does NOT accept part numbers:\n This will NOT work: dref.getDataref( "sim/dataref[99999]" )\n \n \n'],
 		['dref.getFloat', 'dref.getFloat( dataref_id )', ' Returns: value of dataref_id decimal number\n See xp.getDataref("sim/foo") and xp.newDataref("custom/dataref") for more info.\n'],
 		['dref.getFloatV', 'dref.getFloatV( dataref_id, start_at, number_to_fetch )', ' Returns: multiple values for dataref_id as decimal numbers\n \n See xp.getDataref("sim/foo") and xp.newDataref("custom/dataref") for more info.\n start_at refers to the part number in sim/dataref[99]\n \n In X-Plane, OBJ8 and C, part numbers start at 0.\n In Lua, part numbers start at 1.\n \n For this reason, the start_at parameter also starts at 1.\n \n If you want to get sim/dataref[0] use:\n value = xp.getFloatv( dataref_id, 1, 1 )\n \n We ask Gizmo to get us one value, starting at the first item.\n \n This seems a little bit annoying, but when you start using your tables of values\n with the rest of Luas functions you will understand why there is a little "shift"\n here when we push numbers in and out of X-Planes dataref systems.\t\n \n \n value = {}  -- Table to hold the array\n value    =    { xp.getFloatV(dataref_id, 1, n)}\n \n \n'],
@@ -85,9 +85,9 @@ var gizmo_dox_data = {
 		['dref.getString', 'dref.getString( dataref_id )', ' Returns: Lua String\n \n Eg: \n foo = dref.getString( dr_id )\n print( foo )\n \n Note: Max string length is currently hard-limited to 1024 bytes.\n \n API: >= 11.10\n \n'],
 		['dref.newByteArray', 'dref.newByteArray( string_dataref_name )', ' Returns: dref_id\n \n API: >= 11.8\n \n'],
 		['dref.newFloat', 'dref.newFloat( dataref_name, OPT_hook_event_name )', '\nReturns: dref_id\n\nSimple:\n-------\nStorage of the value for this dataref will be completely managed by Gizmo64.\nYour code can update the value of the dataref using dref.getFloat(...) and dref.setFloat(...)\n<code>--create a new floating point dataref\n--store the handle for it in a variable called dr_MyCustomDataref\nlocal dr_MyCustomDataref = dref.newFloat("my/custom/dataref")\n\n--update the value of our dateref\ndref.setFloat( dr_MyCustomDataref, 1.234 )\n\n--retrieve the value of our dataref\nlocal tmp_val = dref.getFloat( dr_MyCustomDataref )</code>\n\nAdvanced:\n---------\nCreate a new floating point dataref that is fully managed by your code.\n\nThese "hooked" datarefs are ideal for managing input from a 3D Cokpit Object that utilizes "manipulators" for user input.\n\nThey can also be useful to provide a dataref that is always the value of a specific algorithm.\n<code>--create a new floating point dataref\n--store the handle for it in a variable called dr_MyCustomDataref\nlocal dr_MyCustomDataref = dref.newFloat("my/custom/dataref", "my_custom_dataref_hooks")\n\n--This code is called when a read of the dataref occurs.\nfunction my_custom_dataref_hooks_OnRead()\n\treturn acf.getIAS() * 10\nend\n\n--This code is called when a write to the dataref occurs.\nfunction my_custom_dataref_hooks_OnWrite( newValue )\n\tsound.say("dataref changed")\nend \n</code>\n\nAPI: >= 11.8\n'],
-		['dref.newFloatArray', 'dref.newFloatArray( string_dataref_name )', ' Returns: dref_id\n \n API: >= 11.8\n \n'],
-		['dref.newInt', 'dref.newInt( dataref_name, OPT_hook_event_name )', ' Returns: dref_id\n \n Creates a new integer (no decimal allowed) dataref.\n \n API: >= 11.8\n \n \n hook_event_name is optional and can be used to make Gizmo notify your\n code when your dataref changes, you do not have to \'watch\' or poll it.\n \n function hook_event_name_OnRead()\n return acf.getIAS() * 10\n end\n \n function hook_event_OnWrite( newValue )\n sound.say("dataref changed")\n end\n'],
-		['dref.newIntArray', 'dref.newIntArray( string_dataref_name )', ' Returns: dref_id\n \n API: >= 11.8\n \n'],
+		['dref.newFloatArray', 'dref.newFloatArray( string_dataref_name )', '\nReturns: dref_id\n\nCreates a new float-array dataref.\n\nUse this when you want to use "part numbers" in your OBJ8 files.\n\nEg:\nmy/custom/float/array[2]\n\nValues are managed by Gizmo64. \nThe new dataref supports read+write access.\nAny other plugin may change their value at any time.\n\n<code>--Create a new custom dataref of type: float-array\nlocal dr_MyCustomFloatArray = dref.newFloatArray( "my/custom/float/array" )\n\n--Adjust the size of the float-array dataref. This can be done at any time.\ndref.setArraySize( dr_MyCustomFloatArray, 10 )\n\n--You can now use "part numbers" [0] through [9] in your OBJ8 files.\n</code>\n\nAPI: >= 11.8\n'],
+		['dref.newInt', 'dref.newInt( dataref_name, OPT_hook_event_name )', '\nReturns: dref_id\n\nSimple:\n-------\nStorage of the value for this dataref will be completely managed by Gizmo64.\nYour code can update the value of the dataref using dref.getInt(...) and dref.setInt(...)\n<code>--create a new floating point dataref\n--store the handle for it in a variable called dr_MyCustomDataref\nlocal dr_MyCustomDataref = dref.newInt("my/custom/dataref")\n\n--update the value of our dateref\ndref.setInt( dr_MyCustomDataref, 5678 )\n\n--retrieve the value of our dataref\nlocal tmp_val = dref.getInt( dr_MyCustomDataref )</code>\n\nAdvanced:\n---------\nCreate a new integer dataref that is fully managed by your code.\n\nThese "hooked" datarefs are ideal for managing input from a 3D Cokpit Object that utilizes "manipulators" for user input.\n\nThey can also be useful to provide a dataref that is always the value of a specific algorithm.\n<code>--create a new floating point dataref\n--store the handle for it in a variable called dr_MyCustomDataref\nlocal dr_MyCustomDataref = dref.newInt("my/custom/dataref", "my_custom_dataref_hooks")\n\n--This code is called when a read of the dataref occurs.\nfunction my_custom_dataref_hooks_OnRead()\n\treturn acf.getIAS() * 10\nend\n\n--This code is called when a write to the dataref occurs.\nfunction my_custom_dataref_hooks_OnWrite( newValue )\n\tsound.say("dataref changed")\nend \n</code>\n\nAPI: >= 11.8\n'],
+		['dref.newIntArray', 'dref.newIntArray( string_dataref_name )', '\nReturns: dref_id\n\nCreates a new int-array dataref.\n\nUse this when you want to use "part numbers" in your OBJ8 files.\n\nEg:\nmy/custom/float/array[2]\n\nValues are managed by Gizmo64. \nThe new dataref supports read+write access.\nAny other plugin may change their value at any time.\n\n<code>--Create a new custom dataref of type: float-array\nlocal dr_MyCustomIntArray = dref.newIntArray( "my/custom/int/array" )\n\n--Adjust the size of the float-array dataref. This can be done at any time.\ndref.setArraySize( dr_MyCustomIntArray, 10 )\n\n--You can now use "part numbers" [0] through [9] in your OBJ8 files.\n</code>\n\nAPI: >= 11.8\n'],
 		['dref.publish', 'dref.publish( string_dataref_name )', 'Returns: nothing\nInforms DataRefEditor that a dataref with the specified name exists.\n\nThe dataref does not need to exist.\nThe dataref does not need to belong to Gizmo64.\n\nAPI: >= 13.07.05\n\n'],
 		['dref.setArraySize', 'dref.setArraySize( dref_id, new_size )', ' Returns: nothing\n \n Only valid when used on a custom-dataref that is owned and managed by Gizmo. Hooked datarefs manage their own size.\n \n API: >= 11.8\n \n'],
 		['dref.setAutoPublish', 'dref.setAutoPublish( boolean )', 'Returns: nothing\n\nToggles auto-publish feature of DRE for finer control of large projects.\n\nAPI: >= 13.07.05\n'],
@@ -275,8 +275,8 @@ var gizmo_dox_data = {
 		['map.setRange', 'map.setRange( map_id, range )', ' Returns: nothing\n \n API: >= broken\n \n']
 		],
 	'math' : [
-		['math.abs', 'math.abs(x)', '\nReturns the absolute value of x.\n'],
-		['math.acos', 'math.acos(x)', '\nReturns the arc cosine of x (in radians).\n'],
+		['math.abs', 'math.abs(x)', '\nReturns: the absolute value of x.\n'],
+		['math.acos', 'math.acos(x)', '\nReturns: the arc cosine of x (in radians).\n'],
 		['math.asin', 'math.asin(x)', '\nReturns the arc sine of x (in radians).\n'],
 		['math.atan', 'math.atan(x)', '\nReturns the arc tangent of x (in radians).\n'],
 		['math.atan2', 'math.atan2(y, x)', '\nReturns the arc tangent of y/x (in radians), but uses the signs of both parameters to find the quadrant of the result. (It also handles correctly the case of x being zero.)\n'],
@@ -336,7 +336,7 @@ var gizmo_dox_data = {
 		['os.read_me', 'os.read_me()', '\n The following functions are disabled in Gizmo64: \n\tos.execute, os.tmpname, os.exit, io.popen\n \n This is to prevent malicious scripts from causing annoyance on the users computer.\n \n All other os functions are available as documented in Lua manuals.\n\n']
 		],
 	'package' : [
-		['package.read_me', 'package.read_me()', '\n Gizmo provides the full Lua package.api\n']
+		['package.read_me', 'package.read_me()', '\n Gizmo64 provides the full Lua package.api\n \n http://www.lua.com/docs/package.html\n \n']
 		],
 	'particles' : [
 		['particles.newParticles', 'particles.newParticles()', ' Returns: particles_id - handle for particle engine, useful in other particles.api functions.\n'],
@@ -433,7 +433,7 @@ var gizmo_dox_data = {
 		['sound.stop', 'sound.stop( sound_source_id )', ' \n Stops playback for a given sound, moves playhead back to start of sample.\n']
 		],
 	'string' : [
-		['string.read_me', 'string.read_me()', ' \n Gizmo provides the full Lua string.api\n']
+		['string.read_me', 'string.read_me()', ' \n Gizmo64 provides the full Lua string.api\n']
 		],
 	'table' : [
 		['table.read_me', 'table.read_me()', '']
