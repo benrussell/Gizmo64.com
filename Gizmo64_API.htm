@@ -9,11 +9,28 @@
     <script src='Gizmo_API.js'></script>
 
 
-    <!-- source code highlighting -->
+
+    <link href="rainbow-master/themes/github.css" rel="stylesheet" type="text/css">
+
+    <script src='rainbow-master/js/rainbow.js'></script>
+    <script src='rainbow-master/js/language/lua.js'></script>
+
+
+    <!-- source code highlighting - - >
     <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/default.min.css">
     <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
 
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+
+        console.warn( hljs.listLanguages() );
+
+        //hljs.configure( {
+        //   languages: ['lua']
+        //});
+
+        //hljs.initHighlightingOnLoad();
+    </script>
+    -->
 
 
     <body style="overflow: hidden;" onload='OnLoad();' onresize='OnResize();'>

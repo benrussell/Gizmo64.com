@@ -41,7 +41,7 @@ var gizmo_events = {
 		['OnBeforeReboot', 'OnBeforeReboot', '\n<pre><code>function OnBeforeReboot()\n--This hook has been created to give you a chance to cleanup x-planes state.\n--This may include releasing overrides, restoring the autopilot/fmc, etc.\nend\n</code></pre>\n', 'boot'],
 		['OnBoot', 'OnBoot', '\n<pre><code>function OnBoot()\n--Gizmo has rebooted, init your code.\n--This event is also called when the user first loads your ACF file.\nend\n</code></pre>\n', 'boot'],
 		['OnFirstFrame', 'OnFirstFrame', '\n<pre><code>function OnFirstFrame()\n--OnBoot -> ACF Finishes Loading -> OnFirstFrame\n--set any "default acf state" datarefs here.\nend\n</code></pre>\n\nAPI: >= 11.5.12\n', 'boot'],
-		['OnKickStart', 'OnKickStart', '\n<pre><code>function OnKickStart()\n--Called during LuaVM restart. Used to initiate boot process. Detects which script to load for the Players current aircraft.\nend\n</code></pre>\n', 'boot']
+		['OnKickStart', 'OnKickStart', '\n<pre><code lang=\'lua\'>function OnKickStart()\n--Called during LuaVM restart. Used to initiate boot process. Detects which script to load for the Players current aircraft.\nend\n</code></pre>\n', 'boot']
 		],
 	'flightloop' : [
 		['OnUpdate', 'OnUpdate', '\n<pre><code>function OnUpdate()\n--this is your basic "every frame" function call, do most of your work here.\nend</code></pre>\n', 'flightloop']
