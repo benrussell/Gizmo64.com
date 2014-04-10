@@ -3,7 +3,7 @@ dref = {}
 function dref.getArraySize( dref_id ) end
 function dref.getBytes( dataref_id, start_at, number_to_fetch ) end
 function dref.getDataref( string_dataref_name ) end
-function dref.getFloat( dataref_id ) end
+function dref.getFloat( dref_id ) end
 function dref.getFloatV( dataref_id, start_at, number_to_fetch ) end
 function dref.getInt( dataref_id ) end
 function dref.getIntV( dataref_id, start_at, number_to_fetch ) end

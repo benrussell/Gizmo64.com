@@ -1,4 +1,4 @@
 
 gxt = {}
-function gxt.load() end
-function gxt.unload() end
+function gxt.load( extension_name ) end
+function gxt.unload( extension_name ) end

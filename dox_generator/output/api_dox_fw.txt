@@ -117,3 +117,4 @@ function vardump_original(value, depth, key)
 function vardump_lua(value, depth, key)
 	type(value)	== 'function' or
 function var_dump( target_var )
+new api section: console
