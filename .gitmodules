@@ -4,3 +4,6 @@
 [submodule "ajcm"]
 	path = ajcm
 	url = https://github.com/benrussell/ajcm.git
+[submodule "autocomplete stubs"]
+	path = autocomplete stubs
+	url = https://github.com/benrussell/Gizmo-Docs-AutoComplete-Stubs.git
