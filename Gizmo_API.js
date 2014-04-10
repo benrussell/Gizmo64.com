@@ -217,6 +217,7 @@ function setContent( header, body ){
 
 
 	//be specific about our language usages.
+	body = body.replace( /\<code\>\n/g, "<code>" ); //kill any blank first line code blocks
 	body = body.replace( /\<code\>/g, "<code data-language=\"lua\">" );
 
 
