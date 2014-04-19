@@ -251,6 +251,17 @@ var gizmo_dox_data = {
 		['gui.showWidget', 'gui.showWidget( gui_widget_id )', ' Show target Widget.\n', 'api_gui.cpp#L734'],
 		['gui.showWindow', 'gui.showWindow( gui_window_id )', ' Show target Window.\n', 'api_gui.cpp#L751']
 		],
+	'gxt' : [
+		['gxt.autoload', 'gxt.autoload()', '\nReturns: nothing\n\nInternal function.\n\nLoads all extensions that are setup for auto loading.\n\nAPI: >= 14.04\n', 'gxt_api.lua#L521'],
+		['gxt.getListIdByName', 'gxt.getListIdByName( extensionName )', '\nReturns: gxt.list index\n\nUsed to query the GXT data.\n\nAPI: >= 14.04\n', 'gxt_api.lua#L177'],
+		['gxt.getLoaded', 'gxt.getLoaded( extensionName )', '\nReturns: boolean\n\nTrue if GXT has already been loaded.\n\nAPI: >= 14.04\n', 'gxt_api.lua#L207'],
+		['gxt.load', 'gxt.load( extension_name )', '\nReturns: nothing.\n\nAttempts to load the named Gizmo64 Firmware Extension.\n\nThe GXT API module will look for the folder:\nX-Plane/Resources/plugins/Gizmo64.plugin/firmware/extensions/extension_name\nand attempt to load any valid extension content that it finds.\n\n<code>gxt.load("Notepad")</code>\n\nAPI: >= 14.04\n', 'gxt_api.lua#L304'],
+		['gxt.refresh', 'gxt.refresh()', '\nReturns: nothing\n\nRebuilds the list of gxt modules found in Gizmo64.plugin/firmware/extensions/\n\n<code>\ngxt.refresh()\n</code>\n\nAPI: >= 14.04\n', 'gxt_api.lua#L36'],
+		['gxt.sendMessage', 'gxt.sendMessage( extensionName, message, param )', '\nReturns: nothing\n\nAllows for mediation between modules.\n\nWill allow you to send a message to an extension that hasn\'t been loaded yet.\n\nWill autoload an extension if required.\n\n<code>\ngxt.sendMessage( "TextureExplorer", "Load", "foo.png" )\n</code>\n\nAPI: >= 14.04\n', 'gxt_api.lua#L454'],
+		['gxt.setLoaded', 'gxt.setLoaded( extensionName, bool_loaded )', '\nReturns: nothing\n\nInternal function, sets loaded state for a GXT by name.\n\nAPI: >= 14.04\n', 'gxt_api.lua#L231'],
+		['gxt.show', 'gxt.show( extensionName )', '\nReturns: nothing\n\nUsed to show a GXT GUI.\n\nCalls GXT _OnShow() function.\n\nWill automatically load a GXT using gxt.load(...) if required.\n\n<code>\ngxt.show( "Notepad" )\n</code>\n\nAPI: >= 14.04\n', 'gxt_api.lua#L251'],
+		['gxt.unload', 'gxt.unload( extension_name )', '\nReturns: nothing.\n\nAttempts to unload the named Gizmo64 Firmware Extension.\n\nThe GXT API will call function: extension_name_OnBeforeUnload() to give the target an opportunity to unload cleanly.\n\n<code>gxt.unload("Notepad")</code>\n\nAPI: >= 14.04\n', 'gxt_api.lua#L373']
+		],
 	'hash' : [
 		['hash.md5File', 'hash.md5File( filename )', '\nReturns: string containing md5 hash of file.\n\nAPI: >= 12.01\n', 'api_hash.cpp#L14'],
 		['hash.md5String', 'hash.md5String( input_string_blob )', '\nReturns: string containing md5 hash of file.\n\nAPI: >= 12.01\n', 'api_hash.cpp#L51']
