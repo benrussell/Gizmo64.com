@@ -1,4 +1,4 @@
-var gizmo_dox_data_firmware = {
+var gizmo_dox_data = {
 	'PointCollisionTest' : [
 		['PointCollisionTest.testQuad', 'PointCollisionTest.testQuad( self,  l,b,w,h,  x,y )', '\nEasy* hit-testing for quad regions.\n\nNeeds renaming.\n\nAPI: >= 13.01\n', 'PointCollisionTest.lua#L12']
 		],
