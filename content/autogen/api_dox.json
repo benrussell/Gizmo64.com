@@ -3,52 +3,52 @@ var gizmo_dox_data = {
 		['PointCollisionTest.testQuad', 'PointCollisionTest.testQuad( self,  l,b,w,h,  x,y )', '\nEasy* hit-testing for quad regions.\n\nNeeds renaming.\n\nAPI: >= 13.01\n', 'PointCollisionTest.lua#L12']
 		],
 	'acf' : [
-		['acf.getAStabHeading', 'acf.getAStabHeading()', ' Returns: Aritifial stability input: heading(rudder): range: -1 to 1\n', 'api_acf.cpp#L116'],
-		['acf.getAStabPitch', 'acf.getAStabPitch()', ' Returns: Aritifial stability input: pitch: range: -1 to 1\n', 'api_acf.cpp#L104'],
-		['acf.getAStabRoll', 'acf.getAStabRoll()', ' Returns: Aritifial stability input: roll: range: -1 to 1\n', 'api_acf.cpp#L110'],
-		['acf.getAlpha', 'acf.getAlpha()', ' Returns: Aircraft attitude: alpha in degrees.\n', 'api_acf.cpp#L96'],
-		['acf.getAltAgl', 'acf.getAltAgl()', ' Returns: Aircraft altitude above ground level in meters.\n', 'api_acf.cpp#L16'],
-		['acf.getAltMsl', 'acf.getAltMsl()', ' Returns: Aircraft altitude above mean-sea-level in meters.\n', 'api_acf.cpp#L23'],
-		['acf.getAuthor', 'acf.getAuthor()', ' Returns: Aircraft Author from .acf file as string value.\n', 'api_acf.cpp#L30'],
-		['acf.getBeta', 'acf.getBeta()', ' Returns: Aircraft attitude: beta in degrees.\n', 'api_acf.cpp#L124'],
-		['acf.getDescription', 'acf.getDescription()', ' Returns: Description string from ACF file, as set in PlaneMaker.\n', 'api_acf.cpp#L46'],
-		['acf.getEncryptedScripts', 'acf.getEncryptedScripts()', '\nReturns: boolean. \n\nTrue if booted from init.lua.aes\n\n<code>\nlocal secure_mode = acf.getEncryptedScripts()\n</code>\n\nAPI: 11.11+\n', 'api_acf.cpp#L376'],
-		['acf.getFCHeading', 'acf.getFCHeading()', ' Returns: Value of flight control pitch.\n', 'api_acf.cpp#L143'],
-		['acf.getFCPitch', 'acf.getFCPitch()', ' Returns: Value of flight control pitch.\n', 'api_acf.cpp#L131'],
-		['acf.getFCRoll', 'acf.getFCRoll()', ' Returns: Value of flight control pitch.\n', 'api_acf.cpp#L137'],
-		['acf.getFilename', 'acf.getFilename()', ' Returns: Aircraft filename, no folder info.\n Eg: "c4.acf"\n', 'api_acf.cpp#L62'],
-		['acf.getFolder', 'acf.getFolder()', ' Returns: Full path to aircraft folder as string.\n Eg: "/Applications/X-Plane 9 Demo/Aircraft/General Aviation/Cirrus Jet/"\n', 'api_acf.cpp#L73'],
-		['acf.getGS', 'acf.getGS()', ' Returns: Aircraft ground speed in meters per second.\n', 'api_acf.cpp#L151'],
-		['acf.getGearDeployState', 'acf.getGearDeployState()', ' Returns: Aircraft landing gear: actual state. Lua table of values as ratios.\n\n\tEg: gear_state = { acf.getGearDeployState() }\n\tgear_state is now somthing like [ 1, 0.5, 0.75,  1,1,1,  1,1,1, 1 ]\n', 'api_acf.cpp#L466'],
-		['acf.getGearHandleState', 'acf.getGearHandleState()', ' Returns: Aircraft landing gear handle selection request value. 0 = gear up, 1 = gear down.\n', 'api_acf.cpp#L485'],
-		['acf.getHeading', 'acf.getHeading()', ' Returns: Aircraft attitude: magnetic heading in degrees.\n', 'api_acf.cpp#L159'],
-		['acf.getHeadingTrue', 'acf.getHeadingTrue()', ' Returns: Aircraft attitude: true heading in degrees.\n', 'api_acf.cpp#L165'],
-		['acf.getIAS', 'acf.getIAS()', ' Returns: Indicated Air Speed in Meters/Second.\n', 'api_acf.cpp#L173'],
-		['acf.getKIAS', 'acf.getKIAS()', ' Returns: Indicated Air Speed in Knots.\n', 'api_acf.cpp#L179'],
-		['acf.getLat', 'acf.getLat()', ' Returns: latitude of aircraft as decimal number.\n', 'api_acf.cpp#L187'],
-		['acf.getLiveryFolder', 'acf.getLiveryFolder()', ' Returns: Path of Livery folder relative to X-Plane app.\n Eg: "Aircraft/General Aviation/Cirrus Jet/liveries/red"\n \n API >= 11.9.1\n', 'api_acf.cpp#L207'],
-		['acf.getLiveryName', 'acf.getLiveryName()', ' Returns: Name of livery in use.\n Eg: "red"\n \n API >= 11.9.1\n', 'api_acf.cpp#L195'],
-		['acf.getLon', 'acf.getLon()', ' Returns: longitude of aircraft as decimal number.\n', 'api_acf.cpp#L220'],
-		['acf.getP', 'acf.getP()', '\nReturns: float\n\nThe roll rotation rates (relative to the flight)\n\n<code>\nlocal roll_rate = acf.getP()\n</code>\n\nAPI: >= 12.01\n', 'api_acf.cpp#L252'],
-		['acf.getP_dot', 'acf.getP_dot()', '\nReturns: float\n\nThe roll angular acceleration (relative to the flight)\n\n<code>\nlocal roll_acc_rate = acf.getP_dot()\n</code>\n\nAPI: >= 12.01\n', 'api_acf.cpp#L268'],
-		['acf.getPitch', 'acf.getPitch()', '\nReturns: float\n\nThe pitch of the airframe.\n\n<code>\nlocal acf_pitch = acf.getPitch()\n</code>\n\nAPI: >= 12.01\n', 'api_acf.cpp#L284'],
-		['acf.getPosition', 'acf.getPosition()', ' Returns: lat,lon,alt_msl\n \n API: >= 11.5.18\n', 'api_acf.cpp#L228'],
-		['acf.getPositionGL', 'acf.getPositionGL()', ' See: gfx.getAircraftPositionGL()\n \n API: >= 11.5.18\n', 'api_acf.cpp#L241'],
-		['acf.getQ', 'acf.getQ()', '\nReturns: float\n\nThe pitch rotation rates (relative to the flight)\n\n<code>\nlocal pitch_rate = acf.getQ()\n</code>\n\nAPI: >= 12.01\n', 'api_acf.cpp#L300'],
-		['acf.getQ_dot', 'acf.getQ_dot()', 'Returns: float\n\nThe pitch angular acceleration (relative to the flight)\n\n<code>\nlocal pitch_rate = acf.getQ()\n</code>\n\nAPI: >= 12.01\n', 'api_acf.cpp#L316'],
-		['acf.getR', 'acf.getR()', '\nReturns: float\n\nThe yaw rotation rates (relative to the flight)\n\n<code>\nlocal yaw_rate = acf.getR()\n</code>\n\nAPI: >= 12.01\n', 'api_acf.cpp#L343'],
-		['acf.getR_dot', 'acf.getR_dot()', '\nReturns: float\n\nThe yaw angular acceleration rates (relative to the flight)\n\n<code>\nlocal yaw_rate = acf.getR()\n</code>\n\nAPI: >= 12.01\n', 'api_acf.cpp#L359'],
-		['acf.getRelativeFolder', 'acf.getRelativeFolder()', ' Returns: String containing relative path to X-Plane folder, includes trailing slash. All slashes are set to /\n Eg: "Aircraft/General Aviation/Cirrus Jet/"\n', 'api_acf.cpp#L84'],
-		['acf.getRoll', 'acf.getRoll()', '\nReturns: float\n\nThe airframe roll value in degrees.\n\nAPI: >= 12.01\n', 'api_acf.cpp#L331'],
-		['acf.getSessionTime', 'acf.getSessionTime()', '\nReturns: float\n\nNumber of seconds that the airframe has been flown for this sim-session.\n \nAPI: 11.4+\n', 'api_acf.cpp#L397'],
-		['acf.getTAS', 'acf.getTAS()', ' Returns: Aircraft true airspeed in meters per second.\n', 'api_acf.cpp#L430'],
-		['acf.getTrack', 'acf.getTrack()', ' Returns: Aircraft track-heading across ground in degrees.\n', 'api_acf.cpp#L435'],
-		['acf.getVS', 'acf.getVS()', ' Returns: Aircraft vertical speed in meters per second.\n', 'api_acf.cpp#L440'],
-		['acf.getYokeHeading', 'acf.getYokeHeading()', ' Returns: pilot heading input as decimal number.\n', 'api_acf.cpp#L459'],
-		['acf.getYokePitch', 'acf.getYokePitch()', ' Returns: pilot pitch input as decimal number.\n', 'api_acf.cpp#L447'],
-		['acf.getYokeRoll', 'acf.getYokeRoll()', ' Returns: pilot roll input as decimal number.\n', 'api_acf.cpp#L453'],
-		['acf.load', 'acf.load( xp_relative_fiilename )', '\neg:  acf.load("Aircraft/Heavy Metal/B747-400 United/United-Air.acf")\n\n \n Load the specified ACF file for the user to fly.\n \n This call will reset the Gizmo engine and can be used to instruct X-Plane to load any valid ACF file inside the X-Plane folder.\n \n API: >= 12.9.14\n \n', 'api_acf.cpp#L544'],
-		['acf.reload', 'acf.reload()', '\n Attempts to reload the users currnetly selected aircraft.\n This can be performed to make certain content changes take effect.\n It also has the effect of rebinding any objects to new datarefs that\n were created between the time that the user first loaded the aircraft\n and invoked the ./scripts/init.lua file and when this function is called.\n', 'api_acf.cpp#L496']
+		['acf.getAStabHeading', 'acf.getAStabHeading()', ' Returns: Aritifial stability input: heading(rudder): range: -1 to 1\n', 'api_acf.cpp#L169'],
+		['acf.getAStabPitch', 'acf.getAStabPitch()', ' Returns: Aritifial stability input: pitch: range: -1 to 1\n', 'api_acf.cpp#L157'],
+		['acf.getAStabRoll', 'acf.getAStabRoll()', ' Returns: Aritifial stability input: roll: range: -1 to 1\n', 'api_acf.cpp#L163'],
+		['acf.getAlpha', 'acf.getAlpha()', ' Returns: Aircraft attitude: alpha in degrees.\n', 'api_acf.cpp#L149'],
+		['acf.getAltAgl', 'acf.getAltAgl()', '\nReturns: float\n\nGet Aircraft altitude above ground level in meters.\n\n<code>\nlocal acf_alt_agl = acf.getAltAgl()\n</code>\n\nAPI: >= 12.01\n', 'api_acf.cpp#L16'],
+		['acf.getAltMsl', 'acf.getAltMsl()', '\nReturns: float\n\nGet Aircraft altitude above mean-sea-level in meters.\n\n<code>\nlocal acf_alt_msl = acf.getAltMsl()\n</code>\n\nAPI: >= 12.01\n', 'api_acf.cpp#L32'],
+		['acf.getAuthor', 'acf.getAuthor()', '\nReturns: string\n\nGet Aircraft Author from .acf file as string value.\n\n<code>\nlocal acf_author = acf.getAuthor()\n</code>\n\nAPI: >= 12.01\n', 'api_acf.cpp#L48'],
+		['acf.getBeta', 'acf.getBeta()', ' Returns: Aircraft attitude: beta in degrees.\n', 'api_acf.cpp#L177'],
+		['acf.getDescription', 'acf.getDescription()', 'Returns: string\n\nGet Description string from ACF file, as set in PlaneMaker.\n\n<code>\nlocal acf_desc = acf.getDescription()\n</code>\n\nAPI: >= 12.01\n', 'api_acf.cpp#L73'],
+		['acf.getEncryptedScripts', 'acf.getEncryptedScripts()', '\nReturns: boolean. \n\nTrue if booted from init.lua.aes\n\n<code>\nlocal secure_mode = acf.getEncryptedScripts()\n</code>\n\nAPI: 11.11+\n', 'api_acf.cpp#L429'],
+		['acf.getFCHeading', 'acf.getFCHeading()', ' Returns: Value of flight control pitch.\n', 'api_acf.cpp#L196'],
+		['acf.getFCPitch', 'acf.getFCPitch()', ' Returns: Value of flight control pitch.\n', 'api_acf.cpp#L184'],
+		['acf.getFCRoll', 'acf.getFCRoll()', ' Returns: Value of flight control pitch.\n', 'api_acf.cpp#L190'],
+		['acf.getFilename', 'acf.getFilename()', '\nReturns: string\n\n<code>\n--Get Aircraft filename, no folder info.\nlocal acf_filename = acf.getFilename()\n\n--acf_filename now contains: "c4.acf"\n</code>\n\nAPI: >= 12.01\n', 'api_acf.cpp#L97'],
+		['acf.getFolder', 'acf.getFolder()', '\nReturns: string\n\nGet Full path to aircraft folder as string.\n\n<code>\n-- "/Applications/X-Plane 9 Demo/Aircraft/General Aviation/Cirrus Jet/"\nlocal acf_folder = acf.getFolder()\n</code>\n\nAPI: >= 12.01\n', 'api_acf.cpp#L117'],
+		['acf.getGS', 'acf.getGS()', ' Returns: Aircraft ground speed in meters per second.\n', 'api_acf.cpp#L204'],
+		['acf.getGearDeployState', 'acf.getGearDeployState()', ' Returns: Aircraft landing gear: actual state. Lua table of values as ratios.\n\n\tEg: gear_state = { acf.getGearDeployState() }\n\tgear_state is now somthing like [ 1, 0.5, 0.75,  1,1,1,  1,1,1, 1 ]\n', 'api_acf.cpp#L519'],
+		['acf.getGearHandleState', 'acf.getGearHandleState()', ' Returns: Aircraft landing gear handle selection request value. 0 = gear up, 1 = gear down.\n', 'api_acf.cpp#L538'],
+		['acf.getHeading', 'acf.getHeading()', ' Returns: Aircraft attitude: magnetic heading in degrees.\n', 'api_acf.cpp#L212'],
+		['acf.getHeadingTrue', 'acf.getHeadingTrue()', ' Returns: Aircraft attitude: true heading in degrees.\n', 'api_acf.cpp#L218'],
+		['acf.getIAS', 'acf.getIAS()', ' Returns: Indicated Air Speed in Meters/Second.\n', 'api_acf.cpp#L226'],
+		['acf.getKIAS', 'acf.getKIAS()', ' Returns: Indicated Air Speed in Knots.\n', 'api_acf.cpp#L232'],
+		['acf.getLat', 'acf.getLat()', ' Returns: latitude of aircraft as decimal number.\n', 'api_acf.cpp#L240'],
+		['acf.getLiveryFolder', 'acf.getLiveryFolder()', ' Returns: Path of Livery folder relative to X-Plane app.\n Eg: "Aircraft/General Aviation/Cirrus Jet/liveries/red"\n \n API >= 11.9.1\n', 'api_acf.cpp#L260'],
+		['acf.getLiveryName', 'acf.getLiveryName()', ' Returns: Name of livery in use.\n Eg: "red"\n \n API >= 11.9.1\n', 'api_acf.cpp#L248'],
+		['acf.getLon', 'acf.getLon()', ' Returns: longitude of aircraft as decimal number.\n', 'api_acf.cpp#L273'],
+		['acf.getP', 'acf.getP()', '\nReturns: float\n\nThe roll rotation rates (relative to the flight)\n\n<code>\nlocal roll_rate = acf.getP()\n</code>\n\nAPI: >= 12.01\n', 'api_acf.cpp#L305'],
+		['acf.getP_dot', 'acf.getP_dot()', '\nReturns: float\n\nThe roll angular acceleration (relative to the flight)\n\n<code>\nlocal roll_acc_rate = acf.getP_dot()\n</code>\n\nAPI: >= 12.01\n', 'api_acf.cpp#L321'],
+		['acf.getPitch', 'acf.getPitch()', '\nReturns: float\n\nThe pitch of the airframe.\n\n<code>\nlocal acf_pitch = acf.getPitch()\n</code>\n\nAPI: >= 12.01\n', 'api_acf.cpp#L337'],
+		['acf.getPosition', 'acf.getPosition()', ' Returns: lat,lon,alt_msl\n \n API: >= 11.5.18\n', 'api_acf.cpp#L281'],
+		['acf.getPositionGL', 'acf.getPositionGL()', ' See: gfx.getAircraftPositionGL()\n \n API: >= 11.5.18\n', 'api_acf.cpp#L294'],
+		['acf.getQ', 'acf.getQ()', '\nReturns: float\n\nThe pitch rotation rates (relative to the flight)\n\n<code>\nlocal pitch_rate = acf.getQ()\n</code>\n\nAPI: >= 12.01\n', 'api_acf.cpp#L353'],
+		['acf.getQ_dot', 'acf.getQ_dot()', 'Returns: float\n\nThe pitch angular acceleration (relative to the flight)\n\n<code>\nlocal pitch_rate = acf.getQ()\n</code>\n\nAPI: >= 12.01\n', 'api_acf.cpp#L369'],
+		['acf.getR', 'acf.getR()', '\nReturns: float\n\nThe yaw rotation rates (relative to the flight)\n\n<code>\nlocal yaw_rate = acf.getR()\n</code>\n\nAPI: >= 12.01\n', 'api_acf.cpp#L396'],
+		['acf.getR_dot', 'acf.getR_dot()', '\nReturns: float\n\nThe yaw angular acceleration rates (relative to the flight)\n\n<code>\nlocal yaw_rate = acf.getR()\n</code>\n\nAPI: >= 12.01\n', 'api_acf.cpp#L412'],
+		['acf.getRelativeFolder', 'acf.getRelativeFolder()', ' Returns: String containing relative path to X-Plane folder, includes trailing slash. All slashes are set to /\n Eg: "Aircraft/General Aviation/Cirrus Jet/"\n', 'api_acf.cpp#L137'],
+		['acf.getRoll', 'acf.getRoll()', '\nReturns: float\n\nThe airframe roll value in degrees.\n\nAPI: >= 12.01\n', 'api_acf.cpp#L384'],
+		['acf.getSessionTime', 'acf.getSessionTime()', '\nReturns: float\n\nNumber of seconds that the airframe has been flown for this sim-session.\n \nAPI: 11.4+\n', 'api_acf.cpp#L450'],
+		['acf.getTAS', 'acf.getTAS()', ' Returns: Aircraft true airspeed in meters per second.\n', 'api_acf.cpp#L483'],
+		['acf.getTrack', 'acf.getTrack()', ' Returns: Aircraft track-heading across ground in degrees.\n', 'api_acf.cpp#L488'],
+		['acf.getVS', 'acf.getVS()', ' Returns: Aircraft vertical speed in meters per second.\n', 'api_acf.cpp#L493'],
+		['acf.getYokeHeading', 'acf.getYokeHeading()', ' Returns: pilot heading input as decimal number.\n', 'api_acf.cpp#L512'],
+		['acf.getYokePitch', 'acf.getYokePitch()', ' Returns: pilot pitch input as decimal number.\n', 'api_acf.cpp#L500'],
+		['acf.getYokeRoll', 'acf.getYokeRoll()', ' Returns: pilot roll input as decimal number.\n', 'api_acf.cpp#L506'],
+		['acf.load', 'acf.load( xp_relative_fiilename )', '\neg:  acf.load("Aircraft/Heavy Metal/B747-400 United/United-Air.acf")\n\n \n Load the specified ACF file for the user to fly.\n \n This call will reset the Gizmo engine and can be used to instruct X-Plane to load any valid ACF file inside the X-Plane folder.\n \n API: >= 12.9.14\n \n', 'api_acf.cpp#L597'],
+		['acf.reload', 'acf.reload()', '\n Attempts to reload the users currnetly selected aircraft.\n This can be performed to make certain content changes take effect.\n It also has the effect of rebinding any objects to new datarefs that\n were created between the time that the user first loaded the aircraft\n and invoked the ./scripts/init.lua file and when this function is called.\n', 'api_acf.cpp#L549']
 		],
 	'camera' : [
 		['camera.getAttitude', 'camera.getAttitude()', '\nReturns: pitch,roll,heading\nEg: p,r,h = camera.getAttitude()\n\nAPI: >= 11.11.14\n', 'api_camera.cpp#L27'],
@@ -71,9 +71,9 @@ var gizmo_dox_data = {
 		['color.read_me', 'color.read_me()', '\nGizmo64 provides a table of common color names that can be used to make your code easier to read and write.\n\nPlease see this file for more information:\nhttps://github.com/benrussell/Gizmo-Firmware/blob/master/firmware/core/color_api.lua\n\n<code>\ngfx.setColor( color.red )\n</code>\n\nColors available as of 2014.04.19\n\ncolor.red\ncolor.green\ncolor.blue\n\ncolor.yellow\ncolor.orange\ncolor.magenta\n\ncolor.black\ncolor.white\n\ncolor.dark_gray\ncolor.light_gray\ncolor.gray\ncolor.grey\n\ncolor.bg_gray\ncolor.bg_gray_bright\n\n\nAPI: >= 14.04\n', 'color_api.lua#L12']
 		],
 	'console' : [
-		['console.error', 'console.error( message )', '\nLog an error message to the console.\n', 'console_api.lua#L30'],
-		['console.log', 'console.log( message )', '\nLog a message to the console.\n', 'console_api.lua#L22'],
-		['console.warn', 'console.warn( message )', '\nLog a warning message to the console.\n', 'console_api.lua#L14']
+		['console.error', 'console.error( message )', '\nLog an error message to the console.\n\n<code>\nconsole.warn("Error!")\n</code>\n\nAPI: >= 12.01\n', 'console_api.lua#L42'],
+		['console.log', 'console.log( message )', '\nLog a message to the console.\n\n<code>\nconsole.warn("Message!")\n</code>\n\nAPI: >= 12.01\n', 'console_api.lua#L28'],
+		['console.warn', 'console.warn( message )', '\nLog a warning message to the console.\n\n<code>\nconsole.warn("Warning!")\n</code>\n\nAPI: >= 12.01\n', 'console_api.lua#L14']
 		],
 	'coroutine' : [
 		['coroutine.read_me', 'coroutine.read_me()', '\nStandard Lua coroutine support is available. \n', 'api_third_party_docs.cpp#L24']
@@ -127,10 +127,10 @@ var gizmo_dox_data = {
 		['fmc.setLatLon', 'fmc.setLatLon( fmc_index_id, Latitude, Longitude, altitude )', ' Changes an entry in the FMS. The destination coordinates will be updated to those of the latitude, longitude and altitude specified.\n', 'api_fmc.cpp#L248']
 		],
 	'font' : [
-		['font.drawString', 'font.drawString( font_id, string_to_draw, OPT_x,OPT_y )', ' Returns: nothing\n \n Usage:\n f = font.getFont( xp.getFolder() .. "Courier New.ttf", 36 )\n \n function OnDraw_Windows()\n\tfont.drawString( f, "Lorem ipsum delorem.", 200, 500 )\n end\n\n \nAPI >= 11.12.13 \n \n', 'api_font.cpp#L637'],
-		['font.getFont', 'font.getFont( full_path_to_font_file, font_size )', ' Returns: font_id\n \n Usage:\n f = font.getFont( xp.getFolder() .. "Courier New.ttf", 36 )\n\nAPI >= 11.12.13\n', 'api_font.cpp#L566'],
-		['font.getStringWidth', 'font.getStringWidth( font_id, string )', ' Returns: horizontal length of string in decimal pixels\n', 'api_font.cpp#L738'],
-		['font.measureString', 'font.measureString( font_id, string )', ' Returns: horizontal length of string in decimal pixels\n', 'api_font.cpp#L734']
+		['font.drawString', 'font.drawString( font_id, string_to_draw, OPT_x,OPT_y )', ' Returns: nothing\n \n Usage:\n f = font.getFont( xp.getFolder() .. "Courier New.ttf", 36 )\n \n function OnDraw_Windows()\n\tfont.drawString( f, "Lorem ipsum delorem.", 200, 500 )\n end\n\n \nAPI >= 11.12.13 \n \n', 'api_font.cpp#L621'],
+		['font.getFont', 'font.getFont( full_path_to_font_file, font_size )', ' Returns: font_id\n \n Usage:\n f = font.getFont( xp.getFolder() .. "Courier New.ttf", 36 )\n\nAPI >= 11.12.13\n', 'api_font.cpp#L550'],
+		['font.getStringWidth', 'font.getStringWidth( font_id, string )', ' Returns: horizontal length of string in decimal pixels\n', 'api_font.cpp#L722'],
+		['font.measureString', 'font.measureString( font_id, string )', ' Returns: horizontal length of string in decimal pixels\n', 'api_font.cpp#L718']
 		],
 	'gfx' : [
 		['gfx.bakeTerrainMap', 'gfx.bakeTerrainMap( texture_id )', ' Bakes a terrain texture image into the desired texture ID. Drawing is handled by your own code.\n', 'api_gfx.cpp#L1880'],
@@ -267,12 +267,12 @@ var gizmo_dox_data = {
 		['hash.md5String', 'hash.md5String( input_string_blob )', '\nReturns: string containing md5 hash of file.\n\nAPI: >= 12.01\n', 'api_hash.cpp#L51']
 		],
 	'http' : [
-		['http.get', 'http.get( url, callback_function_name )', ' Eg:\n function cb_http_get_complete( data, url, size )\n sound.say(\'dl complete: \' .. url)\n end\n \n url = \'http://example.com/foo.htm\'\n sound.say( \'fetch: \' .. url )\n http.get( url, \'cb_http_get_complete\' )\n', 'api_http.cpp#L16'],
-		['http.post', 'http.post( url, callback_function_name, post_payload )', ' Eg:\n payload = string.format( "status=%s", http.urlEncode("this is a status update") ) \n \n See HTTP POST format details for more info. \n It\'s like a query string but the content isn\'t auto encoded by a browser.\n', 'api_http.cpp#L104'],
-		['http.resetProxy', 'http.resetProxy()', ' Resets internal proxy variables. cURL library will default to using ENV variables if any or no proxy at all.\n', 'api_http.cpp#L234'],
-		['http.setProxy', 'http.setProxy( proxy_url )', '\nReturns: nothing\n\nSend a blank string to force use of no proxy for all connections.\nUse http.resetProxy() to reset to default.\n\n<code>\n--Set the proxy:\nhttp.setProxy( "http://user:pass@proxy.host.lan:8001/" )\n\n--Clear the proxy:\nhttp.setProxy( "" )\n</code>\n\nAPI: >= 12.01\n', 'api_http.cpp#L251'],
-		['http.urlDecode', 'http.urlDecode( data, data_length )', ' Returns: url-decoded string\n See http.urlEncode for usage example.\n', 'api_http.cpp#L209'],
-		['http.urlEncode', 'http.urlEncode( data, data_length )', ' Returns: url-encoded string\n Eg:\n s = "raw string data to send."\n e = http.urlEncode( s, #s )\n http.post(url, cb_function, "data=" .. e)\n', 'api_http.cpp#L182']
+		['http.get', 'http.get( url, callback_function_name )', '\n<code>\nfunction cb_http_get_complete( data, url, size )\n\tsound.say(\'dl complete: \' .. url)\nend\n\nlocal url = \'http://example.com/foo.htm\'\nsound.say( \'fetch: \' .. url )\nhttp.get( url, \'cb_http_get_complete\' )\n</code>\n\nAPI: >= 12.01\n', 'api_http.cpp#L16'],
+		['http.post', 'http.post( url, callback_function_name, post_payload )', '\n<code>\nlocal payload = string.format( "status=%s", http.urlEncode("this is a status update") )\n</code>\n\nSee http.get docs also.\n\nSee HTTP POST format details for more info. \nIt\'s like a query string but the content isn\'t auto encoded by a browser.\n\nAPI: >= 12.01\n', 'api_http.cpp#L108'],
+		['http.resetProxy', 'http.resetProxy()', '\nReturns: nothing\n\nResets internal proxy variables. cURL library will default to using ENV variables if any or no proxy at all.\n\n<code>\n--Clear the proxy:\nhttp.resetProxy()\n</code>\n\nAPI: >= 12.01\n', 'api_http.cpp#L258'],
+		['http.setProxy', 'http.setProxy( proxy_url )', '\nReturns: nothing\n\nUse http.resetProxy() to reset to default.\n\n<code>\n--Set the proxy:\nhttp.setProxy( "http://user:pass@proxy.host.com:8001/" )\n</code>\n\n<code>\n--Clear the proxy:\nhttp.resetProxy()\n</code>\n\nAPI: >= 12.01\n', 'api_http.cpp#L285'],
+		['http.urlDecode', 'http.urlDecode( data, data_length )', '\nReturns: url-decoded string\n\n<code>\nlocal packet = "asdfg"\nlocal decoded = http.urlDecode( packet, #packet )\n</code>\n\nAPI: >= 12.01\n', 'api_http.cpp#L226'],
+		['http.urlEncode', 'http.urlEncode( data, data_length )', '\nReturns: url-encoded string\n\n<code>\nlocal url = "http://host.com/foo"\nlocal s = "raw string data to send."\nlocal e = http.urlEncode( s, #s )\n\nhttp.post(url, cb_function, "data=" .. e)\n</code>\n\nAPI: >= 12.01\n', 'api_http.cpp#L192']
 		],
 	'icons' : [
 		['icons.get', 'icons.get( icon_name, OPT_no_cache )', '\nReturns: texture_id\n\nLoad an icon from Gizmo64.plugin/firmware/icons/\n\nActs as a common gateway to shared icon resources, provides caching so that we load a minimal set of texture copies.\n\nSet no_cache to True if you require a unique copy of the icon texture.\n\n<code>\nlocal icon_save = icons.get("save.png")\n</code>\n\nAPI: >= 14.04\n', 'icons_api.lua#L18']
@@ -286,15 +286,6 @@ var gizmo_dox_data = {
 		['logging.error', 'logging.error( message )', '\nReturns: nothing\n\nThis function writes a message to the X-Plane Log.txt file.\n\nAPI: >= 12.2.1\n', 'api_logging.cpp#L66'],
 		['logging.getMessages', 'logging.getMessages()', '\nReturns: table containing all logged messages.\n\nAPI: >= 12.2.1\n', 'api_logging.cpp#L138'],
 		['logging.warning', 'logging.warning( message )', '\nReturns: nothing\n\nThis function writes a message to the X-Plane Log.txt file.\n\nAPI: >= 12.2.1\n', 'api_logging.cpp#L100']
-		],
-	'map' : [
-		['map.bake', 'map.bake( map_id, texture_id )', ' Returns: nothing\n \n API: >= broken\n \n', 'api_map.cpp#L83'],
-		['map.newMap', 'map.newMap()', ' Returns: map_id\n \n API: >= broken\n \n', 'api_map.cpp#L14'],
-		['map.setColorMode', 'map.setColorMode( map_id, map.color_mode )', ' Returns: nothing\n \n See color modes for availanle options.\n \n API: >= broken\n \n', 'api_map.cpp#L48'],
-		['map.setLookAhead', 'map.setLookAhead( map_id, look_ahead )', ' Returns: nothing\n \n API: >= broken\n \n', 'api_map.cpp#L61'],
-		['map.setNorthUp', 'map.setNorthUp( map_id, north_up )', ' Returns: nothing\n \n API: >= broken\n', 'api_map.cpp#L72'],
-		['map.setPosition', 'map.setPosition( map_id, lat, lon, alt_agl, heading )', ' Returns: nothing\n \n API: >= broken\n \n', 'api_map.cpp#L25'],
-		['map.setRange', 'map.setRange( map_id, range )', ' Returns: nothing\n \n API: >= broken\n \n', 'api_map.cpp#L36']
 		],
 	'math' : [
 		['math.abs', 'math.abs(x)', '\nReturns: the absolute value of x.\n', 'api_third_party_docs.cpp#L114'],
@@ -345,15 +336,15 @@ var gizmo_dox_data = {
 		['mouse.setCursor', 'mouse.setCursor( cursor_drawing_function_name )', '\nReturns: nothing\n<code>\n--set cursor to custom GL function\nmouse.setCursor( "drawCustomCursor" )\n\nfunction drawCustomCursor()\n\t--mouse.x and mouse.y are automatically updated by Gizmo64.plugin\n\tgfx.drawString("mouse cursor", mouse.x, mouse.y)\nend\n</code>\n\n<code>\n--reset the mouse cursor to default\nmouse.setCursor("")\n</code>\n\nAPI: >= 12.01\n', 'api_mouse.cpp#L14']
 		],
 	'nav' : [
-		['nav.findNavAid', 'nav.findNavAid( name, id, lat, lon, frequency )', '\nReturns: navaid_id\n\nCombine with nav.setSearchGroups(...)\nThis function can be used to search the nav database.\n\nBy setting "name" or "id" to "*" you can create a wild-card search.\nBy setting "name" or "id" to nil you can create a wild-card search.\n\nAPI: >= 12.01\n', 'api_nav.cpp#L54'],
-		['nav.getFirstNavAid', 'nav.getFirstNavAid()', ' Returns: First navaid_id in the database.\n', 'api_nav.cpp#L301'],
-		['nav.getFirstNavAidOfType', 'nav.getFirstNavAidOfType( navaid_type )', ' Returns: First navaid_id available that matches the specified type.\n', 'api_nav.cpp#L311'],
-		['nav.getLastNavAidOfType', 'nav.getLastNavAidOfType( navaid_type )', ' Returns: Last navaid_id available that matches the specified type.\n', 'api_nav.cpp#L326'],
-		['nav.getNavAidInfo', 'nav.getNavAidInfo( navaid_id )', ' Returns: navaid_type, lat, lon, alt, "ICAO_ID", "Name", reg, freq, heading\n \n Here is some little known info about "getNavAidInfo"...\n Returning frequency for a type of xplm_Nav_Airport is not supported.\n It is also not supported for a type of xplm_Nav_Fix.\n \n Using all other types will return the frequency.\n This is because this info is in the nav database and not the apt or fix databases\n \n API: >= 11.9 Changes the order of the returned parameters.\n Old: navaid_type, lat, lon, alt, freq, heading, "ICAO_ID", "Name", reg\n New: navaid_type, lat, lon, alt, "ICAO_ID", "Name", reg, freq, heading\n', 'api_nav.cpp#L342'],
-		['nav.getNextNavAid', 'nav.getNextNavAid( nav_ref )', ' Returns: Next navaid_id available that matches the specified type.\n', 'api_nav.cpp#L424'],
-		['nav.getTypeName', 'nav.getTypeName( navaid_type )', ' Returns: String representation of nav-aid type, see predefined var list at start of this API chapter for basic info.\n \n Eg:\n x = nav.airport\n name = nav.getTypeName( x )\n print(name)\n -- name is now == "airport"\n \n \n navaid_types:\n The following variables are automatically defined by Gizmo.\n \n nav.unknown\n nav.airport\n nav.ndb\n nav.vor\n nav.ils\n nav.localizer\n nav.glideslope\n nav.outermarker\n nav.middlemarker\n nav.innermarker\n nav.fix\n nav.dme\n nav.latlon\n \n API: >= 11.1(?)\n \n \n nav.not_found -- added as mapping for XPLM_NAV_NOT_FOUND from C SDK.\n See: http://www.xsquawkbox.net/xpsdk/mediawiki/XPLMNavRef\n \n API: >= 11.9.8\n \n', 'api_nav.cpp#L188'],
-		['nav.setSearchGroups', 'nav.setSearchGroups( airports, ndbs, vors, ils, localizers, glideslopes, outermarkers, middle_markers, innermarkers, fixes, dmes, latlons )', ' \n Pass a 0 or 1 in for each option value.\n Combine this with nav.findNavAid()\n \n nav.setSearchGroups( 1,1,1,1, 0,0,0,0, 1,1,1,1 )\n', 'api_nav.cpp#L440'],
-		['navaid_types:', 'navaid_types:', ' The following variables are automatically defined by Gizmo.\n \n nav.unknown\n nav.airport\n nav.ndb\n nav.vor\n nav.ils\n nav.localizer\n nav.glideslope\n nav.outermarker\n nav.middlemarker\n nav.innermarker\n nav.fix\n nav.dme\n nav.latlon\n \n API: >= 11.1(?)\n \n \n nav.not_found -- added as mapping for XPLM_NAV_NOT_FOUND from C SDK.\n See: http://www.xsquawkbox.net/xpsdk/mediawiki/XPLMNavRef\n\n API: >= 11.9.8\n \n \n', 'api_nav.cpp#L24']
+		['nav.findNavAid', 'nav.findNavAid( name, id, lat, lon, frequency )', '\nReturns: navaid_id\n\nCombine with nav.setSearchGroups(...)\nThis function can be used to search the nav database.\n\nBy setting "name" or "id" to "*" you can create a wild-card search.\nBy setting "name" or "id" to nil you can create a wild-card search.\n\nAPI: >= 12.01\n', 'api_nav.cpp#L55'],
+		['nav.getFirstNavAid', 'nav.getFirstNavAid()', ' Returns: First navaid_id in the database.\n', 'api_nav.cpp#L302'],
+		['nav.getFirstNavAidOfType', 'nav.getFirstNavAidOfType( navaid_type )', ' Returns: First navaid_id available that matches the specified type.\n', 'api_nav.cpp#L312'],
+		['nav.getLastNavAidOfType', 'nav.getLastNavAidOfType( navaid_type )', ' Returns: Last navaid_id available that matches the specified type.\n', 'api_nav.cpp#L327'],
+		['nav.getNavAidInfo', 'nav.getNavAidInfo( navaid_id )', ' Returns: navaid_type, lat, lon, alt, "ICAO_ID", "Name", reg, freq, heading\n \n Here is some little known info about "getNavAidInfo"...\n Returning frequency for a type of xplm_Nav_Airport is not supported.\n It is also not supported for a type of xplm_Nav_Fix.\n \n Using all other types will return the frequency.\n This is because this info is in the nav database and not the apt or fix databases\n \n API: >= 11.9 Changes the order of the returned parameters.\n Old: navaid_type, lat, lon, alt, freq, heading, "ICAO_ID", "Name", reg\n New: navaid_type, lat, lon, alt, "ICAO_ID", "Name", reg, freq, heading\n', 'api_nav.cpp#L343'],
+		['nav.getNextNavAid', 'nav.getNextNavAid( nav_ref )', ' Returns: Next navaid_id available that matches the specified type.\n', 'api_nav.cpp#L425'],
+		['nav.getTypeName', 'nav.getTypeName( navaid_type )', 'Returns: String representation of nav-aid type, see predefined var list at start of this API chapter for basic info.\n\n<code>\nlocal x = nav.airport\nlocal name = nav.getTypeName( x )\nprint(name)\n-- name is now == "airport"\n</code>\n\n\nnavaid_types:\nThe following variables are automatically defined by Gizmo.\n\nnav.unknown\nnav.airport\nnav.ndb\nnav.vor\nnav.ils\nnav.localizer\nnav.glideslope\nnav.outermarker\nnav.middlemarker\nnav.innermarker\nnav.fix\nnav.dme\nnav.latlon\n\nAPI: >= 11.1(?)\n\n\nnav.not_found -- added as mapping for XPLM_NAV_NOT_FOUND from C SDK.\nSee: http://www.xsquawkbox.net/xpsdk/mediawiki/XPLMNavRef\n\nAPI: >= 11.9.8\n', 'api_nav.cpp#L189'],
+		['nav.setSearchGroups', 'nav.setSearchGroups( airports, ndbs, vors, ils, localizers, glideslopes, outermarkers, middle_markers, innermarkers, fixes, dmes, latlons )', ' \n Pass a 0 or 1 in for each option value.\n Combine this with nav.findNavAid()\n \n nav.setSearchGroups( 1,1,1,1, 0,0,0,0, 1,1,1,1 )\n', 'api_nav.cpp#L441'],
+		['nav.types', 'nav.types', '\nThe following variables are automatically defined by Gizmo.\n\n<code>\nnav.unknown\nnav.airport\nnav.ndb\nnav.vor\nnav.ils\nnav.localizer\nnav.glideslope\nnav.outermarker\nnav.middlemarker\nnav.innermarker\nnav.fix\nnav.dme\nnav.latlon\n\nnav.not_found\n</code>\n\n\nnav.not_found -- added as mapping for XPLM_NAV_NOT_FOUND from C SDK.\nSee: http://www.xsquawkbox.net/xpsdk/mediawiki/XPLMNavRef\n\nAPI: >= 11.9.8\n', 'api_nav.cpp#L24']
 		],
 	'os' : [
 		['os.read_me', 'os.read_me()', '\nThe following functions are disabled in Gizmo64:\nos.execute, os.tmpname, os.exit, io.popen\n \nThis is to prevent malicious scripts from causing annoyance on the users computer.\n\nAll other os functions are available as documented in Lua manuals.\n\nhttp://www.lua.org/manual/5.2/manual.html#6.9\n\n', 'api_third_party_docs.cpp#L313']
@@ -517,12 +508,12 @@ var gizmo_dox_data = {
 		['xp.getSDKVersion', 'xp.getSDKVersion()', '\nReturns: X-Plane Plugin SDK version as decimal number eg: 2.00\n\n<code>--Detect SDK version as some code may depend on availability in future.\nlocal sdk_version = xp.getSDKVersion()\n</code>\n\nAPI: >= 12.01\n', 'api_xp.cpp#L366'],
 		['xp.getTerrainData', 'xp.getTerrainData( x,y,z )', '\nReturns: x,y,z, nx,ny,nz, vx,vy,vz, wet\n\nWhere:\nx,y,z\t\t: Position in OpenGL space where terrain probe hit terrain polygon. Y value contains terrain height.\nnx,ny,nz\t: Normal of polygon that terrain probe hit. Contains slope data for hitting the side of a mountain.\nvx,vy,vz\t: Velocity data in meters per second(?) for polygon that terrain probe hit. Allows for pitching ship deck.\nwet\t    \t: The terrain polygon that we hit was wet. This is a river, lake, stream or ocean.\n\nAll position related data is in OpenGL space.\nUse gfx.worldToLocal(...) and gfx.localToWorld(...) to translate between a geo-fix and X-Plane GL space.\n\nThe value for wet is either 0 or 1. 0 is dry. 1 is wet.\n\n<code>--Get terrain info for terrain directly below aircraft.\n\n--Fetch position data for aircraft in GL space.\nlocal acfx,acfy,acfz = acf.getPositionGL()\n\n--Query terrain data under our aircraft.\nlocal x,y,z, nx,ny,nz, vx,vy,vz, wet = xp.getTerrainData( acfx,acfy,acfz )\n\nif( wet == 1 )then\n\t--we are over water\nelse\n\t--we are over land\nend\n</code>\n\nAPI: >= 12.01\n', 'api_xp.cpp#L397'],
 		['xp.getVersion', 'xp.getVersion()', '\nReturns: Floating point number containing X-Plane version.\n\nEg: 10.20\n\n<code>--detect sim version number and test for compatability.\nif( xp.getVersion() < 10.3 )then\n\t--Our mod is not compatible with old versions of X-Plane.\n\tsound.say("Please upgrade X-Plane to at least 10.30 to run this code.")\nelse\n\t--continue loading...\nend\n</code>\n\nAPI: >= 12.01\n', 'api_xp.cpp#L333'],
-		['xp.loadReplay', 'xp.loadReplay( filename )', '\nReturns: nothing\n\nLoads a replay movie.\n\nNOTE: This will probably hang/block the sim while the replay file loads.\nThis can take a while, it is recommended you display a message to the user -before- calling this function.\n\n<code>\n--Load a replay file from disk.\nxp.loadReplay( "Output/replays/replay.mov" )\n</code>\n\nAPI: >= 12.01\n', 'api_xp.cpp#L519'],
-		['xp.loadSituation', 'xp.loadSituation( filename )', '\nReturns: nothing\n\nLoads a pre-saved situation file.\n\nNOTE: This will probably hang/block the sim while the replay file loads.\nThis can take a while, it is recommended you display a message to the user -before- calling this function.\n\n<code>\n--Load a pre-saved situation file.\nxp.loadSituation( "Output/situations/filename.sit" )\n</code>\n\nAPI: >= 12.01\n', 'api_xp.cpp#L557'],
-		['xp.newCommand', 'xp.newCommand( command_name, description, script_function_name )', '\nReturns: cmd_id\n\nRegisters a new custom command and makes it available for use inside X-Plane.\n\n<code>--Create a new Custom Command Handler.\ncmd_CustomCommandCanopyOpen = xp.newCommand("my/custom/command/canopy_open", "Open the canopy.", "canopy_open" )\n</code>\n\nSetup your scripted event handler code:\n<code>--Custom Event Handlers for command logic functionality.\nfunction canopy_open_OnStart()\n\t--button or key press started\n\n\tconsole.log("_OnStart")\n\t\n\t--If you want to recieve _OnHold and _OnStop notices you need to return 1 from this function.\n\treturn 1\nend\n\nfunction canopy_open_OnHold()\n\t--button or key is being held down\n\tconsole.log("_OnHold")\nend\n\nfunction canopy_open_OnStop()\n\t--button or key was released\n\tconsole.log("_OnStop")\nend\n</code>\n\nYou can also use your command via the xp.command...(...) API calls, eg:\n<code>--Calling a custom command as though it was a sim command.\nxp.commandOnceByName( "my/custom/command/canopy_open" )\n</code>\n\nAPI: >= 12.01\n', 'api_xp.cpp#L596'],
-		['xp.reloadScenery', 'xp.reloadScenery()', '\nReturns: nothing\n\nCalls for scenery system reload. Thrown in for completeness.\n\nNOTE: This will probably hang the sim visuals momentarily. Untested.\n\n<code>--Reload scenery data:\nxp.reloadScenery()\n</code>\n\nAPI: >= 12.01\n', 'api_xp.cpp#L717'],
-		['xp.saveReplay', 'xp.saveReplay( replay_filename )', '\nReturns: nothing\n\nSave a replave movie to disk.\nThis is NOT a quicktime movie.\n\n<code>--Save a replay movie to disk..\nxp.saveReplay( "Output/replays/replay.mov" )\n</code>\n\nAPI: >= 12.01\n', 'api_xp.cpp#L746'],
-		['xp.saveSituation', 'xp.saveSituation( sit_filename )', '\nReturns: nothing\n\nSave a situation file to disk.\n\n<code>--Save a situation file to disk..\nxp.saveSituation( "Output/situations/filename.sit" )\n</code>\n\nAPI: >= 12.01\n', 'api_xp.cpp#L781'],
-		['xp.setPaused', 'xp.setPaused( integer_flag )', '\nReturns: nothing\n\nPause or Unpause the simulation.\n\n<code>xp.setPaused( 1 ) --pause\nxp.setPaused( 0 ) --unpause\n</code>\n\nAPI: >= 12.01\n', 'api_xp.cpp#L483']
+		['xp.loadReplay', 'xp.loadReplay( filename )', '\nReturns: nothing\n\nLoads a replay movie.\n\nNOTE: This will probably hang/block the sim while the replay file loads.\nThis can take a while, it is recommended you display a message to the user -before- calling this function.\n\n<code>\n--Load a replay file from disk.\nxp.loadReplay( "Output/replays/replay.mov" )\n</code>\n\nAPI: >= 12.01\n', 'api_xp.cpp#L523'],
+		['xp.loadSituation', 'xp.loadSituation( filename )', '\nReturns: nothing\n\nLoads a pre-saved situation file.\n\nNOTE: This will probably hang/block the sim while the replay file loads.\nThis can take a while, it is recommended you display a message to the user -before- calling this function.\n\n<code>\n--Load a pre-saved situation file.\nxp.loadSituation( "Output/situations/filename.sit" )\n</code>\n\nAPI: >= 12.01\n', 'api_xp.cpp#L561'],
+		['xp.newCommand', 'xp.newCommand( command_name, description, script_function_name )', '\nReturns: cmd_id\n\nRegisters a new custom command and makes it available for use inside X-Plane.\n\n<code>--Create a new Custom Command Handler.\ncmd_CustomCommandCanopyOpen = xp.newCommand("my/custom/command/canopy_open", "Open the canopy.", "canopy_open" )\n</code>\n\nSetup your scripted event handler code:\n<code>--Custom Event Handlers for command logic functionality.\nfunction canopy_open_OnStart()\n\t--button or key press started\n\n\tconsole.log("_OnStart")\n\t\n\t--If you want to recieve _OnHold and _OnStop notices you need to return 1 from this function.\n\treturn 1\nend\n\nfunction canopy_open_OnHold()\n\t--button or key is being held down\n\tconsole.log("_OnHold")\nend\n\nfunction canopy_open_OnStop()\n\t--button or key was released\n\tconsole.log("_OnStop")\nend\n</code>\n\nYou can also use your command via the xp.command...(...) API calls, eg:\n<code>--Calling a custom command as though it was a sim command.\nxp.commandOnceByName( "my/custom/command/canopy_open" )\n</code>\n\nAPI: >= 12.01\n', 'api_xp.cpp#L600'],
+		['xp.reloadScenery', 'xp.reloadScenery()', '\nReturns: nothing\n\nCalls for scenery system reload. Thrown in for completeness.\n\nNOTE: This will probably hang the sim visuals momentarily. Untested.\n\n<code>--Reload scenery data:\nxp.reloadScenery()\n</code>\n\nAPI: >= 12.01\n', 'api_xp.cpp#L721'],
+		['xp.saveReplay', 'xp.saveReplay( replay_filename )', '\nReturns: nothing\n\nSave a replave movie to disk.\nThis is NOT a quicktime movie.\n\n<code>--Save a replay movie to disk..\nxp.saveReplay( "Output/replays/replay.mov" )\n</code>\n\nAPI: >= 12.01\n', 'api_xp.cpp#L750'],
+		['xp.saveSituation', 'xp.saveSituation( sit_filename )', '\nReturns: nothing\n\nSave a situation file to disk.\n\n<code>--Save a situation file to disk..\nxp.saveSituation( "Output/situations/filename.sit" )\n</code>\n\nAPI: >= 12.01\n', 'api_xp.cpp#L785'],
+		['xp.setPaused', 'xp.setPaused( integer_flag )', '\nReturns: nothing\n\nPause or Unpause the simulation.\n\n<code>\nxp.setPaused( 1 ) --pause\n</code>\n\n<code>\nxp.setPaused( 0 ) --unpause\n</code>\n\nAPI: >= 12.01\n', 'api_xp.cpp#L483']
 		]
 };
