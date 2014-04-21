@@ -274,6 +274,9 @@ var gizmo_dox_data = {
 		['http.urlDecode', 'http.urlDecode( data, data_length )', ' Returns: url-decoded string\n See http.urlEncode for usage example.\n', 'api_http.cpp#L209'],
 		['http.urlEncode', 'http.urlEncode( data, data_length )', ' Returns: url-encoded string\n Eg:\n s = "raw string data to send."\n e = http.urlEncode( s, #s )\n http.post(url, cb_function, "data=" .. e)\n', 'api_http.cpp#L182']
 		],
+	'icons' : [
+		['icons.get', 'icons.get( icon_name, OPT_no_cache )', '\nReturns: texture_id\n\nLoad an icon from Gizmo64.plugin/firmware/icons/\n\nActs as a common gateway to shared icon resources, provides caching so that we load a minimal set of texture copies.\n\nSet no_cache to True if you require a unique copy of the icon texture.\n\n<code>\nlocal icon_save = icons.get("save.png")\n</code>\n\nAPI: >= 14.04\n', 'icons_api.lua#L18']
+		],
 	'io' : [
 		['io.read_me', 'io.read_me()', '\nGizmo exposes a sandboxed set of Lua Stadnard "io" library functions.\nSee the Lua programming references available via Google for more information.\n\nIO Operations are "Sandboxed" inside the X-Plane folder.\nYou may access any file _inside_ the X-Plane folder.\n\nThe sandbox applies to the following functions:\nio.open, os.remove, os.rename\n\nAll other functions behave as documented in Lua manuals.\n\nhttp://www.lua.org/manual/5.2/manual.html#6.8\n\n', 'api_third_party_docs.cpp#L86']
 		],
@@ -326,6 +329,7 @@ var gizmo_dox_data = {
 		['math.tanh', 'math.tanh(x)', '\nReturns the hyperbolic tangent of x.\n', 'api_third_party_docs.cpp#L297']
 		],
 	'matrix' : [
+		['matrix.angleToVector', 'matrix.angleToVector( angle )', '\nReturns: table[3]\n\nConverts an angle into a vector.\n\n<code>\nlocal vec = matrix.angleToVector( 45 )\n</code>\n\nAPI: >= 14.04\n', 'matrix_api.lua#L13'],
 		['matrix.transform3D', 'matrix.transform3D( x,y,z,  tx,ty,tz,  tp,tr,th )', ' Returns: transformed_x, transformed_y, transformed_z\n \n This function can be used to apply a 3D transformation to a position vector.\n\n Submitted by x-alberto?\n \n\n API: >= 11.4\n \n', 'api_matrix.cpp#L14']
 		],
 	'memcache' : [
@@ -426,6 +430,12 @@ var gizmo_dox_data = {
 		['plugins.sendBlob', 'plugins.sendBlob( signature, code, message )', '\nReturns: true if signature was found and message sent, nil otherwise.\n\n<code>\nplugins.sendMessage( "xplanesdk.examples.DataRefEditor", 0x01000000, "myproject/custom/dataref_name" )\n--this would try to register a fake dataref with DRE.\n</code>\n\nAs of 2013.07.01 this function will auto detect the type of data you are sending as "message".\n\nIf you are sending a string value it will be passed over IPC as a C-String pointer.\n\nIf you are sending a numeric value (may include strings that can be cleanly converted to numeric!) then it will be sent as an unsigned  long int.\n\nData packet will be auto packaged with a 4 byte header to indicate the size of the payload.\nThis allows one shot binary packet xfer over the ixplc channel.\n\nAPI: >= 13.07\n', 'api_plugins.cpp#L182'],
 		['plugins.sendMessage', 'plugins.sendMessage( signature, code, message )', '\nReturns: true if signature was found and message sent, nil otherwise.\n\n<code>\nplugins.sendMessage( "xplanesdk.examples.DataRefEditor", 0x01000000, "myproject/custom/dataref_name" )\n--this would try to register a fake dataref with DRE.\n</code>\n\nAs of 2013.07.01 this function will auto detect the type of data you are sending as "message".\n\nIf you are sending a string value it will be passed over IPC as a C-String pointer.\n\nIf you are sending a numeric value (may include strings that can be cleanly converted to numeric!) then it will be sent as an unsigned  long int.\n\nAPI: >= 13.07\n', 'api_plugins.cpp#L100']
 		],
+	'prefs' : [
+		['prefs.get', 'prefs.get( key_name, default_value )', '\nReturns: Value of prefs key or default_value if prefs key_name was not found.\n\nGet a prefs value.\n\n<code>\nlocal var = prefs.get( "foo_bar", 1.234 )\n</code>\n\nAPI: >= 14.04\n', 'prefs_api.lua#L178'],
+		['prefs.load', 'prefs.load()', '\nReturns: nothing\n\nLoad prefs from disk.\n\n<code>\nprefs.load()\n</code>\n\nAPI: >= 14.04\n', 'prefs_api.lua#L19'],
+		['prefs.save', 'prefs.save()', '\nReturns: nothing\n\nSave prefs to disk.\n\n<code>\nprefs.save()\n</code>\n\nAPI: >= 14.04\n', 'prefs_api.lua#L85'],
+		['prefs.set', 'prefs.set( key_name, value_var )', '\nReturns: nothing\n\nSet a prefs value.\n\nDoes not save to disk.\n\n<code>\nprefs.set( "foo_bar", 1.234 )\n</code>\n\nAPI: >= 14.04\n', 'prefs_api.lua#L128']
+		],
 	'shaders' : [
 		['shaders.compile', 'shaders.compile( shader_id, vertex_shader_string_blob, fragment_shader_string_blob )', ' Returns: boolean for success\n', 'api_shaders.cpp#L36'],
 		['shaders.newShader', 'shaders.newShader()', ' Returns: shader_id\n', 'api_shaders.cpp#L21'],
@@ -467,6 +477,12 @@ var gizmo_dox_data = {
 		['timer.reset', 'timer.reset( timer_id )', '\nReturns: nothing\n\nResets the internal value of a timer and restarts it.\n\nThis function will restart a timer_id that has been stopped using: timer.stop()\n\n<code>\n--stop our timer.\ntimer.stop( tmr_repeating_task )\n</code>\n\n<code>\n--create a function that can be called by a one-shot timer.\nfunction restart_timer_after_delay()\n\t--restart our stopped timer.\n\ttimer.reset( tmr_repeating_task )\nend\n\n--create a one shot timer to restart our stopped timer after 1.5 seconds.\ntimer.newOneShot( "restart_timer_after_delay", 1.5 )\n</code>\n\nAPI: >= 12.01\n', 'api_timer.cpp#L315'],
 		['timer.setInterval', 'timer.setInterval( timer_id, interval )', '\nReturns: nothing\n\nUse this function to modify how often a timer executes.\n\nUse the function <i>timer.getInterval( timer_id )</i> to adjust the interval.\n\n<code>\nlocal timer_interval = 120\ntimer.setInterval( tmr_TickTock, timer_interval )\n</code>\n\nAPI: >= 12.01\n\n', 'api_timer.cpp#L509'],
 		['timer.stop', 'timer.stop( timer_id )', '\nReturns: nothing\n\nStops a timer. The function for timer_id will not be called again.\n\nUse timer.reset( timer_id ) to restart a timer that has been stopped.\n\n<code>\n--stop our timer.\ntimer.stop( tmr_repeating_task )\n</code>\n\n<code>\n--create a function that can be called by a one-shot timer.\nfunction restart_timer_after_delay()\n\t--restart our stopped timer.\n\ttimer.reset( tmr_repeating_task )\nend\n\n--create a one shot timer to restart our stopped timer after 1.5 seconds.\ntimer.newOneShot( "restart_timer_after_delay", 1.5 )\n</code>\n\nAPI: >= 12.01\n', 'api_timer.cpp#L191']
+		],
+	'toast' : [
+		['toast.newError', 'toast.newError( caption, message )', '\nReturns: nothing\n\nDisplay an error message on screen.\n\n<code>\ntoast.newError( "toast", "message data" )\n</code>\n\nAPI: >= 14.04\n', 'toast_api.lua#L141'],
+		['toast.newHelp', 'toast.newHelp( caption, message )', '\nReturns: nothing\n\nDisplay an help message on screen.\n\n<code>\ntoast.newHelp( "toast", "message data" )\n</code>\n\nAPI: >= 14.04\n', 'toast_api.lua#L204'],
+		['toast.newInfo', 'toast.newInfo( caption, message )', '\nReturns: nothing\n\nDisplay an info message on screen.\n\n<code>\ntoast.newInfo( "toast", "message data" )\n</code>\n\nAPI: >= 14.04\n', 'toast_api.lua#L183'],
+		['toast.newWarning', 'toast.newWarning( caption, message )', '\nReturns: nothing\n\nDisplay an warning message on screen.\n\n<code>\ntoast.newWarning( "toast", "message data" )\n</code>\n\nAPI: >= 14.04\n', 'toast_api.lua#L162']
 		],
 	'trig' : [
 		['trig.courseToLocation', 'trig.courseToLocation( x,y )', '\nReturns: Float. Heading in degrees.\n\n<code>--compute course to target\nlocal target_h = trig.courseToLocation( x,y )\n</code>\n\nAPI: >= 12.01\n', 'api_trig.cpp#L12'],
