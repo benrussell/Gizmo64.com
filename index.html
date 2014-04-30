@@ -1,48 +1,56 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Gizmo-docs : Gizmo documentation generator." />
+<head>
+    <meta charset='utf-8'/>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+    <meta name="description" content="Gizmo-docs : Gizmo documentation generator."/>
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-      <!-- syntax highlighter -->
-      <script src='rainbow-master/js/rainbow.js'></script>
-      <script src='rainbow-master/js/language/lua.js'></script>
-      <link href="rainbow-master/themes/github.css" rel="stylesheet" type="text/css">
+    <!-- syntax highlighter -->
+    <script src='rainbow-master/js/rainbow.js'></script>
+    <script src='rainbow-master/js/language/lua.js'></script>
+    <link href="rainbow-master/themes/github.css" rel="stylesheet" type="text/css">
 
 
-      <title>Gizmo64.plugin</title>
-  </head>
+    <title>Gizmo64.plugin</title>
+</head>
 
-  <body>
+<body>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer" style='height:170px'>
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/benrussell/Gizmo-Docs">View on GitHub</a>
+<!-- HEADER -->
+<div id="header_wrap" class="outer" style='height:170px'>
+    <header class="inner">
+        <a id="forkme_banner" href="https://github.com/benrussell/Gizmo-Docs">View on GitHub</a>
 
-          <h1 id="project_title">Gizmo64.plugin</h1>
-          <h2 id="project_tagline">Home of Gizmo64.plugin for the X-Plane flight simulator.</h2>
-            <!--
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/benrussell/Gizmo-Docs/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/benrussell/Gizmo-Docs/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-            -->
-        </header>
-    </div>
+        <h1 id="project_title">Gizmo64.plugin</h1>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-gizom64" class="anchor" href="#welcome-to-gizmo64"><span class="octicon octicon-link"></span></a>Welcome.</h3>
+        <h2 id="project_tagline">Home of Gizmo64.plugin for the X-Plane flight simulator.</h2>
+        <!--
+        <section id="downloads">
+          <a class="zip_download_link" href="https://github.com/benrussell/Gizmo-Docs/zipball/master">Download this project as a .zip file</a>
+          <a class="tar_download_link" href="https://github.com/benrussell/Gizmo-Docs/tarball/master">Download this project as a tar.gz file</a>
+        </section>
+        -->
+    </header>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main_content_wrap" class="outer">
+<section id="main_content" class="inner">
+<h3>
+    <a name="welcome-to-gizom64" class="anchor" href="#welcome-to-gizmo64"><span
+            class="octicon octicon-link"></span></a>Welcome.</h3>
 
 <p>Gizmo64 is a plugin for the X-Plane flight simulator that lets you program in Lua Script.</p><br>
-<p>With low level access to the simulator and a feature rich API out of the box Gizmo64 is the easiest way to create feature rich content for X-Plane.</p>
+<br>
+<p>With low level access to the simulator and a feature rich API out of the box Gizmo64 is the easiest way to create
+    feature rich content for X-Plane.</p><br>
+<br>
+<p>Cross Platform Support for 64bit Windows and OSX. One API, Multiple Targets.</p><br>
+<br>
+
 
 <!--
 <pre><code>eg code
@@ -51,79 +59,217 @@
 <p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
 -->
 
-          <br>
-          <br>
-          <h3>
-              <a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting Started: Pilots..</h3>
+<br>
+<br>
 
-          <p>Installation:</p>
-          <p> [ video ] </p>
-
-          <p>Quick Tour:</p>
-          <p> [ video ] </p>
+<h3>
+    <a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Download..
+</h3>
 
 
+<br>
+<br>
 
-          <br>
-          <br>
-          <h3>
-              <a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting Started: Developers..</h3>
+<h3>
+    <a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Install..
+</h3>
 
-              <p>Install videos:</p>
+<p>Windows:</p><br/>
 
-              <p>Hello World:</p>
-                <p>
-                    ACF/scripts/init.lua<br>
+<p> [ video ] </p><br/>
+<br/>
+
+<p>OS X:</p><br/>
+
+<p> [ video ] </p><br/>
+<br/>
+
+<p>Quick Tour:</p><br/>
+
+<p> [ video ] </p><br/>
+
+
+<br>
+<br>
+
+<h3>
+    <a name="api-reference" class="anchor" href="#api-reference"><span class="octicon octicon-link"></span></a>Hello
+    World</h3>
+
+<p>Hello World:</p>
+
+<p>
+    ACF/scripts/init.lua<br>
 <pre><code data-language='lua'>function OnDraw_Windows()
     gfx.setColor(color.red)
     gfx.drawString( "Hello World!", 512, 384 )
-end</code></pre>
+    end</code></pre>
 
-                </p>
-
-
+</p>
 
 
+<br>
+<br>
 
-          <br>
-          <br>
-          <h3>
-            <a name="api-reference" class="anchor" href="#api-reference"><span class="octicon octicon-link"></span></a>Documentation</h3>
+<h3>
+    <a name="api-reference" class="anchor" href="#api-reference"><span class="octicon octicon-link"></span></a>Documentation
+</h3>
 
-            <p>
-                <a href='Gizmo64_API.htm' target='_blank'>Gizmo64 API Reference Manual</a>
-            </p>
-
-
-
-          <br>
-          <br>
-          <h3>
-            <a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Gratuitous wall of Logos:</h3>
-
-            <p>
-
-            </p>
+<p>
+    <a href='Gizmo64_API.htm' target='_blank'>Gizmo64 API Reference Manual</a>
+</p>
 
 
-          <br>
-          <br>
-          <h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<br>
+<br>
 
-<p>Having trouble with Gizmo64? Contact <a href="mailto:support@x-plugins.com">support@x-plugins.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
+<h3>
+    <a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span
+            class="octicon octicon-link"></span></a>Who's using Gizmo?</h3>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
+<p>
+
+<div style="background-color: white; foo:#f8f8f8; width:562px; border-radius:3px; border: solid 1px #ccc; padding: 50px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center; ">
+
+
+    <!-- old school. -->
+    <table width="100%" cellpadding='0' cellspacing='0' style="border: 0px solid black;">
+        <tr>
+            <td class='trophy'>
+                <a href='http://ixeg.net' target='_blank'>
+                    <img width='180' id='imgIXEG' src='images/IXEG logo.png'/>
+                </a>
+            </td>
+            <td class='trophy'>
+                <a href='http://x-aviation.com' target='_blank'>
+                    <img width='180' id='imgXA' src='images/X-Aviation.png'/>
+                </a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class='trophy'>
+                <a href='https://www.facebook.com/OfficialLeadingEdgeSimulations' target='_blank'>
+                    <img width='180' id='imgIXEG' src='images/LES Logo.png'/>
+                </a>
+            </td>
+            
+            <td class='trophy'>
+                <img width='180' id='imgIXEG' src='images/JGX_logo.png'/>
+            </td>
+        </tr>
+
+        <tr>
+            <td class='trophy'>
+                <!-- IA -->
+                <img width='128' id='imgSecret' alt='IA' src='images/secret.png'/>
+            </td>
+            
+            <td class='trophy'>
+                <a href='http://x-scenery.com' target='_blank'>
+                    <img width='180' id='imgXScenery' alt='X-Scenery' src='images/X-Scenery%20Logo.png'/>
+                </a>
+            </td>
+        </tr>
+
+
+        <!-- Loughborough -->
+        <tr>
+            <td class='trophy' colspan='3' width='100%' style='text-align: center; vertical-align: bottom;'>
+                <a href='http://syseng.lboro.ac.uk' target='_blank'>
+                <img width='400' id='imgSecret' alt='...' src='images/RSSE_lulogo.png'/>
+
+                </a>
+            </td>
+        </tr>
+
+
+        <!-- EA, JA, CO -->
+
+        <tr>
+            <td class='trophy'>
+                <img width='180' id='imgSecret' alt='EA' src='images/secret.png'/>
+            </td>
+            
+            <td class='trophy'>
+                <img width='180' id='imgSecret' alt='JA' src='images/secret.png'/>
+            </td>
+        </tr>
+
+        <tr>
+            <td class='trophy'>
+                <img width='180' id='imgSecret' alt='CO' src='images/secret.png'/>
+            </td>
+            
+            <td class='trophy'>
+                <span img width='180' id='imgSecret' alt='...' src='images/secret.png'/>
+            </td>
+        </tr>
+
+    </table>
+
+
+</div>
+</p>
+
+<br>
+
+
+<h3>Create award winning products with Gizmo64.</h3>
+
+<p>
+
+<div style="background-color: white; foo:#f8f8f8; width:562px; border-radius:3px; border: solid 1px #ccc; padding: 50px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center; ">
+
+    <table width="100%" cellpadding='0' cellspacing='0' style="border: 0px solid black;">
+        <tr>
+            <td class='trophy' style='vertical-align: top;'>
+                <img src='images/pc_pilot_platinum.jpg'><br>
+                <br>
+
+            </td>
+            <td class='trophy' style='text-align: left; vertical-align: top;'>
+
+                Leading Edge Simulation Saab 340A
+                wins Platinum award.<br>
+                <br>
+                <a href='http://www.pcpilot.net/issue_onlineContent.asp?IssueID=5862' target='_blank'>
+                    PC Pilot May/June 2014 Edition<br>
+                    <br>
+                    <img src='http://www.pcpilot.net/central/images/covers/large/5862.jpg' height='128'>
+                </a>
+
+
+            </td>
+        </tr>
+    </table>
+
+</div>
+</p>
+
+
+<br>
+<br>
+
+<h3>
+    <a name="support-or-contact" class="anchor" href="#support-or-contact"><span
+            class="octicon octicon-link"></span></a>Support or Contact</h3>
+
+<p>Having trouble with Gizmo64? Contact <a href="mailto:support@x-plugins.com">support@x-plugins.com</a> and we’ll help you
+    sort it out.</p>
+</section>
+</div>
+
+<!-- FOOTER  -->
+<div id="footer_wrap" class="outer">
+    <footer class="inner">
         <p class="copyright">Gizmo-docs maintained by <a href="https://github.com/benrussell">benrussell</a></p>
+
         <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
 
-    
+    </footer>
+</div>
 
-  </body>
+
+</body>
 </html>

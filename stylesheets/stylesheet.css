@@ -440,3 +440,11 @@ Small Device Styles
   }
 
 }
+
+
+
+.trophy{
+    border: 0px solid grey;
+    text-align: center;
+    vertical-align: middle;
+}
