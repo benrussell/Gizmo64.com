@@ -152,6 +152,18 @@ function buildSectionTree_API(){
 }
 
 
+
+function getBranchInfoForKey( key ){
+
+	for( var x=0; x < branch_info_table.length; x++ ){
+		if( branch_info_table[x].name == key ){
+			return branch_info_table[x];
+		}
+	}
+
+}//end getBranchInfoForKey
+
+
 function expandBranch( key ){
 
 	var branchName_dom = "branch_leaves_" + key;
@@ -159,7 +171,14 @@ function expandBranch( key ){
 
 	//alert( branchName_dom );
 
-	setContent( "Summary: " + key + " API", "branch info" );
+
+	var branch_info = getBranchInfoForKey( key );
+
+	if( branch_info != undefined ){
+		setContent( "Summary: " + key + " API", branch_info.description );
+	}else{
+		setContent( "Summary: " + key + " API", "no docs" );
+	}
 
 
 	switch( branch.style.display ){
