@@ -261,6 +261,31 @@ function OnLoad(){
 
 	syncSectionTreeHeight();
 
+
+	//detect any bookmark #name_data - if found, we auto display the content that best matches.
+	//works with events tab at the moment
+	//expand to work with function names and event names so we can focus any item in the docs with an easy link
+	var location = String(document.location);
+	var tokens = location.split("#");
+	//alert( tokens[1] );
+	if( tokens.length == 2 ){
+		var auto_show = tokens[1];
+
+		switch( auto_show ){
+			case "events":
+				//display events tab.
+				setTab( 'events' );
+				break;
+
+			default:
+				//lookup api function name...
+
+				break;
+
+		}//end switch
+	}//end tokens length check
+
+
 }
 
 
