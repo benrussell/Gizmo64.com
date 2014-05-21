@@ -69,6 +69,10 @@
     position: relative;
     top: 20px;
 
+    overflow: scroll;
+
+    _height: 600px;
+
     /*
     // The styling data we're after is actually in a class override for <pre> elements.
     border: 2px solid black;

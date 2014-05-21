@@ -278,7 +278,7 @@ function OnLoad(){
 	buildSectionTree_API();
 	buildSectionTree_Events();
 
-	syncSectionTreeHeight();
+	OnResize();
 
 
 	//detect any bookmark #name_data - if found, we auto display the content that best matches.
@@ -337,12 +337,24 @@ function mergeFwData(){
 
 function OnResize(){
 	syncSectionTreeHeight();
+
+	syncContentBodyHeight();
+
+}
+
+
+function syncContentBodyHeight(){
+	//sync the height of the display div for content so that scrollbars work properly.
+	var height = document.body.clientHeight;
+	height = height - 100;
+
+	document.getElementById('div_docBlock_Content').style.height = height + "px";
+
 }
 
 
 function syncSectionTreeHeight(){
 	var height = document.body.clientHeight;
-
 	var top = parseInt( document.getElementById('navTree_api').style.top );
 	//alert( top );
 
@@ -352,7 +364,7 @@ function syncSectionTreeHeight(){
 	document.getElementById('navTree_api').style.height = new_tree_height;
 	document.getElementById('navTree_events').style.height = new_tree_height;
 
-}
+} //syncSectionTreeHeight()
 
 
 
