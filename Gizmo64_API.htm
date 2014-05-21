@@ -46,15 +46,16 @@
 
 
 
-    <body style="overflow: hidden;" onload='OnLoad();' onresize='OnResize();'>
+    <body style="overflow: hidden;" onload='OnLoad();' onresize='OnResize();' _onhashchange='loadBookmark()';>
 
         <div>
 
             <div id='searchBox' class='outer'  style='text-align:center;  width:310px; padding: 0px; overflow: hidden; height:72px; left:0px; top:0px; padding: 5px; position:absolute; background-color:#777777; '>
 
-                <form method="get" action="/search" id="search" style='display: hidden; b_order: 1px solid red;'>
-                    <input name="q" type="text" size="40" placeholder="Search..." />
+                <form method="get" action="" id="search" style='' onsubmit='return false;'>
+                    <input name="q" type="text" size="40" placeholder="(disabled) Search..." onchange=''/>
                 </form>
+
 
 
                 <!-- tab buttons -->

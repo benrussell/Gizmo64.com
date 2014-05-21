@@ -3,6 +3,9 @@
 function leafClick( leaf_div, branch, node_name, dox_source ){
 
 	if( leaf_div != undefined ){
+
+		//if the leaf_div valus is set to null then we're probably loading a bookmark
+
 		var all_active_nav_leaves = document.getElementsByClassName("leaf_active");
 		for( var ileaf=0; ileaf < all_active_nav_leaves.length; ileaf++ ){
 			var target_leaf = all_active_nav_leaves[ ileaf ];
@@ -37,11 +40,18 @@ function leafClick( leaf_div, branch, node_name, dox_source ){
 		//var content = "<pre class='none'>" + leaf[2] + "</pre>";
 		var content = leaf[2];
 
-		/*
+
 		if( leaf[3] != undefined ){
-			content += "<a target='_blank' href='https://github.com/benrussell/Gizmo-Firmware/tree/master/firmware/core/" + leaf[3] + "'>View source..</a>";
+
+
+			var leaf_tokens = leaf[3].split(".lua");
+			if( leaf_tokens.length == 2 ){
+				//this is a link to lua firmware source code..
+				content += "<a target='_blank' href='https://github.com/benrussell/Gizmo-Firmware/tree/master/firmware/core/" + leaf[3] + "'>View source..</a>";
+			}
+
 		}
-		*/
+
 
 		setContent( leaf[1], content  );
 
@@ -108,11 +118,16 @@ function createSectionTreeBranch( key, leaves ){
 
 
 
-function buildSectionTree_Events(){
+function buildSectionTree_Events( target_event_name ){
 
 	var divBlob = "";
 	var leaves = new Array();
 
+	if( target_event_name == undefined ){ return; }
+
+
+
+	var parent_section_name = ""; //detect with code because event signature does not supply grouping data very well.
 
 
 	//build API event reference
@@ -127,6 +142,15 @@ function buildSectionTree_Events(){
 		//alert(leaves.length);
 		for( x=0; x<leaves.length; x++ ){
 			var sNewLeaf = "<div id='leaf_"+leaves[x][0]+"' class='leaf' onclick='leafClick(this, \"" + key + "\", \"" + leaves[x][0] + "\", gizmo_events);'>" + leaves[x][0] + "</div>";
+
+			if( target_event_name == (leaves[x][0]) ){
+				//alert("event leaf match");
+				parent_section_name = key;
+				sNewLeaf = "<div id='leaf_"+leaves[x][0]+"' class='leaf_active' onclick='leafClick(this, \"" + key + "\", \"" + leaves[x][0] + "\", gizmo_events);'>" + leaves[x][0] + "</div>";
+
+				leafClick(null, key, leaves[x][0], gizmo_events);
+			}
+
 			divBlob += sNewLeaf;
 		}
 
@@ -136,6 +160,22 @@ function buildSectionTree_Events(){
 
 	var tree = document.getElementById("navTree_events");
 	tree.innerHTML = divBlob;
+
+
+
+
+	if( target_event_name != "" ){
+		setTab( 'events' );
+
+		var branchName_dom = "branch_leaves_" + parent_section_name;
+		//alert( branchName_dom );
+		var branch = document.getElementById( branchName_dom );
+
+		branch.style.display = "";
+
+	}
+
+
 
 }
 
@@ -323,34 +363,39 @@ function OnLoad(){
 
 
 	//-detect and decode a bookmark in the URL that we should open automatically in the browser.
-	var location_tokens = String(document.location).split("#");
-	var bookmark = "";
-	//alert( location_tokens.length );
-	if( location_tokens.length == 2 ){
-		bookmark = location_tokens[1];
-	}
-
-	//alert( bookmark );
+	var bookmark = location.hash.replace("#","");
 
 	//-if we found a bookmark we will decode it here so we can pass appropriate params to our render functions
-	var api_group = "";
-	var api_function = "";
+	var target_api_group = "";
+	var target_api_function = "";
+	var target_event_name = "";
+
+	//if we have a bookmark we examine it to detect whether it is an Event Name or a function signature.
 	if( bookmark != "" ){
 		var bookmark_api_tokens = bookmark.split(".");
-		api_group = bookmark_api_tokens[0];
-		api_function = bookmark_api_tokens[1];
+
+		if( bookmark_api_tokens.length == 2 ){
+			//this is an API signature
+			target_api_group = bookmark_api_tokens[0];
+			target_api_function = bookmark_api_tokens[1];
+
+		}else{
+			//this is an event name
+			target_event_name = bookmark;
+
+		}
+
+
+
 	}
 
 	//alert( api_group + " / " + api_function );
 
 
-	buildSectionTree_API( api_group, bookmark );
-	buildSectionTree_Events();
+	buildSectionTree_API( target_api_group, bookmark );
+	buildSectionTree_Events( target_event_name );
 
 	OnResize();
-
-	//expandBranch( api_group );
-
 
 
 
