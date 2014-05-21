@@ -2,15 +2,15 @@
 
 function leafClick( leaf_div, branch, node_name, dox_source ){
 
+	if( leaf_div != undefined ){
+		var all_active_nav_leaves = document.getElementsByClassName("leaf_active");
+		for( var ileaf=0; ileaf < all_active_nav_leaves.length; ileaf++ ){
+			var target_leaf = all_active_nav_leaves[ ileaf ];
+			target_leaf.className = "leaf";
+		}
 
-	var all_active_nav_leaves = document.getElementsByClassName("leaf_active");
-	for( var ileaf=0; ileaf < all_active_nav_leaves.length; ileaf++ ){
-		var target_leaf = all_active_nav_leaves[ ileaf ];
-		target_leaf.className = "leaf";
-	}
-
-	leaf_div.className = "leaf_active";
-
+		leaf_div.className = "leaf_active";
+	}//check for null leaf_div
 
 
 	var leaves = dox_source[branch];
@@ -44,6 +44,26 @@ function leafClick( leaf_div, branch, node_name, dox_source ){
 		*/
 
 		setContent( leaf[1], content  );
+
+
+
+		//yuck.
+
+
+
+		//-detect and decode a bookmark in the URL that we should open automatically in the browser.
+		var location_tokens = String(document.location).split("#");
+		var base_url = document.location;
+		//alert( location_tokens.length );
+		if( location_tokens.length == 2 ){
+			base_url = location_tokens[0];
+		}
+
+
+		document.location = base_url + "#" + node_name;
+
+
+
 
 	}
 
@@ -121,7 +141,8 @@ function buildSectionTree_Events(){
 
 
 
-function buildSectionTree_API(){
+function buildSectionTree_API( api_group, bookmark ){
+
 
 	var divBlob = "";
 	var leaves = new Array();
@@ -136,8 +157,20 @@ function buildSectionTree_API(){
 
 			var leaves = gizmo_dox_data[key];
 			//alert(leaves.length);
-			for( x=0; x<leaves.length; x++ ){
+			for( var x=0; x<leaves.length; x++ ){
 				var sNewLeaf = "<div id='leaf_"+leaves[x][0]+"' class='leaf' onclick='leafClick(this, \"" + key + "\", \"" + leaves[x][0] + "\", gizmo_dox_data);'>" + leaves[x][0] + "</div>";
+
+				if( bookmark == leaves[x][0] ){
+					//leaf match, render this with a different CSS class
+					sNewLeaf = "<div id='leaf_"+leaves[x][0]+"' class='leaf_active' onclick='leafClick(this, \"" + key + "\", \"" + leaves[x][0] + "\", gizmo_dox_data);'>" + leaves[x][0] + "</div>";
+
+					//leaf content does not render correctly, fucntion call!
+
+					leafClick(null, key, leaves[x][0], gizmo_dox_data);
+
+				}
+
+
 				divBlob += sNewLeaf;
 			}
 
@@ -148,6 +181,18 @@ function buildSectionTree_API(){
 
 	var tree = document.getElementById("navTree_api");
 	tree.innerHTML = divBlob;
+
+
+	if( api_group != "" ){
+		//expandBranch( api_group );
+
+		var branchName_dom = "branch_leaves_" + api_group;
+		var branch = document.getElementById( branchName_dom );
+
+		branch.style.display = "";
+
+	}
+
 
 }
 
@@ -275,12 +320,41 @@ function setContent( header, body ){
 
 
 function OnLoad(){
-	buildSectionTree_API();
+
+
+	//-detect and decode a bookmark in the URL that we should open automatically in the browser.
+	var location_tokens = String(document.location).split("#");
+	var bookmark = "";
+	//alert( location_tokens.length );
+	if( location_tokens.length == 2 ){
+		bookmark = location_tokens[1];
+	}
+
+	//alert( bookmark );
+
+	//-if we found a bookmark we will decode it here so we can pass appropriate params to our render functions
+	var api_group = "";
+	var api_function = "";
+	if( bookmark != "" ){
+		var bookmark_api_tokens = bookmark.split(".");
+		api_group = bookmark_api_tokens[0];
+		api_function = bookmark_api_tokens[1];
+	}
+
+	//alert( api_group + " / " + api_function );
+
+
+	buildSectionTree_API( api_group, bookmark );
 	buildSectionTree_Events();
 
 	OnResize();
 
+	//expandBranch( api_group );
 
+
+
+
+/*
 	//detect any bookmark #name_data - if found, we auto display the content that best matches.
 	//works with events tab at the moment
 	//expand to work with function names and event names so we can focus any item in the docs with an easy link
@@ -303,6 +377,7 @@ function OnLoad(){
 
 		}//end switch
 	}//end tokens length check
+*/
 
 
 }
