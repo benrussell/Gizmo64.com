@@ -64,7 +64,8 @@ var gizmo_events = {
 	'sim' : [
 		['OnForceRedraw', 'OnForceRedraw', '\n<code>function OnForceRedraw()\n--The user has exited a full screen X-Plane dialog: Eg: WX/Joystick/Rendering options.\n--Does not work for: Load ACF / Change ACF Livery. Checked most others. Please report any that dont work.\nend</code>\nAPI: >= 11.5.12\n', 'sim'],
 		['OnSituationLoaded', 'OnSituationLoaded', '\n<code>function OnSituationLoaded()\n--A .sit file completed loading.\nend</code>\n', 'sim'],
-		['OnTrafficCountChanged', 'OnTrafficCountChanged', '\n<code>function OnTrafficCountChanged()\n\n\t--The number of traffic aircraft has been changed\n\n end</code>\n ', 'sim']
+		['OnTrafficCountChanged', 'OnTrafficCountChanged', '\n<code>function OnTrafficCountChanged()\n\n\t--The number of traffic aircraft has been changed\n\n end</code>\n ', 'sim'],
+		['OnXPlaneDialog', 'OnXPlaneDialog', '\n<code>function OnXPlaneDialog()\n--The user has opened a full screen X-Plane dialog: Eg: WX/Joystick/Rendering options.\n--Does not work for: Load ACF / Change ACF Livery. Checked most others. Please report any that dont work.\nend</code>\nAPI: >= 11.5.12\n', 'sim']
 		],
 	'system menu' : [
 		['OnSystemMenu_AboutGizmo', 'OnSystemMenu_AboutGizmo', '\n<code>function OnSystemMenu_AboutGizmo()\n--Gizmo64 XPL calls this when it wants to display the HotFix which is crafted from Lua widgets.\nend\n</code>\n', 'system menu'],
