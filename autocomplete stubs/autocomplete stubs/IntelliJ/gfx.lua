@@ -1,6 +1,6 @@
 --[[
 Gizmo-Docs Lua Stub
-Generated: 2014/09/11 02:07:07
+Generated: 2014/12/01 03:32:03
 
 Created by: https://github.com/benrussell/Gizmo-Docs-Generator
 --]]
@@ -47,7 +47,8 @@ function getTexture_Paint() end
 function getTexture_UI() end
 function getTexture_XALogo() end
 function loadObject( OPT_object_id, filename ) end
-function loadPng( OPT_texture_id, filename ) end
+function loadObjectEx( OPT_object_id, filename ) end
+function loadPngEx( OPT_texture_id, filename ) end
 function loadTga( OPT_texture_id, filename ) end
 function loadTgaBlob( texture_id, blob, blob_size ) end
 function localToWorld( x,y,z ) end
@@ -55,7 +56,6 @@ function matchAircraftOrientation() end
 function measureString( string ) end
 function newFBO( texture_id, width, height ) end
 function newTexture() end
-function plot( data_set, stride, scale ) end
 function rebindFBO( fbo_id..... ) end
 function releaseFBO( fbo_id ) end
 function screenToGL( win_x, win_y ) end
