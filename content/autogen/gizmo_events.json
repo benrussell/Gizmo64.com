@@ -67,6 +67,13 @@ var gizmo_events = {
 		['OnTrafficCountChanged', 'OnTrafficCountChanged', '\n<code>function OnTrafficCountChanged()\n\n\t--The number of traffic aircraft has been changed\n\n end</code>\n ', 'sim'],
 		['OnXPlaneDialog', 'OnXPlaneDialog', '\n<code>function OnXPlaneDialog()\n--The user has opened a full screen X-Plane dialog: Eg: WX/Joystick/Rendering options.\n--Does not work for: Load ACF / Change ACF Livery. Checked most others. Please report any that dont work.\nend</code>\nAPI: >= 11.5.12\n', 'sim']
 		],
+	'synth' : [
+		['_OnClick', '_OnClick', '\n\n- GUI Widgets.\n- Script Menu Items.\n\n<code>function _OnClick()\n--A widget was clicked.\n\nend\n</code>\n', 'synth'],
+		['_OnCreate', '_OnCreate', '\n\n- GUI Widgets.\n- Script Menu Items.\n\n<code>function _OnClick()\n--A widget was clicked.\n\nend\n</code>\n', 'synth'],
+		['_OnDraw', '_OnDraw', '\n\n- GUI Widgets.\n- Script Menu Items.\n\n<code>function _OnClick()\n--A widget was clicked.\n\nend\n</code>\n', 'synth'],
+		['_OnHold', '_OnHold', '\n\n- GUI Widgets.\n- Script Menu Items.\n\n<code>function _OnClick()\n--A widget was clicked.\n\nend\n</code>\n', 'synth'],
+		['_OnKeyBlur', '_OnKeyBlur', '\n\n- GUI Widgets.\n- Script Menu Items.\n\n<code>function _OnClick()\n--A widget was clicked.\n\nend\n</code>\n', 'synth']
+		],
 	'system menu' : [
 		['OnSystemMenu_AboutGizmo', 'OnSystemMenu_AboutGizmo', '\n<code>function OnSystemMenu_AboutGizmo()\n--Gizmo64 XPL calls this when it wants to display the HotFix which is crafted from Lua widgets.\nend\n</code>\n', 'system menu'],
 		['OnSystemMenu_HotFix', 'OnSystemMenu_HotFix', '\n<code>function OnSystemMenu_HotFix()\n--Gizmo64 XPL calls this when it wants to display the About Dialog which is crafted from Lua widgets.\nend\n</code>\n', 'system menu']
