@@ -1,8 +1,4 @@
 var gizmo_dox_data = {
-	'PointCollisionTest' : [
-		['PointCollisionTest.testQuad', 'PointCollisionTest.testQuad( self,  l,b,w,h,  x,y )', '\nEasy* hit-testing for quad regions.\n\nNeeds renaming.\n\nAPI: >= 13.01\n', 
-		'PointCollisionTest.lua#L12']
-		],
 	'acf' : [
 		['acf.getAStabHeading', 'acf.getAStabHeading()', ' Returns: Aritifial stability input: heading(rudder): range: -1 to 1\n', 
 		'api_acf.cpp#L169'],
@@ -1005,7 +1001,7 @@ var gizmo_dox_data = {
 		['utils.popWebBrowser', 'utils.popWebBrowser( url )', '\r\nReturns: nothing\r\n\r\nOpens the system default web browser and sends user to specified URL.\r\n\r\n<code>--Open a URL in a web browser..\r\nutils.popWebBrowser("http://benrussell.github.io/");\r\n</code>\r\n\r\nAPI: >= 11.5.6\r\n', 
 		'api_utils.cpp#L539'],
 		['utils.setClipboardText', 'utils.setClipboardText( string_data )', '\r\nReturns: nothing\r\n\r\nCopy string_data to the system clipboard.\r\n\r\nThe value of the clipboard cannot be read by Gizmo64 scripts for privacy protection.\r\n\r\n<code>--Set the users clipboard value.\r\nutils.setClipboardText("Gizmo64 rocks!")\r\n</code>\r\n\r\nMac/Win only.\r\n\r\nAPI: >= 13.02.24\r\n', 
-		'api_utils.cpp#L639']
+		'api_utils.cpp#L661']
 		],
 	'xp' : [
 		['xp.clearReplay', 'xp.clearReplay()', '\nReturns: nothing.\n\nClears the X-Plane replay buffer.\n\n<code>xp.clearReplay()\n</code>\n\nAPI: >= 12.01\n', 
