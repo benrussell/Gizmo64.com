@@ -910,7 +910,7 @@ var gizmo_dox_data = {
 		'sound_api.lua#L303'],
 		['sound.stop', 'sound.stop( sound_source_id )', '\nStops playback for a given sound, moves playhead back to start of sample.\n', 
 		'sound_api.lua#L170'],
-		['sound.unbind', 'sound.unbind( source_id )', '\nreturns: Nothing.\n\nRemoves a Buffer Binding with the specified buffer to the specified source.\n\n', 
+		['sound.unbind', 'sound.unbind( source_id )', '\nreturns: Nothing.\n\nClears all sound buffer bindings for the specified source.\n\n', 
 		'sound_api.lua#L37']
 		],
 	'string' : [
