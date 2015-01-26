@@ -93,6 +93,10 @@ var gizmo_dox_data = {
 		['acf.reload', 'acf.reload()', '\n Attempts to reload the users currnetly selected aircraft.\n This can be performed to make certain content changes take effect.\n It also has the effect of rebinding any objects to new datarefs that\n were created between the time that the user first loaded the aircraft\n and invoked the ./scripts/init.lua file and when this function is called.\n', 
 		'api_acf.cpp#L559']
 		],
+	'al' : [
+		['al.readme', 'al.readme()', ' \nGizmo64 makes the LuaAL OpenAL API available for use.\n \nSee the following for more info:\n\nhttp://coronalabs.com/blog/2011/07/27/the-secretundocumented-audio-apis-in-corona-sdk/\nhttps://www.openhub.net/p/luaal\nhttp://www.openal.org/documentation/openal-1.1-specification.pdf\n \n', 
+		'al_api.lua#L10']
+		],
 	'camera' : [
 		['camera.getAttitude', 'camera.getAttitude()', '\nReturns: pitch,roll,heading\nEg: p,r,h = camera.getAttitude()\n\nAPI: >= 11.11.14\n', 
 		'api_camera.cpp#L27'],
