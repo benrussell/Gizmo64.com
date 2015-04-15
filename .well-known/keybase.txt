@@ -1,0 +1,74 @@
+==================================================================
+https://keybase.io/benrussell
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://gizmo64.com
+  * I am benrussell (https://keybase.io/benrussell) on keybase.
+  * I have a public key with fingerprint 08E8 248D D749 280E B160  3255 8516 087F B835 0CEE
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "08e8248dd749280eb16032558516087fb8350cee",
+            "host": "keybase.io",
+            "key_id": "8516087fb8350cee",
+            "kid": "0101aba3a2c3bb139027884b7fc700ec7831674400a70df4d3d455b40ebb44811cdd0a",
+            "uid": "1ad0dc7d76e904cc5d140166de638619",
+            "username": "benrussell"
+        },
+        "service": {
+            "hostname": "gizmo64.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1429107758,
+    "expire_in": 157680000,
+    "prev": "c8780d32243e8ccf75473f84086c7250cb0167d447c2178d45cd9b1c83ef683e",
+    "seqno": 6,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.8
+Comment: https://keybase.io/crypto
+
+yMM4AnicbVJtUFRVGOYjHNnhqwYdI0bkMqRjy+69e8+99+xGNghZMUgYMhbDtN6P
+s8sVuHfZXQhCcwpoVJApLab4sAwDZBgJYRjAUlihmZQpLDIG2bGBMUCTdgQlCbJz
+GfvX+XE+3vd5nvO+z7xDoYF+Ov/KjesP9zIh8/5XB5OK/LIMbkMZIahSKWEpI/LQ
+2mGTFTtyOpyy4iYsBAkRNAEoSRwwmyCJBIolaRPDQAZfIGcTIM2QIkKEnshVXRoD
+ywi8CxlkFcfwwypLOPo/+Ly1BEmRFC/wNG8SaUGgaDNp4iAEAmcTOZJEIgdpiuUA
+IEmeIyUbkGgJMIwAcCkCAJCiREkieSxXtCZH8RIpiZzEschMAlFkJAqQFMtKiKUh
+S5k1oAs5Fb4AYbSAFGeRy4Xy84lDegLHi2URaSZovTzG2OV3ClQWGES1AJMdTtWt
+imo+TuS63Q6LxnOXOjTg20iwPpawCrIiYR8xoRg5XbKqEBYKI0W3rGlSwGSmSI5j
+oJ5AJQ7ZiayyhmA4FpJ4ad+gYiwpQg6SEm0yARpBUbRxDOBoGwQkZEXOhI0UcG+c
+BAAnmigOYmdEySxQIqSRjcUboTVVqKiEhcVl8nYs6ZLtCu8uciLikGcw5wk/f53f
+uqAAbRL8dMER/82HxxL+aHfNt965O3RSXF/I9TLd4DeFyURY8nshPTbfxx9cbxTa
+7WmeCBTalnL6eOfqH7crLvsi754bbmq6WTs1G1vv2Db2d/+l3y5VLuxYLs6ck/Yu
+WXwN2dnG2q13Zpr379rQifRsauu0HLT72XcDg44+Ws5gy0KWic7oH9iXZV9844Ht
+SzunFN2BPR2BPVvGP6s09/n3V9f/Wlm/eHIaemc+umhoLWnuOuLoiIkI/GTfTAwa
+VV8Z+33kWGXg3fSJuqduLYh1i0eQPJnKJffNXdva0ihWBTxnmR870+69amz/unvw
+/ku7SttOG5p8RiFhf++nbR+eD3+4ozu0Ovaf5k3run6OntryVUx05nx54eS4omSP
+lLuab3+3cq3/wqmdB4c+/yVspTh/oH7J4CutWgTtZVULvv7vExbdNzMHSsxGa21r
+jjKtm/1xoSF7xXrjMr/5/DB8/QVWjZ9INJ79a3N6/ouGN149zKTdU1dWioIbBZj0
+dGt51IP75VEpB0+NZiWe6aA3UPpm71BsTFNXcrkl78H7q97t4a95mibUrFpiILHi
+LHirO5Lo3dPfcOXEseBt5KaUIE/CPtRTMfnnjYvGn74IePhMX+S5J51xBaP80Zrq
+nDRl+Mrq+pj02YywwY3xkbk943HPp9F8at2Fkb3DX67W5LbcivK2CCer7rUcf/NE
+QsaivqvjXwSVrKA=
+=iLdC
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/benrussell
+
+==================================================================
+
