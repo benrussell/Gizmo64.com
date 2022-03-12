@@ -1,6 +1,3 @@
 [submodule "rainbow-master"]
 	path = rainbow-master
 	url = https://github.com/ccampbell/rainbow.git
-[submodule "ajcm"]
-	path = ajcm
-	url = https://github.com/benrussell/ajcm.git
